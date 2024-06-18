@@ -1,2 +1,2 @@
-# online-banica-calculator
-Online Banica Calculator
+# Online Banica Calculator
+Калкулатор за замесване на тесто за баница
