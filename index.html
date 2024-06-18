@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тесто за баница (online калкулатор)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="borders.css">
+</head>
+
+<body>
+  <header class="page">
+    <h1>Тесто за баница</h1>
+    <h2>(калкулатор)</h2>
+  </header>
+
+  <nav class="top-nav">
+    <a href="#legend" class="legend-link">?</a>
+  </nav>
+
+  <main class="--grid-3-cols">
+    <!-- ##### First Column ##### -->
+    <section class="page-column">
+      <form action="">
+        <!-- ##### (1.3) ##### -->
+        <article class="card">
+          <header>
+            <h3>(1.3) Тегло на тестото</h3>
+          </header>
+          <div class="card-body">
+            <div class="rows-container --grid-2-cols">
+              <!-- Row -->
+              <div class="cell -a">Кори, (брой):</div>
+              <div class="cell -b -input">
+                <input type="number" step="1" min="0" name="" id="" placeholder="пр. ... 5" required>
+              </div>
+              <!-- Row - Line -->
+              <div class="cell -line">&times;</div>
+              <!-- Row -->
+              <div class="cell -a">Тегло на отделна кора, (g):</div>
+              <div class="cell -b -input">
+                <input type="number" step="1" min="0" name="" id="" placeholder="пр. ... 150" required>
+              </div>
+              <!-- Row - Line -->
+              <div class="cell -line">&equals;</div>
+              <!-- Row -->
+              <div class="cell -a">Тегло на тестото, (g):</div>
+              <div class="cell -b -result"><span>750 g</span></div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ##### (2.3) ##### -->
+        <article class="card">
+          <header>
+            <h3>(2.3) Формула на тестото</h3>
+          </header>
+          <div class="card-body">
+            <div class="rows-container --grid-2-cols">
+              <!-- Row -->
+              <div class="cell -a">h<sup class="superscript">тесто</sup>, (%):</div>
+              <div class="cell -b -input">
+                <input type="number" step="1" min="0" name="" id="" placeholder="пр. ... 55" required>
+              </div>
+              <!-- Row - Line -->
+              <div class="cell -line"></div>
+              <!-- Row -->
+              <div class="cell -a">Сол, (%):</div>
+              <div class="cell -b -input">
+                <input type="number" step="0.1" min="0" name="" id="" placeholder="пр. ... 2.5" required>
+              </div>
+              <!-- Row - Line -->
+              <div class="cell -line"></div>
+              <!-- Row - Line -->
+              <div class="cell -line -text">Допълнителни съставки</div>
+              <!-- Row -->
+              <div class="cell -a">Оцет, (%):</div>
+              <div class="cell -b -input">
+                <input type="number" step="0.1" min="0" name="" id="" placeholder="пр. ... 2.5" required>
+              </div>
+              <!-- Row -->
+              <div class="cell -a">Олио, (%):</div>
+              <div class="cell -b -input">
+                <input type="number" step="0.1" min="0" name="" id="" placeholder="пр. ... 2.5" required>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </form>
+    </section>
+
+    <!-- ##### Second Column ##### -->
+    <section class="page-column">
+      <!-- ##### (3.3) ##### -->
+      <article class="card">
+        <header>
+          <h3>(3.3) Изчислена формула</h3>
+        </header>
+        <div class="card-body">
+          <div class="rows-container --grid-2-cols">
+            <!-- Row -->
+            <div class="cell -a">Брашно, (g):</div>
+            <div class="cell -b -result"><span>476 g</span></div>
+            <!-- Row - Line -->
+            <div class="cell -line"></div>
+            <!-- Row -->
+            <div class="cell -a">Сол, (g):</div>
+            <div class="cell -b -result"><span>15 g</span></div>
+            <!-- Row - Line -->
+            <div class="cell -line"></div>
+            <!-- Row - Line -->
+            <div class="cell -line -text">Течни съставки: <span>262g</span></div>
+            <!-- Row -->
+            <div class="cell -a">Вода, (g):</div>
+            <div class="cell -b -result"><span>262 g</span></div>
+            <!-- Row - Line -->
+            <div class="cell -line"></div>
+            <!-- Row -->
+            <div class="cell -a">Оцет, (g):</div>
+            <div class="cell -b -result"><span>0 g</span></div>
+            <!-- Row -->
+            <div class="cell -a">Олио, (g):</div>
+            <div class="cell -b -result"><span>0 g</span></div>
+
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ##### Third Column ##### -->
+    <section class="page-column">
+      <!-- ##### Legend ##### -->
+      <aside id="legend" class="legend">
+        <header class="legend-header">
+          <h4>Легенда:</h4>
+        </header>
+        <div class="legend-row -input">
+          <p>променлива стойност</p>
+        </div>
+        <div class="legend-row -result">
+          <p>търсена стойност</p>
+        </div>
+        <div class="legend-row -regular">
+          <p>h - хидратация</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="page">
+    <a href="#">bread-calculator-bg</a>
+  </footer>
+</body>
+
+</html>
