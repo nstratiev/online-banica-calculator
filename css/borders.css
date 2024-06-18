@@ -1,0 +1,44 @@
+article.card > header {
+  border-bottom: 1px solid black;
+}
+
+.rows-container {
+  border-bottom: 1px solid black;
+}
+
+.cell.-a {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.cell.-b {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.cell.-line {
+  border-top: 1px solid black;
+}
+
+.cell.-line.-text {
+  border: none;
+}
+
+.superscript {
+  vertical-align: top; 
+  position: relative;
+  top:  -0.2em;
+  font-size: 75%;
+}
+
+aside.legend {
+  border-bottom: 1px dotted black;
+  border-right: 1px dotted black;
+}
+
+.legend-header,
+.legend-row {
+  border-top: 1px dotted black;
+  border-left: 1px dotted black;
+}

@@ -1,0 +1,18 @@
+/* ##### QUERIES ##### */
+/* Queries points >>> 1200px / 1000px / 680px / 370px / 350px / 308px / 300px */
+
+@media (max-width: 1200px) {
+  .--grid-3-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer.page {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 680px) {
+  .--grid-3-cols {
+    grid-template-columns: 1fr;
+  }
+}
