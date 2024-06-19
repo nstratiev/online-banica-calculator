@@ -15,4 +15,8 @@
   .--grid-3-cols {
     grid-template-columns: 1fr;
   }
+
+  hr {
+    margin-bottom: 60px;
+  }
 }

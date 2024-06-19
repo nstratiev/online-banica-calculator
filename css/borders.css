@@ -25,20 +25,13 @@ article.card > header {
   border: none;
 }
 
-.superscript {
-  vertical-align: top; 
-  position: relative;
-  top:  -0.2em;
-  font-size: 75%;
-}
-
 aside.legend {
-  border-bottom: 1px dotted black;
-  border-right: 1px dotted black;
+  border-bottom: 1px dashed black;
+  border-right: 1px dashed black;
 }
 
 .legend-header,
 .legend-row {
-  border-top: 1px dotted black;
-  border-left: 1px dotted black;
+  border-top: 1px dashed black;
+  border-left: 1px dashed black;
 }
