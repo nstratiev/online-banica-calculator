@@ -80,7 +80,8 @@ form {
 }
 
 header.page {
-  padding: 4px;
+  /* padding: 4px; */
+  margin-bottom: 40px;
 }
 
 footer.page {
@@ -98,7 +99,8 @@ footer.page {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 5px;
+  padding: 8px;
+  position: relative;
 }
 
 .page-column {
@@ -211,6 +213,13 @@ aside.legend {
 }
 
 /* ##### Links ##### */
+a.legend-link:link {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  background-color: white;
+}
+
 a.legend-link:link,
 a.legend-link:visited {
   display: inline-block;
@@ -218,12 +227,13 @@ a.legend-link:visited {
   border: 1px solid black;
 
   border-radius: 6px;
-  padding: 4px 16px;
+  /* padding: 4px 16px; */
+  padding: 2px 10px;
   color: rgb(226, 107, 10);
   text-decoration: none;
   font-weight: bold;
   /* font-size: 150%; */
-  font-size: 22px;
+  font-size: 140%;
 }
 
 /* a.legend-link:hover,

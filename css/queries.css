@@ -7,7 +7,7 @@
   }
 
   footer.page {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
 
@@ -18,5 +18,27 @@
 
   hr {
     margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-nav,
+  a.legend-link:link {
+    position: initial;
+  }
+
+  /* .top-nav {
+    justify-content: space-evenly;
+  } */
+
+  a.legend-link:link {
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: 220px) {
+  .top-nav {
+    flex-direction: column;
+    gap: 4px;
   }
 }
