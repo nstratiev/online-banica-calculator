@@ -1,9 +1,9 @@
 /* ##### Small Elements ##### */
 .warning {
   border-radius: 4px;
-  background-color: red;
+  background-color: var(--red-menu-color);
   color: white;
-  padding: 4px;
+  padding: 4px 6px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   font-size: 90%;

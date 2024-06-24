@@ -1,6 +1,11 @@
 :root {
   --black-color: rgb(53, 59, 65);
   --black-color-2: rgb(74, 80, 87);
+  --yellow-input-bg-color: rgb(255, 255, 153);
+  --orange-input-bg-color: rgb(255, 204, 102);
+  --orange-menu-color: rgb(226, 107, 10);
+  --red-menu-color: rgb(192, 0, 0);
+  --grey-bg: rgb(248, 248, 248);
 }
 
 * {
@@ -16,7 +21,6 @@ html {
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--black-color);
-
   text-align: center;
   height: 100vh;
 }
@@ -60,10 +64,6 @@ body {
 }
 
 /* ##### Main elements ##### */
-h1 {
-  padding: 0;
-}
-
 body,
 .page-column,
 form,
@@ -76,7 +76,6 @@ aside.legend {
 main,
 form {
   width: 100%;
-  /* padding: 0 5px 5px; */
 }
 
 header.page {
@@ -86,7 +85,6 @@ header.page {
 
 footer.page {
   margin-top: auto;
-  /* height: 60px; */
 }
 
 header.page,
@@ -104,7 +102,7 @@ footer.page {
 }
 
 .page-column {
-  /* padding: 0 20px; */
+  padding: 0 5px;
 }
 
 /* ##### Small elements ##### */
@@ -125,7 +123,6 @@ article.card {
   border: 2px solid black;
   max-width: 320px;
   width: 100%;
-  /* margin-bottom: 40px; */
 }
 
 article.card > header,
@@ -209,7 +206,6 @@ aside.legend {
 
 .legend-row.-input,
 .legend-row.-result {
-  /* font-weight: bold; */
 }
 
 /* ##### Links ##### */
@@ -223,23 +219,14 @@ a.legend-link:link {
 a.legend-link:link,
 a.legend-link:visited {
   display: inline-block;
-  /* border: 2px solid darkorange; */
   border: 1px solid black;
-
   border-radius: 6px;
-  /* padding: 4px 16px; */
   padding: 2px 10px;
-  color: rgb(226, 107, 10);
+  color: var(--orange-menu-color);
   text-decoration: none;
   font-weight: bold;
-  /* font-size: 150%; */
   font-size: 140%;
 }
-
-/* a.legend-link:hover,
-a.legend-link:active {
-  outline: 1px solid darkorange;
-} */
 
 @media (hover: hover) {
   a.legend-link:hover {

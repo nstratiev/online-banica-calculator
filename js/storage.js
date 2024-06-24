@@ -141,11 +141,11 @@ function setLocalStorage(formItemStr, numberFieldsCollection) {
 
 // IMPORTS
 import {
-  numberFieldsMain,
-  formFlours,
-  numberFieldsCorrections,
-  numberFieldsWater,
-  numberFieldsLeaven,
+  // numberFieldsMain,
+  // formFlours,
+  // numberFieldsCorrections,
+  // numberFieldsWater,
+  // numberFieldsLeaven,
 } from './elements.js';
 import { camelToKebapCase } from './helpers.js';
 import { checkmarkAlertGreen } from './alerts.js';

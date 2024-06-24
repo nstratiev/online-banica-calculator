@@ -78,7 +78,7 @@ export function valueRangeCheck(field, min, max) {
       .then((val) => {
         field.focus();
       })
-      .catch((val) => {});
+      .catch((val) => { });
 
     return false;
   } else {
@@ -103,4 +103,4 @@ export function hasOutOfRangeFieldsValidation(fields) {
 }
 
 // IMPORTS
-import { ConfirmModal } from '../../common-js/modalClass.js';
+import { ConfirmModal } from './modalClass.js';

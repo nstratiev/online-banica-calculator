@@ -70,12 +70,12 @@ export function getStorageAndCalculateWater() {
 
 //IMPORTS
 import {
-  totalWaterCheckResultElem,
-  numberFieldsWater,
-  initialWaterResultElem,
-  secondaryWaterResultElem,
-  secondaryWaterPercentResultElem,
-  formWater,
+  // totalWaterCheckResultElem,
+  // numberFieldsWater,
+  // initialWaterResultElem,
+  // secondaryWaterResultElem,
+  // secondaryWaterPercentResultElem,
+  // formWater,
 } from './elements.js';
 import { calcMainSubmit, breadParamsObj } from './calcMain.js';
 import { hasOutOfRangeFieldsValidation } from './validation.js';

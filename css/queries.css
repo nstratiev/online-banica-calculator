@@ -27,12 +27,8 @@
     position: initial;
   }
 
-  /* .top-nav {
-    justify-content: space-evenly;
-  } */
-
   a.legend-link:link {
-    margin-right: 4px;
+    margin-right: 6px;
   }
 }
 

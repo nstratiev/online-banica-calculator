@@ -44,7 +44,7 @@ export function calcMainSubmit() {
           .then((val) => {
             conditionHasEmpty[1].focus();
           })
-          .catch((val) => {});
+          .catch((val) => { });
       }, 100);
     }
 
@@ -162,19 +162,19 @@ export function getStorageAndCalculateMain() {
 
 // IMPORTS
 import {
-  formMain,
-  numberFieldsMain,
-  numberFieldsWater,
-  leavenHydrPredifinedResultElem,
-  doughWeightElement,
-  flourWeightElement,
-  leavenWeightElement,
-  waterWeightElement,
-  saltWeightElement,
-  flourLeavenElement,
-  waterLeavenElement,
-  flourTotalElement,
-  waterTotalElement,
+  // formMain,
+  // numberFieldsMain,
+  // numberFieldsWater,
+  // leavenHydrPredifinedResultElem,
+  // doughWeightElement,
+  // flourWeightElement,
+  // leavenWeightElement,
+  // waterWeightElement,
+  // saltWeightElement,
+  // flourLeavenElement,
+  // waterLeavenElement,
+  // flourTotalElement,
+  // waterTotalElement,
 } from './elements.js';
 
 import {

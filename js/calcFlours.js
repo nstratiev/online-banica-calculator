@@ -114,11 +114,11 @@ export function getStorageAndCalculateFlours() {
 
 // IMPORTS
 import {
-  formFlours,
-  numberFieldsFlours,
-  numberFieldsIngredients,
-  whiteFlourResultElement,
-  totalCalculatedFlourResultElement,
+  // formFlours,
+  // numberFieldsFlours,
+  // numberFieldsIngredients,
+  // whiteFlourResultElement,
+  // totalCalculatedFlourResultElement,
 } from './elements.js';
 import { hasOutOfRangeFieldsValidation } from './validation.js';
 import { breadParamsObj, calcMainSubmit } from './calcMain.js';

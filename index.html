@@ -97,7 +97,7 @@
               <div class="cell -line equal-sign">&equals;</div>
               <!-- Row -->
               <div class="cell -a">Тегло на тестото, (g):</div>
-              <div class="cell -b -result"><span>750 g</span></div>
+              <div class="cell -b -result"><span id="dough-weight">750 g</span></div>
             </div>
 
           </div>
@@ -166,98 +166,98 @@
 
     <!-- ##### Second Column ##### -->
     <section class="page-column">
-      <form form="form-main">
-        <!-- ##### (3.3) ##### -->
-        <article class="card">
-          <header>
-            <h3>(3.3) Изчислена формула</h3>
-          </header>
-          <div class="card-body">
-            <div class="rows-container --grid-2-cols">
-              <!-- Row -->
-              <div class="cell -a">Брашно, (g):</div>
-              <div class="cell -b -result"><span>476 g</span></div>
-              <!-- Row - Line -->
-              <div class="cell -line"></div>
-              <!-- Row -->
-              <div class="cell -a">Сол, (g):</div>
-              <div class="cell -b -result"><span>15 g</span></div>
-              <!-- Row - Line -->
-              <div class="cell -line"></div>
-              <!-- Row - Line -->
-              <div class="cell -line -text">Течни съставки:<span>&nbsp;262g</span></div>
-              <!-- Row -->
-              <div class="cell -a">Вода, (g):</div>
-              <div class="cell -b -result"><span>262 g</span></div>
-              <!-- Row - Line -->
-              <div class="cell -line"></div>
-              <!-- Row - Line -->
-              <div class="cell -line -text">Допълнителни съставки</div>
-              <!-- Row -->
-              <div class="cell -a">Оцет, (g):</div>
-              <div class="cell -b -result"><span>0 g</span></div>
-              <!-- Row -->
-              <div class="cell -a">Олио, (g):</div>
-              <div class="cell -b -result"><span>0 g</span></div>
-
-            </div>
+      <!-- ##### (3.3) ##### -->
+      <article class="card">
+        <header>
+          <h3>(3.3) Изчислена формула</h3>
+        </header>
+        <div class="card-body">
+          <div class="rows-container --grid-2-cols">
+            <!-- Row -->
+            <div class="cell -a">Брашно, (g):</div>
+            <div class="cell -b -result"><span id="flour-weight">476 g</span></div>
+            <!-- Row - Line -->
+            <div class="cell -line"></div>
+            <!-- Row -->
+            <div class="cell -a">Сол, (g):</div>
+            <div class="cell -b -result"><span id="salt-weight">15 g</span></div>
+            <!-- Row - Line -->
+            <div class="cell -line"></div>
+            <!-- Row - Line -->
+            <div class="cell -line -text">Течни съставки:&nbsp;<span id="liquid-indreds-weight">262g</span></div>
+            <!-- Row -->
+            <div class="cell -a">Вода, (g):</div>
+            <div class="cell -b -result"><span id="water-weight">262 g</span></div>
+            <!-- Row - Line -->
+            <div class="cell -line"></div>
+            <!-- Row - Line -->
+            <div class="cell -line -text">Допълнителни съставки</div>
+            <!-- Row -->
+            <div class="cell -a">Оцет, (g):</div>
+            <div class="cell -b -result"><span id="vinegar-weight">0 g</span></div>
+            <!-- Row -->
+            <div class="cell -a">Олио, (g):</div>
+            <div class="cell -b -result"><span id="oil-weight">0 g</span></div>
 
           </div>
-        </article>
 
-        <!-- ##### Buttons Group (Main) ##### -->
-        <div class="btns-group _main">
-          <!-- Submit button -->
-          <button type="button" class="btn-submit" id="btn-submit-main" title="Изчисляване на търсените стойности">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-              <rect width="256" height="256" fill="none" />
-              <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="12" />
-              <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-              <circle cx="88" cy="148" r="10" />
-              <circle cx="128" cy="148" r="10" />
-              <circle cx="168" cy="148" r="10" />
-              <circle cx="88" cy="188" r="10" />
-              <circle cx="128" cy="188" r="10" />
-              <circle cx="168" cy="188" r="10" />
-            </svg>
-          </button>
-
-          <!-- Reset button -->
-          <button type="button" class="btn-reset" id="btn-reset-main" title="Нулиране на полетата от текущата форма">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-              <rect width="256" height="256" fill="none" />
-              <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="12" />
-              <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="12" />
-              <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="12" />
-              <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="12" />
-            </svg>
-          </button>
-
-          <!-- Save button -->
-          <button type="button" class="btn-save" id="btn-save-main"
-            title="Запаметяване на стойностите от полетата на текущата форма">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-              <rect width="256" height="256" fill="none" />
-              <path
-                d="M216,91.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H164.69a8,8,0,0,1,5.65,2.34l43.32,43.32A8,8,0,0,1,216,91.31Z"
-                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-              <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor"
-                stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-              <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="12" />
-            </svg>
-          </button>
         </div>
+      </article>
 
-        <hr />
+      <!-- ##### Buttons Group (Main) ##### -->
+      <div class="btns-group -main">
+        <!-- Submit button -->
+        <button form="form-main" type="button" class="btn-submit" id="btn-submit-main"
+          title="Изчисляване на търсените стойности">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none" />
+            <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="12" />
+            <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+            <circle cx="88" cy="148" r="10" />
+            <circle cx="128" cy="148" r="10" />
+            <circle cx="168" cy="148" r="10" />
+            <circle cx="88" cy="188" r="10" />
+            <circle cx="128" cy="188" r="10" />
+            <circle cx="168" cy="188" r="10" />
+          </svg>
+        </button>
 
-      </form>
+        <!-- Reset button -->
+        <button form="form-main" type="button" class="btn-reset" id="btn-reset-main"
+          title="Нулиране на полетата от текущата форма">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none" />
+            <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="12" />
+            <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="12" />
+            <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="12" />
+            <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="12" />
+          </svg>
+        </button>
+
+        <!-- Save button -->
+        <button form="form-main" type="button" class="btn-save" id="btn-save-main"
+          title="Запаметяване на стойностите от полетата на текущата форма">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none" />
+            <path
+              d="M216,91.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H164.69a8,8,0,0,1,5.65,2.34l43.32,43.32A8,8,0,0,1,216,91.31Z"
+              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+            <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+            <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="12" />
+          </svg>
+        </button>
+      </div>
+
+      <hr />
+
 
     </section>
 
@@ -297,7 +297,9 @@
     <a href="https://nstratiev.github.io/bread-calculator-bg/">bread-calculator-bg</a>
   </footer>
 
-  <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/index.js">
+    console.log('jklhj');
+  </script>
 </body>
 
 </html>

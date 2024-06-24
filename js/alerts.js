@@ -35,4 +35,4 @@ export const alertEmptyFieldBox = new ConfirmModal({
 });
 
 // IMPORTS
-import { ConfirmModal } from '../../common-js/modalClass.js';
+import { ConfirmModal } from './modalClass.js';
