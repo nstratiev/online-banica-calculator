@@ -14,50 +14,6 @@
 </head>
 
 <body>
-  <!-- Page ASIDE -->
-  <aside>
-    <!-- To-top Button -->
-    <div class="btn-to-top" id="btn-to-top">
-      <!-- <div class="up-arrow"></div> -->
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none" />
-          <polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="16" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Global Reset Button -->
-    <div class="btn-reset-global" id="btn-reset-global" title="Нулиране на всички полета">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none" />
-          <polyline points="24 56 24 104 72 104" fill="none" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="16" />
-          <path d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104" fill="none" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="16" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Global Save Button -->
-    <div class="btn-save-global" id="btn-save-global"
-      title="Запаметяване на стойностите от всички полета на текущата страница">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none" />
-          <ellipse cx="128" cy="80" rx="88" ry="48" fill="none" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="16" />
-          <path d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80" fill="none" stroke="currentColor"
-            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
-          <path d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128" fill="none" stroke="currentColor"
-            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
-        </svg>
-      </div>
-    </div>
-  </aside>
-
   <header class="page">
     <h1>Тесто за баница</h1>
     <h2>(калкулатор)</h2>
@@ -82,7 +38,8 @@
               <!-- Row -->
               <div class="cell -a">Кори, (брой):</div>
               <div class="cell -b -input">
-                <input type="number" step="1" min="0" name="" id="" placeholder="пр. ... 5" required>
+                <input type="number" step="1" min="0" name="crustsCount" id="crusts-count" placeholder="пр. ... 5"
+                  required>
               </div>
               <!-- Row - Line -->
               <div class="cell -line multiply-sign">&times;</div>
@@ -91,13 +48,14 @@
                 Тегло на отделна кора, (g):
               </div>
               <div class="cell -b -input">
-                <input type="number" step="1" min="0" name="" id="" placeholder="пр. ... 150" required>
+                <input type="number" step="1" min="0" name="crustWeight" id="crust-weight" placeholder="пр. ... 150"
+                  required>
               </div>
               <!-- Row - Line -->
               <div class="cell -line equal-sign">&equals;</div>
               <!-- Row -->
               <div class="cell -a">Тегло на тестото, (g):</div>
-              <div class="cell -b -result"><span id="dough-weight">750 g</span></div>
+              <div class="cell -b -result"><span id="dough-weight">####</span></div>
             </div>
 
           </div>
@@ -118,7 +76,8 @@
                 </aside>
               </div>
               <div class="cell -b -input">
-                <input type="number" step="1" min="0" name="" id="" placeholder="пр. ... 55" required>
+                <input type="number" step="1" min="50" max="125" name="hydrationPercent" id="hydration-percent"
+                  placeholder="пр. ... 55" required>
               </div>
               <!-- Row - Line -->
               <div class="cell -line"></div>
@@ -131,7 +90,8 @@
                 </aside>
               </div>
               <div class="cell -b -input">
-                <input type="number" step="0.1" min="0" name="" id="" placeholder="пр. ... 2.5" required>
+                <input type="number" step="0.1" min="0" max="7.0" name="saltPercent" id="salt-percent"
+                  placeholder="пр. ... 2.5" required>
               </div>
               <!-- Row - Line -->
               <div class="cell -line"></div>
@@ -145,7 +105,8 @@
                 </aside>
               </div>
               <div class="cell -b -input">
-                <input type="number" step="0.1" min="0" name="" id="" placeholder="пр. ... 2.5" required>
+                <input type="number" step="0.1" min="0" max="7.0" name="vinegarPercent" id="vinegar-percent"
+                  placeholder="пр. ... 0.5">
               </div>
               <!-- Row -->
               <div class="cell -a comment">
@@ -155,7 +116,8 @@
                 </aside>
               </div>
               <div class="cell -b -input">
-                <input type="number" step="0.1" min="0" name="" id="" placeholder="пр. ... 2.5" required>
+                <input type="number" step="0.1" min="0" max="7.0" name="oilPercent" id="oil-percent"
+                  placeholder="пр. ... 0.5">
               </div>
             </div>
 
@@ -167,7 +129,7 @@
     <!-- ##### Second Column ##### -->
     <section class="page-column">
       <!-- ##### (3.3) ##### -->
-      <article class="card">
+      <article class="card --last-child">
         <header>
           <h3>(3.3) Изчислена формула</h3>
         </header>
@@ -175,29 +137,29 @@
           <div class="rows-container --grid-2-cols">
             <!-- Row -->
             <div class="cell -a">Брашно, (g):</div>
-            <div class="cell -b -result"><span id="flour-weight">476 g</span></div>
+            <div class="cell -b -result"><span id="flour-weight">####</span></div>
             <!-- Row - Line -->
             <div class="cell -line"></div>
             <!-- Row -->
             <div class="cell -a">Сол, (g):</div>
-            <div class="cell -b -result"><span id="salt-weight">15 g</span></div>
+            <div class="cell -b -result"><span id="salt-weight">####</span></div>
             <!-- Row - Line -->
             <div class="cell -line"></div>
             <!-- Row - Line -->
-            <div class="cell -line -text">Течни съставки:&nbsp;<span id="liquid-indreds-weight">262g</span></div>
+            <div class="cell -line -text">Течни съставки:&nbsp;<span id="liquid-indreds-weight">###</span></div>
             <!-- Row -->
             <div class="cell -a">Вода, (g):</div>
-            <div class="cell -b -result"><span id="water-weight">262 g</span></div>
+            <div class="cell -b -result"><span id="water-weight">####</span></div>
             <!-- Row - Line -->
             <div class="cell -line"></div>
             <!-- Row - Line -->
             <div class="cell -line -text">Допълнителни съставки</div>
             <!-- Row -->
             <div class="cell -a">Оцет, (g):</div>
-            <div class="cell -b -result"><span id="vinegar-weight">0 g</span></div>
+            <div class="cell -b -result"><span id="vinegar-weight">###</span></div>
             <!-- Row -->
             <div class="cell -a">Олио, (g):</div>
-            <div class="cell -b -result"><span id="oil-weight">0 g</span></div>
+            <div class="cell -b -result"><span id="oil-weight">###</span></div>
 
           </div>
 
@@ -296,6 +258,50 @@
   <footer class="page flex">
     <a href="https://nstratiev.github.io/bread-calculator-bg/">bread-calculator-bg</a>
   </footer>
+
+  <!-- Page ASIDE -->
+  <aside>
+    <!-- To-top Button -->
+    <div class="btn-to-top" id="btn-to-top">
+      <!-- <div class="up-arrow"></div> -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Global Reset Button -->
+    <div class="btn-reset-global" id="btn-reset-global" title="Нулиране на всички полета">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline points="24 56 24 104 72 104" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <path d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Global Save Button -->
+    <div class="btn-save-global" id="btn-save-global"
+      title="Запаметяване на стойностите от всички полета на текущата страница">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <ellipse cx="128" cy="80" rx="88" ry="48" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <path d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+          <path d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+  </aside>
 
   <script type="module" src="js/index.js">
     console.log('jklhj');

@@ -119,6 +119,10 @@ aside.legend {
   margin: 0 20px 40px;
 }
 
+article.card.--last-child {
+  margin-bottom: 20px;
+}
+
 article.card {
   border: 2px solid black;
   max-width: 320px;
@@ -160,13 +164,17 @@ article.card > header {
   font-style: italic;
 }
 
+.cell.-line.-text > span {
+  font-weight: initial;
+}
+
 .cell.-b.-result,
 .legend-row.-result {
   background-color: rgb(255, 204, 102);
 }
 
 .cell.-b.-result {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .cell.-b.-input {

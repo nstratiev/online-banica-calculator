@@ -19,7 +19,7 @@ function temporaryOnClickAlert(msg, duration, bgColor) {
   document.body.appendChild(containerEl);
 }
 
-export const resetConfirmDialog = new ConfirmModal({
+export const globalResetConfirmDialog = new ConfirmModal({
   titleText: '',
   msgText:
     'Желаете ли всички запаметени стойности, свързани с настоящата страница, да бъдат изтрити трайно от паметта?',

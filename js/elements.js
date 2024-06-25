@@ -12,7 +12,7 @@ export const formMain = document.querySelector('#form-main');
 
 // Input elements
 export const numberFieldsMain = document.querySelectorAll(
-  '.cell.-input'
+  '.cell.-input > input'
 );
 
 // RESULT elements
@@ -26,7 +26,7 @@ export const saltWeightElement = document.querySelector(
   '#salt-weight'
 );
 export const liquidIngredsWeightElement = document.querySelector(
-  '#liquid-ingreds-weight'
+  '#liquid-indreds-weight'
 );
 export const waterWeightElement = document.querySelector(
   '#water-weight'
