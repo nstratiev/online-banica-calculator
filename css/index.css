@@ -212,8 +212,8 @@ aside.legend {
   text-decoration: underline;
 }
 
-.legend-row.-input,
-.legend-row.-result {
+.legend-row.-version {
+  font-style: italic;
 }
 
 /* ##### Links ##### */
