@@ -1,4 +1,4 @@
-// Reset functions
+// ##### Reset functions #####
 
 // Global Reset Button
 export function resetGlobalLocalStorage() {
@@ -36,28 +36,38 @@ export function resetAllResults() {
 
 // Main
 export function resetMainForm() {
-  resetMainInputs();
+  resetMainFormInputs();
   resetMainPrimaryResults();
   resetMainSecondaryResults();
 }
 
-function resetMainInputs() {
-  formMain.reset();
+function resetMainFormInputs() {
+  resetFormInputs(formMain);
 }
 
 function resetMainPrimaryResults() {
+  doughWeightElement.style.fontWeight = 'initial';
   doughWeightElement.textContent = '####';
+  flourWeightElement.style.fontWeight = 'initial';
   flourWeightElement.textContent = '####';
+  saltWeightElement.style.fontWeight = 'initial';
   saltWeightElement.textContent = '####';
+  waterWeightElement.style.fontWeight = 'initial';
   waterWeightElement.textContent = '####';
 }
 
 function resetMainSecondaryResults() {
+  liquidIngredsWeightElement.style.fontWeight = 'initial';
   liquidIngredsWeightElement.textContent = '###';
+  vinegarWeightElement.style.fontWeight = 'initial';
   vinegarWeightElement.textContent = '###';
+  oilWeightElement.style.fontWeight = 'initial';
   oilWeightElement.textContent = '###';
 }
 
+function resetFormInputs(formElem) {
+  formElem.reset();
+}
 
 // IMPORTS
 import { globalResetConfirmDialog, checkmarkAlertGreen } from './alerts.js';

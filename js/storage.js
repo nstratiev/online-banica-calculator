@@ -1,4 +1,4 @@
-// --- Locale Storage functions
+// ##### Locale Storage functions #####
 export function setGlobalLocalStorage() {
   setLocaleStorageMain();
   checkmarkAlertGreen();
@@ -6,16 +6,25 @@ export function setGlobalLocalStorage() {
 
 // Main localStorage
 export function getLocaleStorageMain() {
-  getLocalStorage('formMain');
+  getLocalStorageAndFilInputs('formMain');
 }
 
 export function setLocaleStorageMain() {
   setLocalStorage('formMain', numberFieldsMain);
 }
 
-
 // Basic functions
-function getLocalStorage(formItemStr) {
+function setLocalStorage(formItemStr, numberFieldsCollection) {
+  const obj = {};
+
+  for (const numField of numberFieldsCollection) {
+    obj[numField.name] = numField.value;
+  }
+
+  localStorage.setItem(formItemStr, JSON.stringify(obj));
+}
+
+function getLocalStorageAndFilInputs(formItemStr) {
   let formStorage = localStorage.getItem(formItemStr);
   formStorage = JSON.parse(formStorage);
 
@@ -26,17 +35,6 @@ function getLocalStorage(formItemStr) {
   }
 
   return formStorage;
-}
-
-function setLocalStorage(formItemStr, numberFieldsCollection) {
-  const obj = {};
-
-  for (const numField of numberFieldsCollection) {
-    obj[numField.name] = numField.value;
-  }
-
-
-  localStorage.setItem(formItemStr, JSON.stringify(obj));
 }
 
 // IMPORTS

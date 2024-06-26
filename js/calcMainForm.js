@@ -1,28 +1,12 @@
 let isFirstPageLoadEmptyFieldCheck = true;
 let isFirstPageLoadOutOfRangeCheck = true;
 
-/*  
-const breadParamsObj = {
-  formula: {
-    prefermFlourPercent,
-    leavenHydr,
-    hydrationPercent,
-    saltPercent,
-  },
-  doughWeight,
-  leaven: { flour, water },
-  kneading: { flour, leaven, water, salt },
-  total: { flour, water },
-};
-*/
+export let doughParamsObj = null;
 
-export let breadParamsObj = {
-  formula: {},
-  doughWeight: null,
-  leaven: {},
-  kneading: {},
-  total: {},
-};
+export function getStorageAndCalculateMain() {
+  getLocaleStorageMain();
+  calcMainSubmit();
+}
 
 // Main Calculation on submit
 export function calcMainSubmit() {
@@ -30,11 +14,12 @@ export function calcMainSubmit() {
   const formDataObj = formdataToObject(formData);
 
   // Validation - Empty fields
-  const conditionHasEmpty = hasEmptyFieldsValidation(numberFieldsMain);
+  const conditionHasEmptyFields = hasEmptyFieldsValidation(numberFieldsMain);
 
-  if (conditionHasEmpty[0]) {
+  if (conditionHasEmptyFields[0]) {
     if (isFirstPageLoadEmptyFieldCheck) {
       isFirstPageLoadEmptyFieldCheck = false;
+
     } else {
       setLocaleStorageMain();
 
@@ -42,21 +27,21 @@ export function calcMainSubmit() {
         alertEmptyFieldBox
           .open()
           .then((val) => {
-            conditionHasEmpty[1].focus();
+            conditionHasEmptyFields[1].focus();
           })
           .catch((val) => { });
       }, 100);
     }
 
     resetAllResults();
-    breadParamsObj = null;
+    doughParamsObj = null;
     return false;
   }
 
   // Validation - Out of range fields
-  const conditionOutOfRange = hasOutOfRangeFieldsValidation(numberFieldsMain);
+  const conditionOutOfRangeFields = hasOutOfRangeFieldsValidation(numberFieldsMain);
 
-  if (conditionOutOfRange[0]) {
+  if (conditionOutOfRangeFields[0]) {
     if (isFirstPageLoadOutOfRangeCheck) {
       isFirstPageLoadOutOfRangeCheck = false;
     } else {
@@ -64,7 +49,7 @@ export function calcMainSubmit() {
     }
 
     resetAllResults();
-    breadParamsObj = null;
+    doughParamsObj = null;
     return false;
   }
 
@@ -75,9 +60,6 @@ export function calcMainSubmit() {
   const saltPercent = formDataObj.saltPercent / 100;
   const vinegarPercent = formDataObj.vinegarPercent / 100;
   const oilPercent = formDataObj.oilPercent / 100;
-  // numberFieldsWater[0].setAttribute('max', formDataObj.hydrationPercent);
-  // leavenHydrPredifinedResultElem.textContent =
-  //   formDataObj.leavenHydratationPercent;
 
   // Calculated values
   const totalDoughWeight = getTotalDoughWeight(crustsCount, crustWeight);
@@ -85,53 +67,29 @@ export function calcMainSubmit() {
   const totalSalt = getTotalIngredientWeight(totalFlour, saltPercent);
   const totalVinegar = getTotalIngredientWeight(totalFlour, vinegarPercent);
   const totalOil = getTotalIngredientWeight(totalFlour, oilPercent);
-  const liquidIngredientsWeight = getTotalIngredientWeight(totalFlour, hydrationPercent);
-
-  const totalWater = getTotalWaterWeight(liquidIngredientsWeight, totalVinegar, totalOil);
-  // const leavenObj = getLeavenComponents(
-  //   totalFlour,
-  //   prefermFlourPercent,
-  //   leavenHydratationPercent
-  // );
+  const totalLiquidIngredients = getTotalIngredientWeight(totalFlour, hydrationPercent);
+  const totalWater = getTotalWaterWeight(totalLiquidIngredients, totalVinegar, totalOil);
 
   // Set kneading object
-  const kneadingdObj = getIngredientsForKneading(
+  const kneadingdObj = setIngredientsForKneadingObj(
     totalFlour,
     totalWater,
     totalSalt,
     totalVinegar,
     totalOil,
-    liquidIngredientsWeight
+    totalLiquidIngredients
   );
 
-
   // Print calculated values
-  printMainPrimaryResults(kneadingdObj);
-  // printMainSecondaryResults();
+  printResultsMain(kneadingdObj);
 
-  // Set breadParamsObj
-  breadParamsObj = {
-    formula: {},
-    doughWeight: null,
-    liquidIngreds: null,
-    kneading: {},
-  };
-
-  breadParamsObj.formula.hydrationPercent = hydrationPercent;
-  breadParamsObj.formula.saltPercent = saltPercent;
-  breadParamsObj.formula.vinegarPercent = vinegarPercent;
-  breadParamsObj.formula.oilPercent = oilPercent;
-  breadParamsObj.doughWeight = totalDoughWeight;
-  breadParamsObj.liquidIngreds = liquidIngredientsWeight;
-  breadParamsObj.kneading.flour = kneadingdObj.flour;
-  breadParamsObj.kneading.water = kneadingdObj.water;
-  breadParamsObj.kneading.salt = kneadingdObj.salt;
-  breadParamsObj.kneading.vinegar = kneadingdObj.vinegar;
-  breadParamsObj.kneading.oil = kneadingdObj.oil;
+  // Set doughParamsObj
+  setDoughParamsObject();
 
   // Set localStorage
   setLocaleStorageMain();
 
+  // Checkmark visibility
   if (isFirstPageLoadEmptyFieldCheck || isFirstPageLoadOutOfRangeCheck) {
     isFirstPageLoadEmptyFieldCheck = false;
     isFirstPageLoadOutOfRangeCheck = false;
@@ -142,27 +100,48 @@ export function calcMainSubmit() {
   return true;
 
   // Inner functions
-  function printMainPrimaryResults(kneadingdObj) {
-    doughWeightElement.textContent = totalDoughWeight.toFixed(0);
-    flourWeightElement.textContent = kneadingdObj.flour.toFixed(0);
-    saltWeightElement.textContent = kneadingdObj.salt.toFixed(0);
-    liquidIngredsWeightElement.textContent = kneadingdObj.liquidIngredientsWeight.toFixed(0);
-    waterWeightElement.textContent = kneadingdObj.water.toFixed(0);
-    vinegarWeightElement.textContent = kneadingdObj.vinegar.toFixed(0);
-    oilWeightElement.textContent = kneadingdObj.oil.toFixed(0);
+  function setDoughParamsObject() {
+    /*   const doughParamsObj = {
+        formula: {
+          hydrationPercent,
+          saltPercent,
+          vinegarPercent,
+          oilPercent,
+        },
+        doughWeight,
+        liquidIngreds,
+        kneading: { flour, water, salt, vinegar, oil },
+      };
+     */
+    doughParamsObj = {
+      formula: {},
+      doughWeight: null,
+      liquidIngreds: null,
+      kneading: {},
+    };
 
-
+    doughParamsObj.formula.hydrationPercent = hydrationPercent;
+    doughParamsObj.formula.saltPercent = saltPercent;
+    doughParamsObj.formula.vinegarPercent = vinegarPercent;
+    doughParamsObj.formula.oilPercent = oilPercent;
+    doughParamsObj.doughWeight = totalDoughWeight;
+    doughParamsObj.liquidIngreds = totalLiquidIngredients;
+    doughParamsObj.kneading.flour = kneadingdObj.flour;
+    doughParamsObj.kneading.water = kneadingdObj.water;
+    doughParamsObj.kneading.salt = kneadingdObj.salt;
+    doughParamsObj.kneading.vinegar = kneadingdObj.vinegar;
+    doughParamsObj.kneading.oil = kneadingdObj.oil;
   }
 
-  function printMainSecondaryResults() {
-    // flourTotalElement.textContent = totalFlour.toFixed(0);
-    // waterTotalElement.textContent = totalWater.toFixed(0);
+  function printResultsMain(kneadingdObj) {
+    printResult(totalDoughWeight, doughWeightElement, 0);
+    printResult(kneadingdObj.flour, flourWeightElement, 0);
+    printResult(kneadingdObj.salt, saltWeightElement, 0);
+    printResult(kneadingdObj.liquidIngredients, liquidIngredsWeightElement, 0, { prefix: '', postfix: ' g' });
+    printResult(kneadingdObj.water, waterWeightElement, 0);
+    printResult(kneadingdObj.vinegar, vinegarWeightElement, 0);
+    printResult(kneadingdObj.oil, oilWeightElement, 0);
   }
-}
-
-export function getStorageAndCalculateMain() {
-  getLocaleStorageMain();
-  calcMainSubmit();
 }
 
 // IMPORTS
@@ -180,9 +159,11 @@ import { getLocaleStorageMain, setLocaleStorageMain } from './storage.js';
 import {
   getTotalDoughWeight,
   getTotalFlour,
-  getIngredientsForKneading,
+  setIngredientsForKneadingObj,
   getTotalIngredientWeight,
   getTotalWaterWeight,
 } from './math.js';
 
 import { formdataToObject } from './helpers.js';
+import { printResult } from './print.js';
+

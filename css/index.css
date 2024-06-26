@@ -98,7 +98,7 @@ footer.page {
   align-items: center;
   width: 100%;
   padding: 8px;
-  position: relative;
+  /* position: relative; */
 }
 
 .page-column {
@@ -218,9 +218,9 @@ aside.legend {
 
 /* ##### Links ##### */
 a.legend-link:link {
-  position: absolute;
+  /* position: absolute;
   top: 3px;
-  left: 6px;
+  left: 6px; */
   background-color: white;
 }
 

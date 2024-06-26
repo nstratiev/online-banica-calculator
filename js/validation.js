@@ -1,16 +1,34 @@
+// ##### Validation functions #####
+
 // On Focus Out
-export function addOnFocusOutInputsListener(numberFields) {
+export function attachOnFocusoutDecimalPointValidation() {
+  const decimalOneDigitInputs = document.querySelectorAll('input[step="0.1"]');
+  decimalOneDigitInputs.forEach(el => {
+    el.addEventListener('focusout', () => validationForDecimalPoint(el));
+  });
+
+  function validationForDecimalPoint(numField) {
+    const numValue = numField.value;
+
+    if (numValue !== '' && numValue.includes('.') === false) {
+      numField.value = numValue + '.0';
+    }
+  }
+}
+
+export function attachOnFocusOutInputsListener(numberFields) {
   numberFields.forEach((field) => {
     field.addEventListener('focusout', (e) => {
       const min = e.target.min;
       const max = e.target.max;
       const isRequired = e.target.required;
-      onFocusOutValidation(e.target, min, max, isRequired);
+      onFocusOutColorOutline(e.target, min, max, isRequired);
     });
   });
 }
 
-function onFocusOutValidation(field, min, max, isRequired) {
+function onFocusOutColorOutline(field, min, max, isRequired) {
+  let textOutput = '';
   const inputValue = Number(field.value);
   min = Number(min);
   max = Number(max);
@@ -22,19 +40,32 @@ function onFocusOutValidation(field, min, max, isRequired) {
   if (field.value === '') {
     if (isRequired) {
       field.style.outline = '2px solid green';
+      textOutput = 'empty required field';
     } else {
       field.style.outline = 'none';
+      textOutput = 'ok';
     }
+
   } else if (inputValue < min || inputValue > max) {
     field.style.outline = '2px solid red';
+    textOutput = 'out of range required field';
   } else {
     field.style.outline = 'none';
+    textOutput = 'ok';
   }
+
+  return [textOutput, field];
 }
 
 // On Empty Field
-export function hasEmptyFieldsValidation(fields) {
-  for (const field of fields) {
+export function hasEmptyFieldsValidation(fieldsCollection) {
+  for (const field of fieldsCollection) {
+    const isRequired = field.required;
+
+    if (isRequired === false) {
+      continue
+    }
+
     const val = field.value;
 
     if (val === '') {
@@ -81,6 +112,7 @@ export function valueRangeCheck(field, min, max) {
       .catch((val) => { });
 
     return false;
+
   } else {
     field.style.outline = 'none';
     return true;

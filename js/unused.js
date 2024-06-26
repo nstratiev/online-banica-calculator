@@ -1,4 +1,11 @@
 // Unused functions REPO
+export function preventDefaultOnEnterKeyPress(element) {
+  element.addEventListener('keydown', function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+    }
+  });
+}
 
 function getLeavenComponents(
   totalFlour,
@@ -14,7 +21,7 @@ function getLeavenComponents(
   return obj;
 }
 
-function getIngredientsForKneading(
+function setIngredientsForKneadingObj(
   totalFlour,
   totalWater,
   totalSalt,

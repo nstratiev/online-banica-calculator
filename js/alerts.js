@@ -1,4 +1,4 @@
-// --- Alert functions
+// ##### Alert functions #####
 export function checkmarkAlertGreen() {
   temporaryOnClickAlert('&check;', 400, 'green');
 }

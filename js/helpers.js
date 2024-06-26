@@ -1,14 +1,6 @@
-// Helper Functions
+// ##### Helper Functions #####
 // --- DOM helper functions
-export function preventDefaultOnEnterKeyPress(element) {
-  element.addEventListener('keydown', function (e) {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-    }
-  });
-}
-
-export function addOnEnterFormListener(form, func) {
+export function attachToInputsOnEnterKeydownFormListener(form, func) {
   form.addEventListener('keydown', (e) => {
     if (e.target.tagName === 'INPUT' && e.key === 'Enter') {
       setTimeout(func, 10);

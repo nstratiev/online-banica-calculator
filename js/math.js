@@ -1,6 +1,6 @@
-// --- Math functions
-export function getTotalDoughWeight(loafsCount, loafWeight) {
-  return loafsCount * loafWeight;
+// ##### Math functions #####
+export function getTotalDoughWeight(crustsCount, crustWeight) {
+  return crustsCount * crustWeight;
 }
 
 export function getTotalFlour(totalDoughWeight, hydrationPercent, saltPercent) {
@@ -15,13 +15,13 @@ export function getTotalIngredientWeight(totalFlour, ingredientPercent) {
   return totalFlour * ingredientPercent;
 }
 
-export function getIngredientsForKneading(
+export function setIngredientsForKneadingObj(
   totalFlour,
   totalWater,
   totalSalt,
   totalVinegar,
   totalOil,
-  liquidIngredientsWeight
+  totalLiquidIngredients
 ) {
   const obj = {};
   obj.flour = totalFlour;
@@ -29,8 +29,7 @@ export function getIngredientsForKneading(
   obj.salt = totalSalt;
   obj.vinegar = totalVinegar;
   obj.oil = totalOil
-  obj.liquidIngredientsWeight = liquidIngredientsWeight
+  obj.liquidIngredients = totalLiquidIngredients
 
-  // const obj = { flour: '', water: '', salt: '' };
   return obj;
 }
