@@ -16,6 +16,7 @@ export function getTotalIngredientWeight(totalFlour, ingredientPercent) {
 }
 
 export function setIngredientsForKneadingObj(
+  totalDoughWeight,
   totalFlour,
   totalWater,
   totalSalt,
@@ -24,6 +25,7 @@ export function setIngredientsForKneadingObj(
   totalLiquidIngredients
 ) {
   const obj = {};
+  obj.doughWeight = totalDoughWeight;
   obj.flour = totalFlour;
   obj.water = totalWater;
   obj.salt = totalSalt;

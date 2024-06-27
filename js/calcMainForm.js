@@ -1,8 +1,6 @@
 let isFirstPageLoadEmptyFieldCheck = true;
 let isFirstPageLoadOutOfRangeCheck = true;
 
-export let doughParamsObj = null;
-
 export function getStorageAndCalculateMain() {
   getLocaleStorageMain();
   calcMainSubmit();
@@ -34,7 +32,6 @@ export function calcMainSubmit() {
     }
 
     resetAllResults();
-    doughParamsObj = null;
     return false;
   }
 
@@ -49,7 +46,6 @@ export function calcMainSubmit() {
     }
 
     resetAllResults();
-    doughParamsObj = null;
     return false;
   }
 
@@ -72,6 +68,7 @@ export function calcMainSubmit() {
 
   // Set kneading object
   const kneadingdObj = setIngredientsForKneadingObj(
+    totalDoughWeight,
     totalFlour,
     totalWater,
     totalSalt,
@@ -82,9 +79,6 @@ export function calcMainSubmit() {
 
   // Print calculated values
   printResultsMain(kneadingdObj);
-
-  // Set doughParamsObj
-  setDoughParamsObject();
 
   // Set localStorage
   setLocaleStorageMain();
@@ -98,54 +92,10 @@ export function calcMainSubmit() {
   }
 
   return true;
-
-  // Inner functions
-  function setDoughParamsObject() {
-    /*   const doughParamsObj = {
-        formula: {
-          hydrationPercent,
-          saltPercent,
-          vinegarPercent,
-          oilPercent,
-        },
-        doughWeight,
-        liquidIngreds,
-        kneading: { flour, water, salt, vinegar, oil },
-      };
-     */
-    doughParamsObj = {
-      formula: {},
-      doughWeight: null,
-      liquidIngreds: null,
-      kneading: {},
-    };
-
-    doughParamsObj.formula.hydrationPercent = hydrationPercent;
-    doughParamsObj.formula.saltPercent = saltPercent;
-    doughParamsObj.formula.vinegarPercent = vinegarPercent;
-    doughParamsObj.formula.oilPercent = oilPercent;
-    doughParamsObj.doughWeight = totalDoughWeight;
-    doughParamsObj.liquidIngreds = totalLiquidIngredients;
-    doughParamsObj.kneading.flour = kneadingdObj.flour;
-    doughParamsObj.kneading.water = kneadingdObj.water;
-    doughParamsObj.kneading.salt = kneadingdObj.salt;
-    doughParamsObj.kneading.vinegar = kneadingdObj.vinegar;
-    doughParamsObj.kneading.oil = kneadingdObj.oil;
-  }
-
-  function printResultsMain(kneadingdObj) {
-    printResult(totalDoughWeight, doughWeightElement, 0);
-    printResult(kneadingdObj.flour, flourWeightElement, 0);
-    printResult(kneadingdObj.salt, saltWeightElement, 0);
-    printResult(kneadingdObj.liquidIngredients, liquidIngredsWeightElement, 0, { prefix: '', postfix: ' g' });
-    printResult(kneadingdObj.water, waterWeightElement, 0);
-    printResult(kneadingdObj.vinegar, vinegarWeightElement, 0);
-    printResult(kneadingdObj.oil, oilWeightElement, 0);
-  }
 }
 
 // IMPORTS
-import { doughWeightElement, flourWeightElement, formMain, liquidIngredsWeightElement, numberFieldsMain, oilWeightElement, saltWeightElement, vinegarWeightElement, waterWeightElement } from './elements.js';
+import { formMain, numberFieldsMain } from './elements.js';
 
 import {
   hasEmptyFieldsValidation,
@@ -165,5 +115,5 @@ import {
 } from './math.js';
 
 import { formdataToObject } from './helpers.js';
-import { printResult } from './print.js';
+import { printResultsMain } from './print.js';
 
