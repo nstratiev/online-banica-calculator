@@ -34,5 +34,13 @@ export const alertEmptyFieldBox = new ConfirmModal({
   cancelText: '',
 });
 
+export const alertOutOfRangeBox = new ConfirmModal({
+  titleText: '',
+  msgText: `Моля, въведете стойност в диапазона:`,
+  confirmText: 'OK',
+  cancelText: '',
+  msgText2: '',
+});
+
 // IMPORTS
 import { ConfirmModal } from './modalClass.js';

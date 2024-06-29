@@ -44,11 +44,13 @@ function onFocusOutColorOutline(field, min, max, isRequired) {
 }
 
 export function attachOnFocusoutDecimalPointValidation() {
-  const decimalOneDigitInputs = document.querySelectorAll('input[step="0.1"]');
   decimalOneDigitInputs.forEach(el => {
     el.addEventListener('focusout', () => validationForDecimalPoint(el));
   });
+}
 
+export function fillMissingDecimalPoints() {
+  decimalOneDigitInputs.forEach(el => validationForDecimalPoint(el));
 }
 
 function validationForDecimalPoint(numField) {
@@ -94,18 +96,11 @@ export function valueRangeCheck(field, min, max) {
   }
 
   if (inputValue < min || inputValue > max) {
-    const alertOutOfRangeBox = new ConfirmModal({
-      titleText: '',
-      msgText: `Моля, въведете стойност в диапазона:`,
-      confirmText: 'OK',
-      cancelText: '',
-      msgText2: `[ ${min} - ${max} ]`,
-    });
-
     setTimeout(() => {
       field.style.outline = '2px solid red';
     }, 0);
 
+    alertOutOfRangeBox.msgText2 = `[ ${min} - ${max} ]`;
     alertOutOfRangeBox
       .open()
       .then((val) => {
@@ -136,5 +131,7 @@ export function hasOutOfRangeFieldValidation(fields) {
   return [false];
 }
 
+import { alertOutOfRangeBox } from './alerts.js';
+import { decimalOneDigitInputs } from './elements.js';
 // IMPORTS
 import { ConfirmModal } from './modalClass.js';

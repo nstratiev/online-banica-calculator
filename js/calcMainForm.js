@@ -58,11 +58,9 @@ export function calcMainSubmit() {
     totalLiquidIngredients
   );
 
-  // Print calculated values
   printResultsMain(kneadingdObj);
-
-  // Set localStorage
   setLocaleStorageMain();
+  fillMissingDecimalPoints();
 
   // Checkmark visibility
   if (isFirstPageLoadEmptyFieldCheck || isFirstPageLoadOutOfRangeCheck) {
@@ -89,7 +87,7 @@ function haveEmptyFieldsCheck() {
         alertEmptyFieldBox
           .open()
           .then((val) => {
-            hasEmptyField[1].style.outline = '3px solid orange';
+            hasEmptyField[1].style.outline = '3px solid purple';
             hasEmptyField[1].focus();
           })
           .catch((err) => console.log(err));
@@ -107,6 +105,7 @@ function haveEmptyFieldsCheck() {
 import { formMain, numberFieldsMain } from './elements.js';
 
 import {
+  fillMissingDecimalPoints,
   hasEmptyFieldValidation,
   hasOutOfRangeFieldValidation,
 } from './validation.js';

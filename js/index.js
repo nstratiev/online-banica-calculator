@@ -59,4 +59,4 @@ import { resetGlobalLocalStorage, resetMainForm } from './reset.js';
 
 import { onScreenScroll, goToScreenTop } from './scroll.js';
 import { setGlobalLocalStorage, setLocaleStorageMain } from './storage.js';
-import { attachOnFocusOutColorOutlineValidation, attachOnFocusoutDecimalPointValidation } from './validation.js';
+import { attachOnFocusOutColorOutlineValidation, attachOnFocusoutDecimalPointValidation, fillMissingDecimalPoints } from './validation.js';

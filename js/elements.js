@@ -14,6 +14,7 @@ export const formMain = document.querySelector('#form-main');
 export const numberFieldsMain = document.querySelectorAll(
   '.cell.-input > input'
 );
+export const decimalOneDigitInputs = document.querySelectorAll('input[step="0.1"]');
 
 // RESULT elements
 export const doughWeightElement = document.querySelector(
