@@ -1,27 +1,13 @@
 // ##### Validation functions #####
 
 // On Focus Out
-export function attachOnFocusoutDecimalPointValidation() {
-  const decimalOneDigitInputs = document.querySelectorAll('input[step="0.1"]');
-  decimalOneDigitInputs.forEach(el => {
-    el.addEventListener('focusout', () => validationForDecimalPoint(el));
-  });
-
-  function validationForDecimalPoint(numField) {
-    const numValue = numField.value;
-
-    if (numValue !== '' && numValue.includes('.') === false) {
-      numField.value = numValue + '.0';
-    }
-  }
-}
-
-export function attachOnFocusOutInputsListener(numberFields) {
-  numberFields.forEach((field) => {
+export function attachOnFocusOutColorOutlineValidation(numberFieldsCollection) {
+  numberFieldsCollection.forEach((field) => {
     field.addEventListener('focusout', (e) => {
       const min = e.target.min;
       const max = e.target.max;
       const isRequired = e.target.required;
+
       onFocusOutColorOutline(e.target, min, max, isRequired);
     });
   });
@@ -57,8 +43,24 @@ function onFocusOutColorOutline(field, min, max, isRequired) {
   return [textOutput, field];
 }
 
+export function attachOnFocusoutDecimalPointValidation() {
+  const decimalOneDigitInputs = document.querySelectorAll('input[step="0.1"]');
+  decimalOneDigitInputs.forEach(el => {
+    el.addEventListener('focusout', () => validationForDecimalPoint(el));
+  });
+
+}
+
+function validationForDecimalPoint(numField) {
+  const numValue = numField.value;
+
+  if (numValue !== '' && numValue.includes('.') === false) {
+    numField.value = numValue + '.0';
+  }
+}
+
 // On Empty Field
-export function hasEmptyFieldsValidation(fieldsCollection) {
+export function hasEmptyFieldValidation(fieldsCollection) {
   for (const field of fieldsCollection) {
     const isRequired = field.required;
 
@@ -70,8 +72,8 @@ export function hasEmptyFieldsValidation(fieldsCollection) {
 
     if (val === '') {
       setTimeout(() => {
-        field.focus();
         field.style.outline = '2px solid green';
+        field.focus();
       }, 0);
 
       return [true, field];
@@ -119,7 +121,7 @@ export function valueRangeCheck(field, min, max) {
   }
 }
 
-export function hasOutOfRangeFieldsValidation(fields) {
+export function hasOutOfRangeFieldValidation(fields) {
   for (const field of fields) {
     const min = field.min;
     const max = field.max;

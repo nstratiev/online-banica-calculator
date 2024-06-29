@@ -28,24 +28,23 @@ export function resetGlobalLocalStorage() {
   }, 200);
 }
 
-// Global
-export function resetAllResults() {
-  resetMainPrimaryResults();
-  resetMainSecondaryResults();
-}
-
 // Main
 export function resetMainForm() {
-  resetMainFormInputs();
-  resetMainPrimaryResults();
-  resetMainSecondaryResults();
+  resetFormInputsMain();
+  resetPrimaryResultsMain();
+  resetSecondaryResultsMain();
 }
 
-function resetMainFormInputs() {
+function resetFormInputsMain() {
   resetFormInputs(formMain);
 }
 
-function resetMainPrimaryResults() {
+export function resetAllResultsMain() {
+  resetPrimaryResultsMain();
+  resetSecondaryResultsMain();
+}
+
+function resetPrimaryResultsMain() {
   doughWeightElement.style.fontWeight = 'initial';
   doughWeightElement.textContent = '####';
   flourWeightElement.style.fontWeight = 'initial';
@@ -56,7 +55,7 @@ function resetMainPrimaryResults() {
   waterWeightElement.textContent = '####';
 }
 
-function resetMainSecondaryResults() {
+function resetSecondaryResultsMain() {
   liquidIngredsWeightElement.style.fontWeight = 'initial';
   liquidIngredsWeightElement.textContent = '###';
   vinegarWeightElement.style.fontWeight = 'initial';

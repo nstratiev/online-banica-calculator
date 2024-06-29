@@ -29,7 +29,7 @@ export const globalResetConfirmDialog = new ConfirmModal({
 
 export const alertEmptyFieldBox = new ConfirmModal({
   titleText: '',
-  msgText: 'Необходимо е всички полета да бъдат попълнени ...',
+  msgText: 'Необходимо е всички задължителни полета да бъдат попълнени ...',
   confirmText: 'OK',
   cancelText: '',
 });

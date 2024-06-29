@@ -12,44 +12,25 @@ export function calcMainSubmit() {
   const formDataObj = formdataToObject(formData);
 
   // Validation - Empty fields
-  const conditionHasEmptyFields = hasEmptyFieldsValidation(numberFieldsMain);
-
-  if (conditionHasEmptyFields[0]) {
-    if (isFirstPageLoadEmptyFieldCheck) {
-      isFirstPageLoadEmptyFieldCheck = false;
-
-    } else {
-      setLocaleStorageMain();
-
-      setTimeout(() => {
-        alertEmptyFieldBox
-          .open()
-          .then((val) => {
-            conditionHasEmptyFields[1].focus();
-          })
-          .catch((val) => { });
-      }, 100);
-    }
-
-    resetAllResults();
+  if (haveEmptyFieldsCheck()) {
     return false;
   }
 
   // Validation - Out of range fields
-  const conditionOutOfRangeFields = hasOutOfRangeFieldsValidation(numberFieldsMain);
+  const hasOutOfRangeFields = hasOutOfRangeFieldValidation(numberFieldsMain);
 
-  if (conditionOutOfRangeFields[0]) {
+  if (hasOutOfRangeFields[0]) {
     if (isFirstPageLoadOutOfRangeCheck) {
       isFirstPageLoadOutOfRangeCheck = false;
     } else {
       setLocaleStorageMain();
     }
 
-    resetAllResults();
+    resetAllResultsMain();
     return false;
   }
 
-  // Input values
+  // Get input values
   const crustsCount = formDataObj.crustsCount;
   const crustWeight = formDataObj.crustWeight;
   const hydrationPercent = formDataObj.hydrationPercent / 100;
@@ -57,7 +38,7 @@ export function calcMainSubmit() {
   const vinegarPercent = formDataObj.vinegarPercent / 100;
   const oilPercent = formDataObj.oilPercent / 100;
 
-  // Calculated values
+  // Calculate result values
   const totalDoughWeight = getTotalDoughWeight(crustsCount, crustWeight);
   const totalFlour = getTotalFlour(totalDoughWeight, hydrationPercent, saltPercent);
   const totalSalt = getTotalIngredientWeight(totalFlour, saltPercent);
@@ -94,16 +75,44 @@ export function calcMainSubmit() {
   return true;
 }
 
+function haveEmptyFieldsCheck() {
+  const hasEmptyField = hasEmptyFieldValidation(numberFieldsMain);
+
+  if (hasEmptyField[0]) {
+    if (isFirstPageLoadEmptyFieldCheck) {
+      isFirstPageLoadEmptyFieldCheck = false;
+
+    } else {
+      setLocaleStorageMain();
+
+      setTimeout(() => {
+        alertEmptyFieldBox
+          .open()
+          .then((val) => {
+            hasEmptyField[1].style.outline = '3px solid orange';
+            hasEmptyField[1].focus();
+          })
+          .catch((err) => console.log(err));
+      }, 100);
+    }
+
+    resetAllResultsMain();
+    return true;
+  }
+
+  return false;
+}
+
 // IMPORTS
 import { formMain, numberFieldsMain } from './elements.js';
 
 import {
-  hasEmptyFieldsValidation,
-  hasOutOfRangeFieldsValidation,
+  hasEmptyFieldValidation,
+  hasOutOfRangeFieldValidation,
 } from './validation.js';
 
 import { alertEmptyFieldBox, checkmarkAlertGreen } from './alerts.js';
-import { resetAllResults } from './reset.js';
+import { resetAllResultsMain } from './reset.js';
 import { getLocaleStorageMain, setLocaleStorageMain } from './storage.js';
 
 import {

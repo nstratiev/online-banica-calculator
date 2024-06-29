@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 attachToInputsOnEnterKeydownFormListener(formMain, calcMainSubmit);
 
 // -- Focusout form listeners
-attachOnFocusOutInputsListener(numberFieldsMain);
+attachOnFocusOutColorOutlineValidation(numberFieldsMain);
 attachOnFocusoutDecimalPointValidation();
 
 // -- Button-to-top listeners
@@ -59,4 +59,4 @@ import { resetGlobalLocalStorage, resetMainForm } from './reset.js';
 
 import { onScreenScroll, goToScreenTop } from './scroll.js';
 import { setGlobalLocalStorage, setLocaleStorageMain } from './storage.js';
-import { attachOnFocusOutInputsListener, attachOnFocusoutDecimalPointValidation } from './validation.js';
+import { attachOnFocusOutColorOutlineValidation, attachOnFocusoutDecimalPointValidation } from './validation.js';

@@ -50,17 +50,22 @@ body {
   font-size: 80%;
 }
 
-.equal-sign,
-.multiply-sign {
-  font-weight: bold;
+.italic {
+  font-style: italic;
 }
 
-.equal-sign {
+.text-green {
+  color: green;
+}
+
+.equal-sign,
+.multiply-sign {
   font-size: 120%;
 }
 
-.multiply-sign {
-  font-size: 110%;
+.equal-sign > span,
+.multiply-sign > span {
+  transform: translateX(1px);
 }
 
 /* ##### Main elements ##### */

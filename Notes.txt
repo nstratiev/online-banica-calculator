@@ -1,0 +1,12 @@
+- Disable the click over global btns during validation modal box;
+- validation.js >>> Refactor
+- &times; and &equal; >>> center
+
+- Reduce the font-size of <h1>
+- Set paddings & margins
+- Change css for active state of the page buttons
+
+isEmptyField(fieldElem)
+isOutOfRangeField(fieldElem)
+
+highlightField(fieldElem, color)
