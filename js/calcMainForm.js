@@ -16,6 +16,34 @@ export function calcMainSubmit() {
     return false;
   }
 
+  function haveEmptyFieldsCheck() {
+    const hasEmptyField = hasEmptyFieldValidation(numberFieldsMain);
+
+    if (hasEmptyField[0]) {
+      if (isFirstPageLoadEmptyFieldCheck) {
+        isFirstPageLoadEmptyFieldCheck = false;
+
+      } else {
+        setLocaleStorageMain();
+
+        setTimeout(() => {
+          alertEmptyFieldBox
+            .open()
+            .then((val) => {
+              hasEmptyField[1].style.outline = '3px solid green';
+              hasEmptyField[1].focus();
+            })
+            .catch((err) => console.log(err));
+        }, 100);
+      }
+
+      resetAllResultsMain();
+      return true;
+    }
+
+    return false;
+  }
+
   // Validation - Out of range fields
   const hasOutOfRangeFields = hasOutOfRangeFieldValidation(numberFieldsMain);
 
@@ -73,33 +101,33 @@ export function calcMainSubmit() {
   return true;
 }
 
-function haveEmptyFieldsCheck() {
-  const hasEmptyField = hasEmptyFieldValidation(numberFieldsMain);
+// function haveEmptyFieldsCheck() {
+//   const hasEmptyField = hasEmptyFieldValidation(numberFieldsMain);
 
-  if (hasEmptyField[0]) {
-    if (isFirstPageLoadEmptyFieldCheck) {
-      isFirstPageLoadEmptyFieldCheck = false;
+//   if (hasEmptyField[0]) {
+//     if (isFirstPageLoadEmptyFieldCheck) {
+//       isFirstPageLoadEmptyFieldCheck = false;
 
-    } else {
-      setLocaleStorageMain();
+//     } else {
+//       setLocaleStorageMain();
 
-      setTimeout(() => {
-        alertEmptyFieldBox
-          .open()
-          .then((val) => {
-            hasEmptyField[1].style.outline = '3px solid purple';
-            hasEmptyField[1].focus();
-          })
-          .catch((err) => console.log(err));
-      }, 100);
-    }
+//       setTimeout(() => {
+//         alertEmptyFieldBox
+//           .open()
+//           .then((val) => {
+//             hasEmptyField[1].style.outline = '3px solid purple';
+//             hasEmptyField[1].focus();
+//           })
+//           .catch((err) => console.log(err));
+//       }, 100);
+//     }
 
-    resetAllResultsMain();
-    return true;
-  }
+//     resetAllResultsMain();
+//     return true;
+//   }
 
-  return false;
-}
+//   return false;
+// }
 
 // IMPORTS
 import { formMain, numberFieldsMain } from './elements.js';

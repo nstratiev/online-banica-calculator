@@ -116,8 +116,8 @@ export function valueRangeCheck(field, min, max) {
   }
 }
 
-export function hasOutOfRangeFieldValidation(fields) {
-  for (const field of fields) {
+export function hasOutOfRangeFieldValidation(fieldsCollection) {
+  for (const field of fieldsCollection) {
     const min = field.min;
     const max = field.max;
 
