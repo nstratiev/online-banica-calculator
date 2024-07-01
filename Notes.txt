@@ -10,3 +10,9 @@ isEmptyField(fieldElem)
 isOutOfRangeField(fieldElem)
 
 highlightField(fieldElem, color)
+
+css
+
+- outline / border-radius / double
+- outline-offset
+- box-shadow
