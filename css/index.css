@@ -200,6 +200,11 @@ input[type="number"] {
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
+input[type="number"]:focus {
+  /* box-shadow: 0 0 4px 4px rgb(61, 119, 194); */
+  box-shadow: 0 0 4px 4px gray;
+}
+
 /* ##### Legend ##### */
 aside.legend {
   max-width: 320px;
