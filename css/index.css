@@ -122,6 +122,12 @@ hr {
 }
 
 /* ##### Card ##### */
+fieldset,
+article.card {
+  max-width: 320px;
+  width: 100%;
+}
+
 article.card,
 aside.legend {
   margin: 0 20px 40px;
@@ -133,8 +139,6 @@ article.card.--last-child {
 
 article.card {
   border: 2px solid black;
-  max-width: 320px;
-  width: 100%;
 }
 
 article.card > header,
