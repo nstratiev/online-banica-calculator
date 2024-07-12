@@ -1,4 +1,3 @@
-// --- Screen scroll functions
 export function onScreenScroll() {
   if (
     document.body.scrollTop > 120 ||
@@ -16,5 +15,5 @@ export function goToScreenTop() {
   history.replaceState(null, "", "/");
 }
 
-// IMPORTS
+
 import { btnToTop } from './elements.js';

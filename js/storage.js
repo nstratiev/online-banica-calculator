@@ -30,7 +30,3 @@ export function populateLocaleStorageData(formsArr) {
   }
 
 }
-
-function deleteLocalStorageObj(formName) {
-  localStorage.removeItem(formName);
-}

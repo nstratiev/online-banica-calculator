@@ -46,7 +46,6 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc) 
 
   if (loadingConfig.isFirstPageLoad !== true) {
     checkmarkAlertGreen();
-    // setTimeout(() => showModal(ev), 200);
   }
 
 }
@@ -56,6 +55,6 @@ import { printResult_formMain } from './print.js';
 import { formMain } from './elements.js';
 import { getData, getFormDataToObject } from './generic.js';
 import { setLocalStorage } from './storage.js';
-import { resetResults_fMain } from './reset.js'; import { checkmarkAlertGreen } from './alerts.js';
+import { resetResults_fMain } from './reset.js';
+import { checkmarkAlertGreen } from './alerts.js';
 import { calculate_fMain } from './math.js';
-

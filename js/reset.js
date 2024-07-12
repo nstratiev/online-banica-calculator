@@ -18,9 +18,7 @@ export function onGlobalReset() {
       location.reload();
     })
     .catch((msg) => { })
-    .finally(() => {
-      inactivateAllFormsAndLinks(false, configArr);
-    });
+    .finally(() => inactivateAllFormsAndLinks(false, configArr));
 }
 
 function resetResults(resultElementsCollection) {
@@ -50,36 +48,6 @@ function resetFieldsOutline(formElem) {
     field.style.outline = 'none';
   }
 }
-
-// ##### Reset functions #####
-
-// Global Reset Button
-// export function resetGlobalLocalStorage() {
-//   btnGlobalReset.style.pointerEvents = 'none';
-//   btnGlobalSave.style.pointerEvents = 'none';
-//   btnToTop.style.pointerEvents = 'none';
-
-//   resetMainForm();
-//   checkmarkAlertGreen();
-
-//   setTimeout(() => {
-//     globalResetConfirmDialog
-//       .open()
-//       .then((val) => {
-//         localStorage.clear();
-//         checkmarkAlertGreen();
-//         location.reload();
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       })
-//       .finally(() => {
-//         btnGlobalReset.style.pointerEvents = 'auto';
-//         btnGlobalSave.style.pointerEvents = 'auto';
-//         btnToTop.style.pointerEvents = 'auto';
-//       });
-//   }, 200);
-// }
 
 
 import { clearLocalStorageGlobal } from './storage.js';

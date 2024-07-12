@@ -11,39 +11,18 @@ export function calculate_fMain(data) {
   return { doughWeight, flourWeight, saltWeight, liquidIngredsWeight, vinegarWeight, oilWeight, waterWeight };
 }
 
-export function getTotalDoughWeight(crustsCount, crustWeight) {
+function getTotalDoughWeight(crustsCount, crustWeight) {
   return Number(crustsCount) * Number(crustWeight);
 }
 
-export function getTotalFlour(totalDoughWeight, hydrationPercentValue, saltPercent) {
+function getTotalFlour(totalDoughWeight, hydrationPercentValue, saltPercent) {
   return totalDoughWeight / (1 + Number(hydrationPercentValue / 100) + Number(saltPercent / 100));
 }
 
-export function getTotalWaterWeight(liquidIngredientsWeight, vinegarWeight, oilWeight) {
+function getTotalWaterWeight(liquidIngredientsWeight, vinegarWeight, oilWeight) {
   return liquidIngredientsWeight - (vinegarWeight + oilWeight);
 }
 
-export function getTotalIngredientWeight(totalFlour, ingredientPercentValue) {
+function getTotalIngredientWeight(totalFlour, ingredientPercentValue) {
   return totalFlour * (Number(ingredientPercentValue) / 100);
-}
-
-export function setIngredientsForKneadingObj(
-  totalDoughWeight,
-  totalFlour,
-  totalWater,
-  totalSalt,
-  totalVinegar,
-  totalOil,
-  totalLiquidIngredients
-) {
-  const obj = {};
-  obj.doughWeight = totalDoughWeight;
-  obj.flour = totalFlour;
-  obj.water = totalWater;
-  obj.salt = totalSalt;
-  obj.vinegar = totalVinegar;
-  obj.oil = totalOil
-  obj.liquidIngredients = totalLiquidIngredients
-
-  return obj;
 }

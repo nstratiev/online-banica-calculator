@@ -58,6 +58,12 @@ button > * {
 /* PAGE BUTTONS GROUP [End] */
 
 /* GLOBAL BUTTONS [Start] */
+.btns-global {
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+}
+
 .btn-to-top,
 .btn-reset-global,
 .btn-save-global {
@@ -65,13 +71,12 @@ button > * {
   height: 36px;
   background-color: rgba(128, 128, 128, 0.8);
   border-radius: 50%;
-  position: fixed;
-  right: 20px;
   z-index: 99;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .btn-to-top div,

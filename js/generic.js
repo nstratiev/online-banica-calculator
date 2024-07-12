@@ -11,7 +11,6 @@ export function getData(formElem, pageLoadingObj, resetFormResultsFunc) {
     return false;
   }
 
-  // const dataObj = getInputsDataObj(formElem);
   const dataObj = getFormDataToObject(formElem);
   return dataObj;
 }
@@ -23,34 +22,19 @@ export function inactivateAllFormsAndLinks(bool, [linkElems, inactivateFunc]) {
   const inactivateLink = (ev) => ev.preventDefault();
 
   if (bool) {
+    btnsGlobal.style.pointerEvents = 'none';
     allFieldsets.forEach(el => el.disabled = true);
     allLinks.forEach(el => el.addEventListener('click', inactivateLink));
     return [allLinks, inactivateLink];
 
   } else {
+    btnsGlobal.style.pointerEvents = 'initial';
     allFieldsets.forEach(el => el.disabled = false);
     linkElems.forEach(el => el.removeEventListener('click', inactivateFunc));
   }
 
 }
 
-function disableForm(formElem) {
-  toggleEnableDisableFormInputs_js(formElem, true);
-}
 
-function enableForm(formElem) {
-  toggleEnableDisableFormInputs_js(formElem, false);
-}
-
-function toggleEnableDisableFormInputs_js(formElem, bool) {
-  for (const el of formElem.elements) {
-    el.disabled = bool;
-  }
-}
-
-function toggleEnableDisableFormInputs_fieldset(fieldsetElem, bool) {
-  fieldsetElem.disabled = bool;
-}
-
-
+import { btnsGlobal } from './elements.js';
 import { validationEmptyFields, validationOutOfRangeFields } from './validation.js';

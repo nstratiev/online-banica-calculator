@@ -11,19 +11,13 @@ export function printResult_formMain(resultsData) {
   printResult(d.oilWeight, el.oilWeight, 0);
 }
 
-function printResult(
-  value,
-  resultElem,
-  toFixedIndex,
-  additionalTextObj
-) {
+function printResult(value, resultElem, toFixedIndex, additionalTextObj) {
   // additionalTextObj = {prefix: '', postfix: ''};
   let result;
 
   if (value) {
     if (additionalTextObj) {
-      result = `${additionalTextObj.prefix}${value.toFixed(toFixedIndex)}${additionalTextObj.postfix
-        }`;
+      result = `${additionalTextObj.prefix}${value.toFixed(toFixedIndex)}${additionalTextObj.postfix}`;
     } else {
       result = `${value.toFixed(toFixedIndex)}`;
     }

@@ -17,18 +17,19 @@
   <script>0</script>
   <header class="page">
     <h1>Тесто за баница</h1>
-    <h2>(калкулатор)</h2>
+    <h2>(калкулатор) stable</h2>
     <nav class="top-nav">
       <a href="#legend" class="legend-link">?</a>
       <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
     </nav>
   </header>
 
-  <fieldset>
 
-    <main class="--grid-3-cols">
-      <!-- ##### First Column ##### -->
-      <section class="page-column">
+  <main class="--grid-3-cols">
+    <!-- ##### First Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
         <form id="form-main" name="formMain">
 
           <!-- ##### (1.3) ##### -->
@@ -141,11 +142,14 @@
             </div>
           </article>
         </form>
-      </section>
+      </fieldset>
 
-      <!-- ##### Second Column ##### -->
-      <section class="page-column">
+    </section>
 
+    <!-- ##### Second Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
         <form>
           <!-- ##### (3.3) ##### -->
           <article class="card --last-child">
@@ -254,83 +258,71 @@
           <hr />
 
         </form>
+      </fieldset>
 
-      </section>
+    </section>
 
-      <!-- ##### Third Column ##### -->
-      <section class="page-column">
+    <!-- ##### Third Column ##### -->
+    <section class="page-column">
 
-        <!-- ##### Legend ##### -->
-        <aside id="legend" class="legend">
-          <header class="legend-header">
-            <h4>Легенда:</h4>
-          </header>
+      <!-- ##### Legend ##### -->
+      <aside id="legend" class="legend">
+        <header class="legend-header">
+          <h4>Легенда:</h4>
+        </header>
 
-          <div class="legend-row -version">
-            <p>Версия: 0.7</p>
-          </div>
+        <div class="legend-row -version">
+          <p>Версия: 0.7</p>
+        </div>
 
-          <div class="legend-row -input comment">
-            <p>променлива стойност</p>
-            <aside class="comment-box">
-              Стойност, подлежаща на промяна, която задаваме свободно;
-            </aside>
-          </div>
+        <div class="legend-row -input comment">
+          <p>променлива стойност</p>
+          <aside class="comment-box">
+            Стойност, подлежаща на промяна, която задаваме свободно;
+          </aside>
+        </div>
 
-          <div class="legend-row -result comment">
-            <p>търсена стойност</p>
-            <aside class="comment-box">
-              Стойността, която търсим;<br />
-              (изчислена на базата на зададените
-              от нас променливи стойности)
-            </aside>
-          </div>
+        <div class="legend-row -result comment">
+          <p>търсена стойност</p>
+          <aside class="comment-box">
+            Стойността, която търсим;<br />
+            (изчислена на базата на зададените
+            от нас променливи стойности)
+          </aside>
+        </div>
 
-          <div class="legend-row comment">
-            <p>
-              *Десетичният знак се изписва<br />
-              с „точка” или „запетая”;
-            </p>
-            <aside class="comment-box">
-              ... В зависимост от регионалните настройки на операционната система;
-            </aside>
-          </div>
+        <div class="legend-row comment">
+          <p>
+            *Десетичният знак се изписва<br />
+            с „точка” или „запетая”;
+          </p>
+          <aside class="comment-box">
+            ... В зависимост от регионалните настройки на операционната система;
+          </aside>
+        </div>
 
-          <div class="legend-row -regular comment">
-            <p>h - хидратация</p>
-            <aside class="comment-box">
-              Показва съдържанието на течности в тестото,
-              изразено като процент от съдържащото се в тестото брашно;
-            </aside>
-          </div>
+        <div class="legend-row -regular comment">
+          <p>h - хидратация</p>
+          <aside class="comment-box">
+            Показва съдържанието на течности в тестото,
+            изразено като процент от съдържащото се в тестото брашно;
+          </aside>
+        </div>
 
-        </aside>
-      </section>
+      </aside>
+    </section>
 
-    </main>
-  </fieldset>
+  </main>
 
   <footer class="page flex">
     <a href="https://nstratiev.github.io/bread-calculator-bg/">bread-calculator-bg</a>
   </footer>
 
-  <!-- Page ASIDE -->
-  <fieldset>
-
-    <!-- To-top Button -->
-    <button class="btn-to-top" id="btn-to-top">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none" />
-          <polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="16" />
-        </svg>
-      </div>
-    </button>
+  <!-- Global buttons -->
+  <aside class="btns-global">
 
     <!-- Global Reset Button -->
-    <button class="btn-reset-global" id="btn-reset-global"
-      title="Освобождаване на паметта, свързана с текущата страница">
+    <div class="btn-reset-global" id="btn-reset-global" title="Освобождаване на паметта, свързана с текущата страница">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
           <rect width="256" height="256" fill="none" />
@@ -340,10 +332,10 @@
             stroke-linejoin="round" stroke-width="16" />
         </svg>
       </div>
-    </button>
+    </div>
 
     <!-- Global Save Button -->
-    <button class="btn-save-global" id="btn-save-global"
+    <div class="btn-save-global" id="btn-save-global"
       title="Запаметяване на стойностите от всички полета на текущата страница">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -356,9 +348,20 @@
             stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
         </svg>
       </div>
-    </button>
+    </div>
 
-  </fieldset>
+    <!-- To-top Button -->
+    <div class="btn-to-top" id="btn-to-top">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+
+  </aside>
 
   <script type="module" src="js/index.js"></script>
 </body>

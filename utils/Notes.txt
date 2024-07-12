@@ -1,0 +1,5 @@
+TODO
+- Reduce the font-size of <h1>
+- Set paddings & margins
+- Change css for active state of the page buttons
+- box-shadow

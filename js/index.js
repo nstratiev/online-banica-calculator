@@ -47,5 +47,4 @@ import { attachFocusoutValidation } from './focusout.js';
 import { populateLocaleStorageData } from './storage.js';
 import { onGlobalReset, onReset_fMain } from './reset.js';
 import { goToScreenTop, onScreenScroll } from "./scroll.js";
-import { checkmarkAlertGreen } from "./alerts.js";
 import { attachOnFocusoutDecimalPointValidation } from './validation.js';

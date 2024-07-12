@@ -7,6 +7,7 @@ export const resultElementsArr_fMain = getFormOutputsArray(formMain);
 export const resultElementsObj_fMain = getFormOutputsObject(formMain);
 
 // Buttons (Global)
+export const btnsGlobal = document.querySelector('.btns-global');
 export const btnToTop = document.querySelector('#btn-to-top');
 export const btnGlobalReset = document.querySelector('#btn-reset-global ');
 export const btnGlobalSave = document.querySelector('#btn-save-global');

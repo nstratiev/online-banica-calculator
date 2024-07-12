@@ -20,8 +20,8 @@ export function validationOutOfRangeFields(formFieldsArr, pageLoadingObj, resetF
 
         alertOutOfRangeBox.msgText2 = `[ ${minLimit} - ${maxLimit} ]`;
         alertOutOfRangeBox.open()
-          .then((msg) => {
-          }).catch((err) => console.log(err))
+          .then((msg) => { })
+          .catch((err) => console.log(err))
           .finally(() => {
             inactivateAllFormsAndLinks(false, configArr);
             item.focus();
@@ -48,8 +48,7 @@ export function validationEmptyFields(formFieldsArr, pageLoadingObj, resetFormRe
         const configArr = inactivateAllFormsAndLinks(true, []);
 
         alertEmptyFieldBox.open()
-          .then((msg) => {
-          })
+          .then((msg) => { })
           .catch((err) => console.log(err))
           .finally(() => {
             inactivateAllFormsAndLinks(false, configArr);
@@ -85,11 +84,4 @@ function validationForDecimalPoint(ev, numField) {
 }
 
 import { alertEmptyFieldBox, alertOutOfRangeBox } from './alerts.js';
-/* export function fillMissingDecimalPoints() {
-  decimalOneDigitInputs.forEach(el => validationForDecimalPoint(el));
-}
- */
-
-
-import { formMain } from './elements.js';
 import { inactivateAllFormsAndLinks } from './generic.js';

@@ -1,6 +1,7 @@
 // ##### Alert functions #####
 export function checkmarkAlertGreen() {
   temporaryOnClickAlert('&check;', 400, 'green');
+  // setTimeout(() => showModal(ev), 200);
 }
 
 function temporaryOnClickAlert(msg, duration, bgColor) {
