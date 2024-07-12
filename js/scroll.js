@@ -12,7 +12,10 @@ export function onScreenScroll() {
 export function goToScreenTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-  history.replaceState(null, "", "/");
+
+  const path = `${window.location.pathname}` || '';
+  const newURL = window.location.protocol + "//" + window.location.host + path;
+  history.replaceState(null, "", newURL);
 }
 
 

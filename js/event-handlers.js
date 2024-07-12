@@ -47,8 +47,6 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, 
   if (loadingConfig.isFirstPageLoad !== true) {
     checkmarkAlertGreen();
 
-    console.log(window.location.href);
-
     if (href) {
       location.href = href;
     }
