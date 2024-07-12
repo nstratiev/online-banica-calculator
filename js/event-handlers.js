@@ -3,7 +3,7 @@ export function onSubmit_initialLoad(ev) {
 }
 
 export function onSubmit_fMain(ev) {
-  onSubmit(ev, formMain, { isFirstPageLoad: false }, printResult_formMain, resetResults_fMain);
+  onSubmit(ev, formMain, { isFirstPageLoad: false }, printResult_formMain, resetResults_fMain, '#results-fMain');
 }
 
 export function onSave_fMain(ev) {
@@ -29,7 +29,7 @@ function onSave(ev, formElem) {
   checkmarkAlertGreen();
 }
 
-function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc) {
+function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, href) {
   if (loadingConfig.isFirstPageLoad !== true) {
     ev.preventDefault();
   }
@@ -46,6 +46,10 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc) 
 
   if (loadingConfig.isFirstPageLoad !== true) {
     checkmarkAlertGreen();
+
+    if (href) {
+      location.href = href;
+    }
   }
 
 }
