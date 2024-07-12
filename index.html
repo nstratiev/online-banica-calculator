@@ -21,265 +21,304 @@
     <nav class="top-nav">
       <a href="#legend" class="legend-link">?</a>
       <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
-      <!-- <div></div> -->
     </nav>
   </header>
 
+  <fieldset>
 
-  <main class="--grid-3-cols">
-    <!-- ##### First Column ##### -->
-    <section class="page-column">
-      <form id="form-main">
-        <!-- ##### (1.3) ##### -->
-        <article class="card">
-          <header>
-            <h3>(1.3) Тегло на тестото</h3>
-          </header>
-          <div class="card-body">
-            <div class="rows-container --grid-2-cols">
-              <!-- Row -->
-              <div class="cell -a">Кори, (брой):</div>
-              <div class="cell -b -input">
-                <input type="number" step="1" min="0" name="crustsCount" id="crusts-count" placeholder="пр. ... 5"
-                  required>
+    <main class="--grid-3-cols">
+      <!-- ##### First Column ##### -->
+      <section class="page-column">
+        <form id="form-main" name="formMain">
+
+          <!-- ##### (1.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(1.3) Тегло на тестото</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">Кори, (брой):</div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="crustsCount" id="crusts-count" placeholder="пр. ... 5"
+                    required autofocus>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line multiply-sign"><span>&times;</span></div>
+
+                <!-- Row -->
+                <div class="cell -a">
+                  Тегло на отделна кора, (g):
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="crustWeight" id="crust-weight" placeholder="пр. ... 150"
+                    required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line equal-sign"><span>&equals;</span></div>
+
+                <!-- Row -->
+                <div class="cell -a">Тегло на тестото, (g):</div>
+                <output id="dough-weight" class="cell -b -result" name="doughWeight">####</output>
               </div>
-              <!-- Row - Line -->
-              <div class="cell -line multiply-sign"><span>&times;</span></div>
-              <!-- Row -->
-              <div class="cell -a">
-                Тегло на отделна кора, (g):
-              </div>
-              <div class="cell -b -input">
-                <input type="number" step="1" min="0" name="crustWeight" id="crust-weight" placeholder="пр. ... 150"
-                  required>
-              </div>
-              <!-- Row - Line -->
-              <div class="cell -line equal-sign"><span>&equals;</span></div>
-              <!-- Row -->
-              <div class="cell -a">Тегло на тестото, (g):</div>
-              <div class="cell -b -result"><span id="dough-weight">####</span></div>
+
             </div>
+          </article>
 
-          </div>
-        </article>
+          <!-- ##### (2.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(2.3) Формула на тестото</h3>
+            </header>
 
-        <!-- ##### (2.3) ##### -->
-        <article class="card">
-          <header>
-            <h3>(2.3) Формула на тестото</h3>
-          </header>
-          <div class="card-body">
-            <div class="rows-container --grid-2-cols">
-              <!-- Row -->
-              <div class="cell -a comment">
-                h<sup class="superscript">тесто</sup>, (%):
-                <aside class="comment-box">
-                  Хидратация на тестото;
-                </aside>
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a comment">
+                  h<sup class="superscript">тесто</sup>, (%):
+                  <aside class="comment-box">
+                    Хидратация на тестото;
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="50" max="125" name="hydrationPercent" id="hydration-percent"
+                    placeholder="пр. ... 55" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  Сол, (%):
+                  <aside class="comment-box">
+                    При тестото за баница, обикновено е препоръчително
+                    солта да не надвишава 3%;
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="saltPercent" id="salt-percent"
+                    placeholder="пр. ... 2.5" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">Допълнителни съставки</div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  Оцет, (%):
+                  <aside class="comment-box">
+                    % от брашното;<br />
+                    <span class="text-green italic">*Полето не е задължително;</span>
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="vinegarPercent" id="vinegar-percent"
+                    placeholder="пр. ... 0.5">
+                </div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  Олио, (%):
+                  <aside class="comment-box">
+                    % от брашното;<br />
+                    <span class="text-green italic">*Полето не е задължително;</span>
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="oilPercent" id="oil-percent"
+                    placeholder="пр. ... 0.5">
+                </div>
               </div>
-              <div class="cell -b -input">
-                <input type="number" step="1" min="50" max="125" name="hydrationPercent" id="hydration-percent"
-                  placeholder="пр. ... 55" required>
-              </div>
-              <!-- Row - Line -->
-              <div class="cell -line"></div>
-              <!-- Row -->
-              <div class="cell -a comment">
-                Сол, (%):
-                <aside class="comment-box">
-                  При тестото за баница, обикновено е препоръчително
-                  солта да не надвишава 3%;
-                </aside>
-              </div>
-              <div class="cell -b -input">
-                <input type="number" step="0.1" min="0" max="7.0" name="saltPercent" id="salt-percent"
-                  placeholder="пр. ... 2.5" required>
-              </div>
-              <!-- Row - Line -->
-              <div class="cell -line"></div>
-              <!-- Row - Line -->
-              <div class="cell -line -text">Допълнителни съставки</div>
-              <!-- Row -->
-              <div class="cell -a comment">
-                Оцет, (%):
-                <aside class="comment-box">
-                  % от брашното;<br />
-                  <span class="text-green italic">*Полето не е задължително;</span>
-                </aside>
-              </div>
-              <div class="cell -b -input">
-                <input type="number" step="0.1" min="0" max="7.0" name="vinegarPercent" id="vinegar-percent"
-                  placeholder="пр. ... 0.5">
-              </div>
-              <!-- Row -->
-              <div class="cell -a comment">
-                Олио, (%):
-                <aside class="comment-box">
-                  % от брашното;<br />
-                  <span class="text-green italic">*Полето не е задължително;</span>
-                </aside>
-              </div>
-              <div class="cell -b -input">
-                <input type="number" step="0.1" min="0" max="7.0" name="oilPercent" id="oil-percent"
-                  placeholder="пр. ... 0.5">
-              </div>
+
             </div>
+          </article>
+        </form>
+      </section>
+
+      <!-- ##### Second Column ##### -->
+      <section class="page-column">
+
+        <form>
+          <!-- ##### (3.3) ##### -->
+          <article class="card --last-child">
+            <header>
+              <h3>(3.3) Изчислена формула</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">Брашно, (g):</div>
+                <output id="flour-weight" name="flourWeight" class="cell -b -result" form="form-main">####</output>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a">Сол, (g):</div>
+                <output id="salt-weight" name="saltWeight" class="cell -b -result" form="form-main">####</output>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">
+                  Течни съставки:&nbsp;
+                  <output id="liquid-indreds-weight" name="liquidIngredsWeight" form="form-main">###</output>
+                </div>
+
+                <!-- Row -->
+                <div class="cell -a">Вода, (g):</div>
+                <output id="water-weight" name="waterWeight" class="cell -b -result" form="form-main">####</output>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">Допълнителни съставки</div>
+
+                <!-- Row -->
+                <div class="cell -a">Оцет, (g):</div>
+                <output id="vinegar-weight" name="vinegarWeight" class="cell -b -result" form="form-main">###</output>
+
+                <!-- Row -->
+                <div class="cell -a">Олио, (g):</div>
+                <output id="oil-weight" name="oilWeight" class="cell -b -result" form="form-main">###</output>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### Buttons Group (Main) ##### -->
+          <div class="btns-group -main">
+
+            <!-- Submit button -->
+            <button type="submit" class="btn-submit" id="btn-submit-main" form="form-main"
+              title="Изчисляване на търсените стойности">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <circle cx="88" cy="148" r="10" />
+                <circle cx="128" cy="148" r="10" />
+                <circle cx="168" cy="148" r="10" />
+                <circle cx="88" cy="188" r="10" />
+                <circle cx="128" cy="188" r="10" />
+                <circle cx="168" cy="188" r="10" />
+              </svg>
+            </button>
+
+            <!-- Reset button -->
+            <button type="reset" class="btn-reset" id="btn-reset-main" form="form-main"
+              title="Нулиране на полетата от текущата форма">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+              </svg>
+            </button>
+
+            <!-- Save button -->
+            <button type="button" class="btn-save" id="btn-save-main" form="form-main"
+              title="Запаметяване на стойностите от полетата на текущата форма">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <path
+                  d="M216,91.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H164.69a8,8,0,0,1,5.65,2.34l43.32,43.32A8,8,0,0,1,216,91.31Z"
+                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+              </svg>
+            </button>
 
           </div>
-        </article>
-      </form>
-    </section>
 
-    <!-- ##### Second Column ##### -->
-    <section class="page-column">
-      <!-- ##### (3.3) ##### -->
-      <article class="card --last-child">
-        <header>
-          <h3>(3.3) Изчислена формула</h3>
-        </header>
-        <div class="card-body">
-          <div class="rows-container --grid-2-cols">
-            <!-- Row -->
-            <div class="cell -a">Брашно, (g):</div>
-            <div class="cell -b -result"><span id="flour-weight">####</span></div>
-            <!-- Row - Line -->
-            <div class="cell -line"></div>
-            <!-- Row -->
-            <div class="cell -a">Сол, (g):</div>
-            <div class="cell -b -result"><span id="salt-weight">####</span></div>
-            <!-- Row - Line -->
-            <div class="cell -line"></div>
-            <!-- Row - Line -->
-            <div class="cell -line -text">Течни съставки:&nbsp;<span id="liquid-indreds-weight">###</span></div>
-            <!-- Row -->
-            <div class="cell -a">Вода, (g):</div>
-            <div class="cell -b -result"><span id="water-weight">####</span></div>
-            <!-- Row - Line -->
-            <div class="cell -line"></div>
-            <!-- Row - Line -->
-            <div class="cell -line -text">Допълнителни съставки</div>
-            <!-- Row -->
-            <div class="cell -a">Оцет, (g):</div>
-            <div class="cell -b -result"><span id="vinegar-weight">###</span></div>
-            <!-- Row -->
-            <div class="cell -a">Олио, (g):</div>
-            <div class="cell -b -result"><span id="oil-weight">###</span></div>
+          <hr />
 
+        </form>
+
+      </section>
+
+      <!-- ##### Third Column ##### -->
+      <section class="page-column">
+
+        <!-- ##### Legend ##### -->
+        <aside id="legend" class="legend">
+          <header class="legend-header">
+            <h4>Легенда:</h4>
+          </header>
+
+          <div class="legend-row -version">
+            <p>Версия: 0.7</p>
           </div>
 
-        </div>
-      </article>
+          <div class="legend-row -input comment">
+            <p>променлива стойност</p>
+            <aside class="comment-box">
+              Стойност, подлежаща на промяна, която задаваме свободно;
+            </aside>
+          </div>
 
-      <!-- ##### Buttons Group (Main) ##### -->
-      <div class="btns-group -main">
-        <!-- Submit button -->
-        <button form="form-main" type="button" class="btn-submit" id="btn-submit-main"
-          title="Изчисляване на търсените стойности">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-            <rect width="256" height="256" fill="none" />
-            <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="12" />
-            <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
-              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-            <circle cx="88" cy="148" r="10" />
-            <circle cx="128" cy="148" r="10" />
-            <circle cx="168" cy="148" r="10" />
-            <circle cx="88" cy="188" r="10" />
-            <circle cx="128" cy="188" r="10" />
-            <circle cx="168" cy="188" r="10" />
-          </svg>
-        </button>
+          <div class="legend-row -result comment">
+            <p>търсена стойност</p>
+            <aside class="comment-box">
+              Стойността, която търсим;<br />
+              (изчислена на базата на зададените
+              от нас променливи стойности)
+            </aside>
+          </div>
 
-        <!-- Reset button -->
-        <button form="form-main" type="button" class="btn-reset" id="btn-reset-main"
-          title="Нулиране на полетата от текущата форма">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-            <rect width="256" height="256" fill="none" />
-            <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="12" />
-            <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="12" />
-            <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="12" />
-            <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="12" />
-          </svg>
-        </button>
+          <div class="legend-row comment">
+            <p>
+              *Десетичният знак се изписва<br />
+              с „точка” или „запетая”;
+            </p>
+            <aside class="comment-box">
+              ... В зависимост от регионалните настройки на операционната система;
+            </aside>
+          </div>
 
-        <!-- Save button -->
-        <button form="form-main" type="button" class="btn-save" id="btn-save-main"
-          title="Запаметяване на стойностите от полетата на текущата форма">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-            <rect width="256" height="256" fill="none" />
-            <path
-              d="M216,91.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H164.69a8,8,0,0,1,5.65,2.34l43.32,43.32A8,8,0,0,1,216,91.31Z"
-              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-            <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor"
-              stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-            <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="12" />
-          </svg>
-        </button>
-      </div>
+          <div class="legend-row -regular comment">
+            <p>h - хидратация</p>
+            <aside class="comment-box">
+              Показва съдържанието на течности в тестото,
+              изразено като процент от съдържащото се в тестото брашно;
+            </aside>
+          </div>
 
-      <hr />
+        </aside>
+      </section>
 
-
-    </section>
-
-    <!-- ##### Third Column ##### -->
-    <section class="page-column">
-      <!-- ##### Legend ##### -->
-      <aside id="legend" class="legend">
-        <header class="legend-header">
-          <h4>Легенда:</h4>
-        </header>
-        <div class="legend-row -version">
-          <p>Версия (тестова): 1.1</p>
-        </div>
-        <div class="legend-row -input comment">
-          <p>променлива стойност</p>
-          <aside class="comment-box">
-            Стойност, подлежаща на промяна, която задаваме свободно;
-          </aside>
-        </div>
-        <div class="legend-row -result comment">
-          <p>търсена стойност</p>
-          <aside class="comment-box">
-            Стойността, която търсим;<br />
-            (изчислена на базата на зададените
-            от нас променливи стойности)
-          </aside>
-        </div>
-        <div class="legend-row comment">
-          <p>
-            *Десетичният знак се изписва<br />
-            с „точка” или „запетая”;
-          </p>
-          <aside class="comment-box">
-            ... В зависимост от регионалните настройки на операционната система;
-          </aside>
-        </div>
-        <div class="legend-row -regular comment">
-          <p>h - хидратация</p>
-          <aside class="comment-box">
-            Показва съдържанието на течности в тестото,
-            изразено като процент от съдържащото се в тестото брашно;
-          </aside>
-        </div>
-      </aside>
-    </section>
-  </main>
+    </main>
+  </fieldset>
 
   <footer class="page flex">
     <a href="https://nstratiev.github.io/bread-calculator-bg/">bread-calculator-bg</a>
   </footer>
 
   <!-- Page ASIDE -->
-  <aside>
+  <fieldset>
+
     <!-- To-top Button -->
-    <div class="btn-to-top" id="btn-to-top">
-      <!-- <div class="up-arrow"></div> -->
+    <button class="btn-to-top" id="btn-to-top">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
           <rect width="256" height="256" fill="none" />
@@ -287,10 +326,11 @@
             stroke-linejoin="round" stroke-width="16" />
         </svg>
       </div>
-    </div>
+    </button>
 
     <!-- Global Reset Button -->
-    <div class="btn-reset-global" id="btn-reset-global" title="Освобождаване на паметта, свързана с текущата страница">
+    <button class="btn-reset-global" id="btn-reset-global"
+      title="Освобождаване на паметта, свързана с текущата страница">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
           <rect width="256" height="256" fill="none" />
@@ -300,10 +340,10 @@
             stroke-linejoin="round" stroke-width="16" />
         </svg>
       </div>
-    </div>
+    </button>
 
     <!-- Global Save Button -->
-    <div class="btn-save-global" id="btn-save-global"
+    <button class="btn-save-global" id="btn-save-global"
       title="Запаметяване на стойностите от всички полета на текущата страница">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -316,8 +356,9 @@
             stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
         </svg>
       </div>
-    </div>
-  </aside>
+    </button>
+
+  </fieldset>
 
   <script type="module" src="js/index.js"></script>
 </body>

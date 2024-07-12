@@ -1,15 +1,17 @@
-// ##### Print functions #####
-export function printResultsMain(kneadingdObj) {
-  printResult(kneadingdObj.doughWeight, doughWeightElement, 0);
-  printResult(kneadingdObj.flour, flourWeightElement, 0);
-  printResult(kneadingdObj.salt, saltWeightElement, 0);
-  printResult(kneadingdObj.liquidIngredients, liquidIngredsWeightElement, 0, { prefix: '', postfix: ' g' });
-  printResult(kneadingdObj.water, waterWeightElement, 0);
-  printResult(kneadingdObj.vinegar, vinegarWeightElement, 0);
-  printResult(kneadingdObj.oil, oilWeightElement, 0);
+export function printResult_formMain(resultsData) {
+  const d = resultsData;
+  const el = resultElementsObj_fMain;
+
+  printResult(d.doughWeight, el.doughWeight, 0);
+  printResult(d.flourWeight, el.flourWeight, 0);
+  printResult(d.saltWeight, el.saltWeight, 0);
+  printResult(d.liquidIngredsWeight, el.liquidIngredsWeight, 0, { prefix: '', postfix: ' g' });
+  printResult(d.waterWeight, el.waterWeight, 0);
+  printResult(d.vinegarWeight, el.vinegarWeight, 0);
+  printResult(d.oilWeight, el.oilWeight, 0);
 }
 
-export function printResult(
+function printResult(
   value,
   resultElem,
   toFixedIndex,
@@ -34,4 +36,4 @@ export function printResult(
 }
 
 // IMPORTS
-import { doughWeightElement, flourWeightElement, liquidIngredsWeightElement, oilWeightElement, saltWeightElement, vinegarWeightElement, waterWeightElement } from './elements.js';
+import { resultElementsObj_fMain } from './elements.js';

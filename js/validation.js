@@ -1,59 +1,82 @@
-// ##### Validation functions #####
+export function validationOutOfRangeFields(formFieldsArr, pageLoadingObj, resetFormResultsFunc) {
+  for (const item of formFieldsArr) {
+    if (item.type !== 'number') {
+      continue;
+    }
 
-// On Focus Out
-export function attachOnFocusOutColorOutlineValidation(numberFieldsCollection) {
-  numberFieldsCollection.forEach((field) => {
-    field.addEventListener('focusout', (e) => {
-      const min = e.target.min;
-      const max = e.target.max;
-      const isRequired = e.target.required;
+    const num = Number(item.value);
+    const minLimit = Number(item.min);
+    let maxLimit = Number(item.max);
 
-      onFocusOutColorOutline(e.target, min, max, isRequired);
+    if (maxLimit === 0) {
+      maxLimit = Number.MAX_SAFE_INTEGER;
+    }
+
+    if (num < minLimit || num > maxLimit) {
+      if (pageLoadingObj.isFirstPageLoad !== true) {
+        resetFormResultsFunc();
+
+        const configArr = inactivateAllFormsAndLinks(true, []);
+
+        alertOutOfRangeBox.msgText2 = `[ ${minLimit} - ${maxLimit} ]`;
+        alertOutOfRangeBox.open()
+          .then((msg) => {
+          }).catch((err) => console.log(err))
+          .finally(() => {
+            inactivateAllFormsAndLinks(false, configArr);
+            item.focus();
+          });
+      }
+
+      return false;
+    }
+  }
+
+  return true;
+}
+
+export function validationEmptyFields(formFieldsArr, pageLoadingObj, resetFormResultsFunc) {
+  for (const item of formFieldsArr) {
+    if (item.tagName !== 'INPUT' || item.required === false) {
+      continue;
+    }
+
+    if (item.value === '') {
+      if (pageLoadingObj.isFirstPageLoad !== true) {
+        resetFormResultsFunc();
+
+        const configArr = inactivateAllFormsAndLinks(true, []);
+
+        alertEmptyFieldBox.open()
+          .then((msg) => {
+          })
+          .catch((err) => console.log(err))
+          .finally(() => {
+            inactivateAllFormsAndLinks(false, configArr);
+            item.focus();
+          });
+      }
+
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Decimal point inputs validation
+export function attachOnFocusoutDecimalPointValidation() {
+  document.querySelectorAll('input[step="0.1"]').forEach(el => {
+    el.addEventListener('focusout', (ev) => validationForDecimalPoint(ev, el));
+    el.addEventListener('keydown', (ev) => {
+      if (ev.code === 'Enter') {
+        validationForDecimalPoint(ev, el);
+      }
     });
   });
 }
 
-function onFocusOutColorOutline(field, min, max, isRequired) {
-  let textOutput = '';
-  const inputValue = Number(field.value);
-  min = Number(min);
-  max = Number(max);
-
-  if (max === 0) {
-    max = Number.MAX_SAFE_INTEGER;
-  }
-
-  if (field.value === '') {
-    if (isRequired) {
-      field.style.outline = '2px solid green';
-      textOutput = 'empty required field';
-    } else {
-      field.style.outline = 'none';
-      textOutput = 'ok';
-    }
-
-  } else if (inputValue < min || inputValue > max) {
-    field.style.outline = '2px solid red';
-    textOutput = 'out of range required field';
-  } else {
-    field.style.outline = 'none';
-    textOutput = 'ok';
-  }
-
-  return [textOutput, field];
-}
-
-export function attachOnFocusoutDecimalPointValidation() {
-  decimalOneDigitInputs.forEach(el => {
-    el.addEventListener('focusout', () => validationForDecimalPoint(el));
-  });
-}
-
-export function fillMissingDecimalPoints() {
-  decimalOneDigitInputs.forEach(el => validationForDecimalPoint(el));
-}
-
-function validationForDecimalPoint(numField) {
+function validationForDecimalPoint(ev, numField) {
   const numValue = numField.value;
 
   if (numValue !== '' && numValue.includes('.') === false) {
@@ -61,77 +84,12 @@ function validationForDecimalPoint(numField) {
   }
 }
 
-// On Empty Field
-export function hasEmptyFieldValidation(fieldsCollection) {
-  for (const field of fieldsCollection) {
-    const isRequired = field.required;
-
-    if (isRequired === false) {
-      continue
-    }
-
-    const val = field.value;
-
-    if (val === '') {
-      setTimeout(() => {
-        field.style.outline = '2px solid green';
-        field.focus();
-      }, 0);
-
-      return [true, field];
-    }
-  }
-
-  return [false];
+import { alertEmptyFieldBox, alertOutOfRangeBox } from './alerts.js';
+/* export function fillMissingDecimalPoints() {
+  decimalOneDigitInputs.forEach(el => validationForDecimalPoint(el));
 }
+ */
 
-// On Out Of Range
-export function valueRangeCheck(field, min, max) {
-  const inputValue = Number(field.value);
-  min = Number(min);
-  max = Number(max);
 
-  if (max === 0) {
-    max = Number.MAX_SAFE_INTEGER;
-  }
-
-  if (inputValue < min || inputValue > max) {
-    setTimeout(() => {
-      field.style.outline = '2px solid red';
-    }, 0);
-
-    alertOutOfRangeBox.msgText2 = `[ ${min} - ${max} ]`;
-    alertOutOfRangeBox
-      .open()
-      .then((val) => {
-        field.focus();
-      })
-      .catch((val) => { });
-
-    return false;
-
-  } else {
-    field.style.outline = 'none';
-    return true;
-  }
-}
-
-export function hasOutOfRangeFieldValidation(fieldsCollection) {
-  for (const field of fieldsCollection) {
-    const min = field.min;
-    const max = field.max;
-
-    if (valueRangeCheck(field, min, max)) {
-      continue;
-    } else {
-      return [true, field];
-    }
-  }
-
-  return [false];
-}
-
-import { alertOutOfRangeBox } from './alerts.js';
-import { decimalOneDigitInputs } from './elements.js';
-// IMPORTS
-import { ConfirmModal } from './modalClass.js';
+import { formMain } from './elements.js';
+import { inactivateAllFormsAndLinks } from './generic.js';

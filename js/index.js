@@ -1,62 +1,51 @@
-// EVENT LISTENERS
-document.addEventListener('DOMContentLoaded', function () {
-  getStorageAndCalculateMain();
+// On first page load
+document.addEventListener('DOMContentLoaded', (ev) => {
+  populateLocaleStorageData([formMain]);
+  onSubmit_initialLoad(ev);
 });
-
-// -- OnEnter form listeners
-attachToInputsOnEnterKeydownFormListener(formMain, calcMainSubmit);
-
-// -- Focusout form listeners
-attachOnFocusOutColorOutlineValidation(numberFieldsMain);
-attachOnFocusoutDecimalPointValidation();
 
 // -- Button-to-top listeners
 window.addEventListener('scroll', onScreenScroll);
 btnToTop.addEventListener('click', goToScreenTop);
 
 // -- Buttons - global
-btnGlobalReset.addEventListener('click', resetGlobalLocalStorage);
-btnGlobalSave.addEventListener('click', setGlobalLocalStorage);
+btnGlobalReset.addEventListener('click', onGlobalReset);
+btnGlobalSave.addEventListener('click', onGlobalSave);
+
+// Listeners
+attachFocusoutValidation();
+attachOnFocusoutDecimalPointValidation();
 
 // -- Buttons listeners
-document.addEventListener('click', (e) => {
-  if (e.target.tagName !== 'BUTTON') {
+document.addEventListener('click', (ev) => {
+  if (ev.target.tagName !== 'BUTTON') {
     return;
   }
 
-  const btnsGroupClassName = e.target.parentElement.className;
-  const btnClassName = e.target.className;
+  const btnsGroupClassName = ev.target.parentElement.className;
+  const btnClassName = ev.target.className;
 
   if (btnsGroupClassName.includes('-main')) {
     // console.log('MAIN');
     if (btnClassName === 'btn-submit') {
-      calcMainSubmit();
+      onSubmit_fMain(ev);
 
     } else if (btnClassName === 'btn-reset') {
-      resetMainForm();
-      checkmarkAlertGreen();
+      onReset_fMain(ev);
 
     } else if (btnClassName === 'btn-save') {
-      setLocaleStorageMain();
-      checkmarkAlertGreen();
+      onSave_fMain(ev);
     }
   }
 
 });
 
-import { checkmarkAlertGreen } from './alerts.js';
-import { calcMainSubmit, getStorageAndCalculateMain } from './calcMainForm.js';
-// Imports
-import {
-  btnGlobalReset,
-  btnGlobalSave,
-  btnToTop,
-  formMain,
-  numberFieldsMain,
-} from './elements.js';
-import { attachToInputsOnEnterKeydownFormListener } from './helpers.js';
-import { resetGlobalLocalStorage, resetMainForm } from './reset.js';
 
-import { onScreenScroll, goToScreenTop } from './scroll.js';
-import { setGlobalLocalStorage, setLocaleStorageMain } from './storage.js';
-import { attachOnFocusOutColorOutlineValidation, attachOnFocusoutDecimalPointValidation, fillMissingDecimalPoints } from './validation.js';
+import { btnGlobalReset, btnGlobalSave, btnToTop, formMain } from './elements.js';
+import { onGlobalSave, onSave_fMain, onSubmit_fMain, onSubmit_initialLoad } from './event-handlers.js';
+import { attachFocusoutValidation } from './focusout.js';
+import { populateLocaleStorageData } from './storage.js';
+import { onGlobalReset, onReset_fMain } from './reset.js';
+import { goToScreenTop, onScreenScroll } from "./scroll.js";
+import { checkmarkAlertGreen } from "./alerts.js";
+import { attachOnFocusoutDecimalPointValidation } from './validation.js';

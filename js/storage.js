@@ -1,45 +1,36 @@
-// ##### Locale Storage functions #####
-export function setGlobalLocalStorage() {
-  setLocaleStorageMain();
-  checkmarkAlertGreen();
+export function setLocalStorage(obj, formName) {
+  const jsonData = JSON.stringify(obj);
+  localStorage.setItem(formName, jsonData);
 }
 
-// Main localStorage
-export function getLocaleStorageMain() {
-  getLocalStorageAndFilInputs('formMain');
+export function getLocalStorage(formName) {
+  const obj = JSON.parse(localStorage.getItem(formName));
+  return obj;
 }
 
-export function setLocaleStorageMain() {
-  setLocalStorage('formMain', numberFieldsMain);
+export function clearLocalStorageGlobal() {
+  localStorage.clear();
 }
 
-// Basic functions
-function setLocalStorage(formItemStr, numberFieldsCollection) {
-  const obj = {};
+export function populateLocaleStorageData(formsArr) {
+  for (const formElem of formsArr) {
+    const localStorageObj = getLocalStorage(formElem.name);
 
-  for (const numField of numberFieldsCollection) {
-    obj[numField.name] = numField.value;
+    if (localStorageObj === null) {
+      console.info('No localStorage for this form ...');
+      return null;
+    }
+
+    for (const key in localStorageObj) {
+      const target = formElem[key];
+      // const target = formElem.querySelector(`input[name=${key}]`);
+      target.value = localStorageObj[key];
+    }
+
   }
 
-  localStorage.setItem(formItemStr, JSON.stringify(obj));
 }
 
-function getLocalStorageAndFilInputs(formItemStr) {
-  let formStorage = localStorage.getItem(formItemStr);
-  formStorage = JSON.parse(formStorage);
-
-  for (const key in formStorage) {
-    const val = formStorage[key];
-    const elem = document.querySelector(`#${camelToKebapCase(key)}`);
-    elem.value = val;
-  }
-
-  return formStorage;
+function deleteLocalStorageObj(formName) {
+  localStorage.removeItem(formName);
 }
-
-// IMPORTS
-import {
-  numberFieldsMain,
-} from './elements.js';
-import { camelToKebapCase } from './helpers.js';
-import { checkmarkAlertGreen } from './alerts.js';

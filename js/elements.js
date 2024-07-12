@@ -1,40 +1,27 @@
-// Button elements
-export const btnSubmit = document.querySelector('#btn-submit-main');
-export const btnReset = document.querySelector('#btn-reset-main');
-export const btnSave = document.querySelector('#btn-save-main');
+// checked
+// -- Forms
+export const formMain = document.querySelector('#form-main');
 
+// -- Elements - fMain
+export const resultElementsArr_fMain = getFormOutputsArray(formMain);
+export const resultElementsObj_fMain = getFormOutputsObject(formMain);
+
+// Buttons (Global)
 export const btnToTop = document.querySelector('#btn-to-top');
 export const btnGlobalReset = document.querySelector('#btn-reset-global ');
 export const btnGlobalSave = document.querySelector('#btn-save-global');
 
-// Form elements
-export const formMain = document.querySelector('#form-main');
+// -- Functions
+function getFormOutputsArray(formElem) {
+  return Array.from(formElem.elements).filter(el => el.tagName === 'OUTPUT');
+}
 
-// Input elements
-export const numberFieldsMain = document.querySelectorAll(
-  '.cell.-input > input'
-);
-export const decimalOneDigitInputs = document.querySelectorAll('input[step="0.1"]');
+function getFormOutputsObject(formElem) {
+  const obj = {};
+  const arr = Array.from(formElem.elements).filter(el => el.tagName === 'OUTPUT');
+  const x = arr.forEach(el => {
+    obj[el.name] = el;
+  });
 
-// RESULT elements
-export const doughWeightElement = document.querySelector(
-  '#dough-weight'
-);
-export const flourWeightElement = document.querySelector(
-  '#flour-weight'
-);
-export const saltWeightElement = document.querySelector(
-  '#salt-weight'
-);
-export const liquidIngredsWeightElement = document.querySelector(
-  '#liquid-indreds-weight'
-);
-export const waterWeightElement = document.querySelector(
-  '#water-weight'
-);
-export const vinegarWeightElement = document.querySelector(
-  '#vinegar-weight'
-);
-export const oilWeightElement = document.querySelector(
-  '#oil-weight'
-);
+  return obj;
+}

@@ -29,14 +29,15 @@ export const globalResetConfirmDialog = new ConfirmModal({
 
 export const alertEmptyFieldBox = new ConfirmModal({
   titleText: '',
-  msgText: 'Необходимо е всички задължителни полета да бъдат попълнени ...',
+  msgText: 'Моля, попълнете всички задължителни полета ...',
   confirmText: 'OK',
   cancelText: '',
+  msgText2: ''
 });
 
 export const alertOutOfRangeBox = new ConfirmModal({
   titleText: '',
-  msgText: `Моля, въведете стойност в диапазона:`,
+  msgText: `Моля, въведете стойност в диапазона: `,
   confirmText: 'OK',
   cancelText: '',
   msgText2: '',
