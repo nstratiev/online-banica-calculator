@@ -1,5 +1,5 @@
-export function onReset_fMain() {
-  onReset(null, formMain, resetResults_fMain);
+export function onReset_fMain(hasCheckmark) {
+  onReset(null, formMain, resetResults_fMain, hasCheckmark);
 }
 
 export function resetResults_fMain() {
@@ -8,17 +8,22 @@ export function resetResults_fMain() {
 
 // Basic
 export function onGlobalReset() {
+  resetAllForms();
   const configArr = inactivateAllFormsAndLinks(true, []);
 
   globalResetConfirmDialog.open()
     .then((msg) => {
       clearLocalStorageGlobal();
       formMain.reset();
-      checkmarkAlertGreen();
+      checkmarkAlertGreen(true);
       location.reload();
     })
     .catch((msg) => { })
     .finally(() => inactivateAllFormsAndLinks(false, configArr));
+}
+
+function resetAllForms() {
+  onReset_fMain(false);
 }
 
 function resetResults(resultElementsCollection) {
@@ -33,12 +38,12 @@ function resetResults(resultElementsCollection) {
   });
 }
 
-function onReset(ev, formElem, resetResultHandler) {
+function onReset(ev, formElem, resetResultHandler, hasCheckmark) {
   formElem.reset();
   resetFieldsOutline(formElem);
   resetResultHandler();
 
-  checkmarkAlertGreen();
+  checkmarkAlertGreen(hasCheckmark);
 }
 
 function resetFieldsOutline(formElem) {

@@ -31,7 +31,7 @@ document.addEventListener('click', (ev) => {
       onSubmit_fMain(ev);
 
     } else if (btnClassName === 'btn-reset') {
-      onReset_fMain(ev);
+      onReset_fMain(true);
 
     } else if (btnClassName === 'btn-save') {
       onSave_fMain(ev);

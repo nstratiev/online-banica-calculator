@@ -7,7 +7,7 @@ export function onSubmit_fMain(ev) {
 }
 
 export function onSave_fMain(ev) {
-  onSave(ev, formMain);
+  onSave(ev, formMain, true);
 }
 
 // Basic
@@ -15,18 +15,18 @@ export function onGlobalSave(ev) {
   const allForms = document.querySelectorAll('form');
 
   for (const form of allForms) {
-    onSave(ev, form);
+    onSave(ev, form, false);
   }
 
-  checkmarkAlertGreen();
+  checkmarkAlertGreen(true);
 }
 
-function onSave(ev, formElem) {
+function onSave(ev, formElem, hasCheckmark) {
   const currFormData = getFormDataToObject(formElem);
   const currFormName = formElem.name;
   setLocalStorage(currFormData, currFormName);
 
-  checkmarkAlertGreen();
+  checkmarkAlertGreen(hasCheckmark);
 }
 
 function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, href) {
@@ -45,7 +45,7 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, 
   printFunc(resultsData);
 
   if (loadingConfig.isFirstPageLoad !== true) {
-    checkmarkAlertGreen();
+    checkmarkAlertGreen(true);
 
     const screenWidth = window.screen.width;
     const screenAvailWidth = window.screen.availWidth;
