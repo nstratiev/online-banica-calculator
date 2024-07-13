@@ -47,8 +47,14 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, 
   if (loadingConfig.isFirstPageLoad !== true) {
     checkmarkAlertGreen();
 
+    const screenWidth = window.screen.width;
+    const screenAvailWidth = window.screen.availWidth;
+
     if (href) {
-      location.href = href;
+      if (screenWidth <= 680 || screenAvailWidth <= 680) {
+        location.href = href;
+      }
+
     }
   }
 

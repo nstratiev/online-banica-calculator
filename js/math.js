@@ -1,4 +1,3 @@
-// ##### Math functions #####
 export function calculate_fMain(data) {
   const doughWeight = getTotalDoughWeight(data.crustsCount, data.crustWeight);
   const flourWeight = getTotalFlour(doughWeight, data.hydrationPercent, data.saltPercent);
