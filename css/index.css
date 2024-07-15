@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  /* font-family: Inter, Arial, Helvetica, sans-serif; */
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--black-color);
   text-align: center;
@@ -88,8 +89,8 @@ fieldset {
 }
 
 header.page {
-  padding-top: 8px;
-  margin-bottom: 40px;
+  padding: 6px;
+  /* margin-bottom: 40px; */
 }
 
 footer.page {
@@ -106,7 +107,7 @@ footer.page {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 8px;
+  padding: 4px;
 }
 
 .page-column {
