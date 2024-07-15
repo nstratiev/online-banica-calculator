@@ -41,7 +41,9 @@
             <div class="card-body">
               <div class="rows-container --grid-2-cols">
                 <!-- Row -->
-                <div class="cell -a">Кори, (брой):</div>
+                <div class="cell -a">
+                  <label for="crusts-count">Кори, (брой):</label>
+                </div>
                 <div class="cell -b -input">
                   <input type="number" step="1" min="0" name="crustsCount" id="crusts-count" placeholder="пр. 5"
                     required autofocus>
@@ -52,7 +54,7 @@
 
                 <!-- Row -->
                 <div class="cell -a">
-                  Тегло на отделна кора, (g):
+                  <label for="crust-weight">Тегло на отделна кора, (g):</label>
                 </div>
                 <div class="cell -b -input">
                   <input type="number" step="1" min="0" name="crustWeight" id="crust-weight" placeholder="пр. 150"
@@ -64,7 +66,9 @@
 
                 <!-- Row -->
                 <div class="cell -a">Тегло на тестото, (g):</div>
-                <output id="dough-weight" class="cell -b -result" name="doughWeight">....</output>
+                <div class="cell -b -result">
+                  <output id="dough-weight" name="doughWeight">....</output>
+                </div>
               </div>
 
             </div>
@@ -80,7 +84,7 @@
               <div class="rows-container --grid-2-cols">
                 <!-- Row -->
                 <div class="cell -a comment">
-                  h<sup class="superscript">тесто</sup>, (%):
+                  <label for="hydration-percent">h<sup class="superscript">тесто</sup>, (%):</label>
                   <aside class="comment-box">
                     Хидратация на тестото;
                   </aside>
@@ -95,7 +99,7 @@
 
                 <!-- Row -->
                 <div class="cell -a comment">
-                  Сол, (%):
+                  <label for="salt-percent">Сол, (%):</label>
                   <aside class="comment-box">
                     При тестото за баница, обикновено е препоръчително
                     солта да не надвишава 3%;
@@ -114,7 +118,7 @@
 
                 <!-- Row -->
                 <div class="cell -a comment">
-                  Оцет, (%):
+                  <label for="vinegar-percent">Оцет, (%):</label>
                   <aside class="comment-box">
                     % от брашното;<br />
                     <span class="text-green italic">*Полето не е задължително;</span>
@@ -127,7 +131,7 @@
 
                 <!-- Row -->
                 <div class="cell -a comment">
-                  Олио, (%):
+                  <label for="oil-percent">Олио, (%):</label>
                   <aside class="comment-box">
                     % от брашното;<br />
                     <span class="text-green italic">*Полето не е задължително;</span>
@@ -161,14 +165,18 @@
               <div class="rows-container --grid-2-cols">
                 <!-- Row -->
                 <div class="cell -a">Брашно, (g):</div>
-                <output id="flour-weight" name="flourWeight" class="cell -b -result" form="form-main">....</output>
+                <div class="cell -b -result">
+                  <output id="flour-weight" name="flourWeight" form="form-main">....</output>
+                </div>
 
                 <!-- Row - Line -->
                 <div class="cell -line"></div>
 
                 <!-- Row -->
                 <div class="cell -a">Сол, (g):</div>
-                <output id="salt-weight" name="saltWeight" class="cell -b -result" form="form-main">....</output>
+                <div class="cell -b -result">
+                  <output id="salt-weight" name="saltWeight" form="form-main">....</output>
+                </div>
 
                 <!-- Row - Line -->
                 <div class="cell -line"></div>
@@ -182,7 +190,9 @@
 
                 <!-- Row -->
                 <div class="cell -a">Вода, (g):</div>
-                <output id="water-weight" name="waterWeight" class="cell -b -result" form="form-main">....</output>
+                <div class="cell -b -result">
+                  <output id="water-weight" name="waterWeight" form="form-main">....</output>
+                </div>
 
                 <!-- Row - Line -->
                 <div class="cell -line"></div>
@@ -192,11 +202,15 @@
 
                 <!-- Row -->
                 <div class="cell -a">Оцет, (g):</div>
-                <output id="vinegar-weight" name="vinegarWeight" class="cell -b -result" form="form-main">...</output>
+                <div class="cell -b -result">
+                  <output id="vinegar-weight" name="vinegarWeight" form="form-main">...</output>
+                </div class="cell -b -result">
 
                 <!-- Row -->
                 <div class="cell -a">Олио, (g):</div>
-                <output id="oil-weight" name="oilWeight" class="cell -b -result" form="form-main">...</output>
+                <div class="cell -b -result">
+                  <output id="oil-weight" name="oilWeight" form="form-main">...</output>
+                </div>
               </div>
 
             </div>
@@ -292,6 +306,12 @@
           </aside>
         </div>
 
+        <div class="legend-row -placeholder">
+          <p>
+            пр. [число] - примерна стойност;
+          </p>
+        </div>
+
         <div class="legend-row comment">
           <p>
             *Десетичният знак се изписва<br />
@@ -303,7 +323,7 @@
         </div>
 
         <div class="legend-row -regular comment">
-          <p>h - хидратация</p>
+          <p>h - хидратация;</p>
           <aside class="comment-box">
             Показва съдържанието на течности в тестото,
             изразено като процент от съдържащото се в тестото брашно;

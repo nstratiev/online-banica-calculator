@@ -195,8 +195,10 @@ article.card > header {
 }
 
 ::placeholder {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace, monospace;
+  font-weight: bold;
   font-size: 14px;
+  opacity: 0.4;
 }
 
 input[type="number"],
@@ -237,6 +239,11 @@ aside.legend {
 
 .legend-row.-version {
   font-style: italic;
+}
+
+.-placeholder {
+  font-family: monospace, monospace;
+  font-weight: 500;
 }
 
 /* ##### Links ##### */
