@@ -31,7 +31,7 @@ function resetResults(resultElementsCollection) {
     el.style.fontWeight = 'initial';
 
     if (el.className.includes('-secondary') === false) {
-      el.textContent = '...';
+      el.textContent = '....';
     } else {
       el.textContent = '...';
     }
