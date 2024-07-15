@@ -194,14 +194,13 @@ article.card > header {
   padding: 0;
 }
 
-::placeholder {
-  color: blue;
-}
+/* ::placeholder {
+  color: black;
+  opacity: 0.6;
+} */
 
 ::-webkit-input-placeholder,
 ::-moz-placeholder {
-  color: blue;
-  opacity: 1;
 }
 
 input[type="number"],
