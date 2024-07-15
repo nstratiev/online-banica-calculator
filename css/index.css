@@ -196,7 +196,7 @@ article.card > header {
 
 ::placeholder {
   color: green;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 input[type="number"],
