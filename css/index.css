@@ -204,6 +204,7 @@ article.card > header {
 }
 ::-moz-placeholder {  /* Firefox 19+ */
   color: purple;
+}
 
 input[type="number"],
 .legend-row.-input {
