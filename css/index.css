@@ -195,18 +195,14 @@ article.card > header {
 }
 
 ::placeholder {
-  color: red;
+  color: green;
   opacity: 1;
 }
 
-/* ::-webkit-input-placeholder {
-  color: blue;
+::-webkit-input-placeholder,
+::-moz-placeholder {
   opacity: 1;
 }
-::-moz-placeholder {
-  color: blue;
-  opacity: 1;
-} */
 
 input[type="number"],
 .legend-row.-input {
