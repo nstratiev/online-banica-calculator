@@ -195,12 +195,8 @@ article.card > header {
 }
 
 ::placeholder {
-  color: rgb(24, 114, 44);
-  opacity: 1;
-}
-
-::-webkit-input-placeholder,
-::-moz-placeholder {
+  /* color: rgb(24, 114, 44);
+  opacity: 1; */
 }
 
 input[type="number"],
