@@ -195,9 +195,15 @@ article.card > header {
 }
 
 ::placeholder {
-  color: green;
+  color: purple;
   opacity: 1;
 }
+
+::-webkit-input-placeholder {  /* Chrome/Opera/Safari */
+  color: purple;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: purple;
 
 input[type="number"],
 .legend-row.-input {
