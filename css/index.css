@@ -194,10 +194,10 @@ article.card > header {
   padding: 0;
 }
 
-/* ::placeholder {
-  color: black;
-  opacity: 0.6;
-} */
+::placeholder {
+  color: rgb(24, 114, 44);
+  opacity: 1;
+}
 
 ::-webkit-input-placeholder,
 ::-moz-placeholder {
