@@ -21,7 +21,7 @@ html {
 body {
   /* font-family: Inter, Arial, Helvetica, sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--black-color);
+  /* color: var(--black-color); */
   text-align: center;
   height: 100vh;
 }
@@ -192,6 +192,11 @@ article.card > header {
 
 .cell.-b.-input {
   padding: 0;
+}
+
+::placeholder {
+  /* color: red; */
+  opacity: 0.5;
 }
 
 input[type="number"],
