@@ -196,16 +196,17 @@ article.card > header {
 
 ::placeholder {
   color: blue;
+  opacity: 1;
 }
 
-::-webkit-input-placeholder {  /* Chrome/Opera/Safari */
+/* ::-webkit-input-placeholder {
   color: blue;
   opacity: 1;
 }
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
   color: blue;
   opacity: 1;
-}
+} */
 
 input[type="number"],
 .legend-row.-input {
