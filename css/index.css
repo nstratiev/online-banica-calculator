@@ -195,14 +195,15 @@ article.card > header {
 }
 
 ::placeholder {
-  color: green;
+  color: blue;
 }
 
 ::-webkit-input-placeholder {  /* Chrome/Opera/Safari */
-  color: green;
+  color: blue;
+  opacity: 1;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-  color: green;
+  color: blue;
   opacity: 1;
 }
 
