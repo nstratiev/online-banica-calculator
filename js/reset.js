@@ -46,7 +46,7 @@ function onReset(ev, formElem, resetResultHandler, hasCheckmark) {
   checkmarkAlertGreen(hasCheckmark);
 }
 
-function resetFieldsOutline(formElem) {
+export function resetFieldsOutline(formElem) {
   const formInputsCollection = formElem.querySelectorAll('input');
 
   for (const field of formInputsCollection) {

@@ -43,6 +43,7 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, 
   setLocalStorage(data, formElem.name);
   const resultsData = calculate_fMain(data);
   printFunc(resultsData);
+  resetFieldsOutline(formElem);
 
   if (loadingConfig.isFirstPageLoad !== true) {
     checkmarkAlertGreen(true);
@@ -65,6 +66,7 @@ import { printResult_formMain } from './print.js';
 import { formMain } from './elements.js';
 import { getData, getFormDataToObject } from './generic.js';
 import { setLocalStorage } from './storage.js';
-import { resetResults_fMain } from './reset.js';
+import { resetFieldsOutline, resetResults_fMain } from './reset.js';
 import { checkmarkAlertGreen } from './alerts.js';
 import { calculate_fMain } from './math.js';
+import { } from "./reset.js";
