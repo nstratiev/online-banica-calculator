@@ -195,7 +195,7 @@ article.card > header {
 }
 
 input::placeholder {
-  color: green;
+  color: red;
   opacity: 1;
 }
 
