@@ -26,6 +26,13 @@ body {
   height: 100vh;
 }
 
+:focus {
+  outline: none;
+  outline: 1px solid green;
+  /* box-shadow: 0 0 4px 4px gray; */
+
+}
+
 /* ##### Common styles ##### */
 .flex {
   display: flex;
