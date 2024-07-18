@@ -1,3 +1,4 @@
+// ##### Generic [Start] #####
 export function getFormDataToObject(formElem) {
   return Object.fromEntries(new FormData(formElem));
 }
@@ -38,3 +39,5 @@ export function inactivateAllFormsAndLinks(bool, [linkElems, inactivateFunc]) {
 
 import { btnsGlobal } from './elements.js';
 import { validationEmptyFields, validationOutOfRangeFields } from './validation.js';
+
+// ##### Generic [End] #####

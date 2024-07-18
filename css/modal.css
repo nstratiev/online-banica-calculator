@@ -1,3 +1,4 @@
+/* ##### Modal [Start] ##### */
 .modal {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -66,3 +67,5 @@
 .btn-confirm:focus {
   box-shadow: 0 0 4px 4px gray;
 }
+
+/* ##### Modal [End] ##### */

@@ -1,3 +1,4 @@
+// ##### Index [Start] #####
 // On first page load
 document.addEventListener('DOMContentLoaded', (ev) => {
   populateLocaleStorageData([formMain]);
@@ -48,3 +49,5 @@ import { populateLocaleStorageData } from './storage.js';
 import { onGlobalReset, onReset_fMain } from './reset.js';
 import { goToScreenTop, onScreenScroll } from "./scroll.js";
 import { attachOnFocusoutDecimalPointValidation } from './validation.js';
+
+// ##### Index [End] #####

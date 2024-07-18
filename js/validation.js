@@ -1,3 +1,4 @@
+// ##### Validation [Start] #####
 export function validationOutOfRangeFields(formFieldsArr, pageLoadingObj, resetFormResultsFunc) {
   for (const item of formFieldsArr) {
     if (item.type !== 'number') {
@@ -85,3 +86,5 @@ function validationForDecimalPoint(ev, numField) {
 
 import { alertEmptyFieldBox, alertOutOfRangeBox } from './alerts.js';
 import { inactivateAllFormsAndLinks } from './generic.js';
+
+// ##### Validation [End] #####

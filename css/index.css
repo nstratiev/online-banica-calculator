@@ -1,3 +1,4 @@
+/* ##### Index [Start] ##### */
 :root {
   --black-color: rgb(53, 59, 65);
   --black-color-2: rgb(74, 80, 87);
@@ -287,10 +288,31 @@ a.legend-link:visited {
   }
 }
 
-footer > a:link,
+/* footer > a:link,
 footer > a:visited  {
   color: rgb(54, 96, 146);
   font-size: 18px;
   font-weight: bold;
   padding: 20px 40px;
+} */
+
+footer > a:link, footer > a:visited,
+a.offline-link:link, a.offline-link:visited,
+a.github-link:link, a.github-link:visited {
+  color: #366092;
+  font-size: 18px;
+  font-weight: bold;
 }
+
+footer > a:link, footer > a:visited {
+  padding: 20px 40px;
+}
+
+a.legend-link:link, a.legend-link:visited,
+a.offline-link:link, a.offline-link:visited,
+a.github-link:link, a.github-link:visited {
+  margin-right: 20px;
+}
+
+
+/* ##### Index [End] ##### */

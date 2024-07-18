@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тесто за баница (online калкулатор)</title>
+  <!-- <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/borders.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/small-elements.css">
+  <link rel="stylesheet" href="css/queries.css">
+  <link rel="stylesheet" href="css/modal.css"> -->
+  <style>
+    /* ##### Index [Start] ##### */
+    :root {
+      --black-color: rgb(53, 59, 65);
+      --black-color-2: rgb(74, 80, 87);
+      --yellow-input-bg-color: rgb(255, 255, 153);
+      --orange-input-bg-color: rgb(255, 204, 102);
+      --orange-menu-color: rgb(226, 107, 10);
+      --red-menu-color: rgb(192, 0, 0);
+      --grey-bg: rgb(248, 248, 248);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      /* font-family: Inter, Arial, Helvetica, sans-serif; */
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black-color);
+      text-align: center;
+      height: 100vh;
+    }
+
+    :focus {
+      outline: none;
+      outline: 1px solid green;
+      /* box-shadow: 0 0 4px 4px gray; */
+
+    }
+
+    /* ##### Common styles ##### */
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .--grid-2-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .--grid-3-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* ##### Text styles ##### */
+    .superscript {
+      /* vertical-align: top;  */
+      position: relative;
+      top: -0.3em;
+      font-size: 80%;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    .text-green {
+      color: green;
+    }
+
+    .equal-sign,
+    .multiply-sign {
+      font-size: 120%;
+    }
+
+    .equal-sign>span,
+    .multiply-sign>span {
+      transform: translateX(1px);
+    }
+
+    /* ##### Main elements ##### */
+    body,
+    .page-column,
+    form,
+    aside.legend {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    main,
+    form {
+      width: 100%;
+    }
+
+    fieldset {
+      border: none;
+    }
+
+    header.page {
+      padding: 6px;
+      /* margin-bottom: 40px; */
+    }
+
+    footer.page {
+      margin-top: auto;
+    }
+
+    header.page,
+    footer.page {
+      background-color: rgb(248, 248, 248);
+      width: 100%;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 4px 20px;
+    }
+
+    .page-column {
+      padding: 0 5px;
+    }
+
+    /* ##### Small elements ##### */
+    hr {
+      max-width: 300px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ##### Card ##### */
+    fieldset,
+    article.card {
+      max-width: 320px;
+      width: 100%;
+    }
+
+    article.card,
+    aside.legend {
+      margin: 0 20px 40px;
+    }
+
+    article.card.--last-child {
+      margin-bottom: 20px;
+    }
+
+    article.card {
+      border: 2px solid black;
+    }
+
+    article.card>header,
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    article.card>header {
+      background-color: rgb(220, 230, 241);
+      padding: 2px 2px 4px 2px;
+      text-decoration: underline;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .cell {
+      padding: 2px;
+    }
+
+    .cell.-line {
+      grid-column: 1 / -1;
+      padding: 2px;
+      height: 16px;
+    }
+
+    .cell.-line.-text {
+      height: auto;
+      padding: 2px;
+      font-size: 90%;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .cell.-line.-text>span {
+      font-weight: initial;
+    }
+
+    .cell.-b.-result,
+    .legend-row.-result {
+      background-color: rgb(255, 204, 102);
+    }
+
+    .cell.-b.-result {
+      /* font-weight: bold; */
+    }
+
+    .cell.-b.-input {
+      padding: 0;
+    }
+
+    ::placeholder {
+      font-family: monospace, monospace;
+      font-weight: bold;
+      font-size: 14px;
+      opacity: 0.4;
+    }
+
+    input[type="number"],
+    .legend-row.-input {
+      background-color: rgb(255, 255, 153);
+    }
+
+    input[type="number"] {
+      border: none;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 90%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input[type="number"]:focus {
+      /* box-shadow: 0 0 4px 4px rgb(61, 119, 194); */
+      box-shadow: 0 0 4px 4px gray;
+    }
+
+    /* ##### Legend ##### */
+    aside.legend {
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .legend-header,
+    .legend-row {
+      padding: 4px 10px;
+      font-size: 90%;
+      width: 100%;
+    }
+
+    .legend-header {
+      text-decoration: underline;
+    }
+
+    .legend-row.-version {
+      font-style: italic;
+    }
+
+    .-placeholder {
+      font-family: monospace, monospace;
+      font-weight: 500;
+    }
+
+    /* ##### Links ##### */
+    a.legend-link:link {
+      /* position: absolute;
+  top: 3px;
+  left: 6px; */
+      background-color: white;
+    }
+
+    a.legend-link:link,
+    a.legend-link:visited {
+      display: inline-block;
+      border: 1px solid black;
+      border-radius: 6px;
+      padding: 2px 10px;
+      color: var(--orange-menu-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 140%;
+    }
+
+    @media (hover: hover) {
+      a.legend-link:hover {
+        outline: 2px solid black;
+        border: 1px solid white;
+      }
+    }
+
+    @media (hover: none) {
+      a.legend-link:active {
+        outline: 2px solid black;
+        border: 1px solid white;
+      }
+    }
+
+    footer>a:link,
+    footer>a:visited {
+      color: rgb(54, 96, 146);
+      font-size: 18px;
+      font-weight: bold;
+      padding: 20px 40px;
+    }
+
+    /* ##### Index [End] ##### */
+    /* ##### Borders [Start] ##### */
+    article.card>header {
+      border-bottom: 1px solid black;
+    }
+
+    .rows-container {
+      border-bottom: 1px solid black;
+    }
+
+    .cell.-a {
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+    }
+
+    .cell.-b {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-top: 1px solid black;
+    }
+
+    .cell.-line {
+      border-top: 1px solid black;
+    }
+
+    .cell.-line.-text {
+      border: none;
+    }
+
+    aside.legend {
+      border-bottom: 1px dashed black;
+      border-right: 1px dashed black;
+    }
+
+    .legend-header,
+    .legend-row {
+      border-top: 1px dashed black;
+      border-left: 1px dashed black;
+    }
+
+    /* ##### Borders [End] ##### */
+    /* ##### Buttons [Start] ##### */
+    button {
+      cursor: pointer;
+    }
+
+    button>* {
+      pointer-events: none;
+    }
+
+    /* PAGE BUTTONS GROUP [Start] */
+    .btns-group {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .btn-submit,
+    .btn-reset,
+    .btn-save {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      background-color: rgb(244, 244, 244);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+    }
+
+    .btn-submit svg,
+    .btn-reset svg,
+    .btn-save svg {
+      width: 65%;
+      height: auto;
+      z-index: 0;
+    }
+
+    /* Queries */
+    @media (hover: hover) {
+
+      .btn-submit:hover,
+      .btn-reset:hover,
+      .btn-save:hover {
+        border-width: 2px;
+        background-color: white;
+      }
+    }
+
+    @media (hover: none) {
+
+      .btn-submit:active,
+      .btn-reset:active,
+      .btn-save:active {
+        border-width: 2px;
+        background-color: white;
+      }
+    }
+
+    /* PAGE BUTTONS GROUP [End] */
+
+    /* GLOBAL BUTTONS [Start] */
+    .btns-global {
+      position: fixed;
+      right: 10px;
+      bottom: 40px;
+    }
+
+    .btn-to-top,
+    .btn-reset-global,
+    .btn-save-global {
+      width: 38px;
+      height: 38px;
+      background-color: rgba(128, 128, 128, 0.8);
+      border-radius: 50%;
+      z-index: 99;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .btn-to-top div,
+    .btn-reset-global div,
+    .btn-save-global div {
+      padding: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-to-top svg,
+    .btn-reset-global svg,
+    .btn-save-global svg {
+      color: white;
+      width: 85%;
+      height: auto;
+      color: white;
+    }
+
+    .btn-to-top polyline {
+      translate: 0 1em;
+    }
+
+    .btn-to-top polyline,
+    .btn-reset-global path,
+    .btn-save-global path {
+      stroke-width: 24;
+    }
+
+    /* To-top button */
+    .btn-to-top {
+      display: none;
+      bottom: 60px;
+    }
+
+    /* Global reset button */
+    .btn-reset-global {
+      bottom: 140px;
+    }
+
+    /* Global save button */
+    .btn-save-global {
+      bottom: 100px;
+    }
+
+    @media (hover: hover) {
+
+      .btn-to-top:hover,
+      .btn-reset-global:hover,
+      .btn-save-global:hover {
+        border: 2px solid rgba(128, 128, 128, 0.8);
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-to-top:hover svg,
+      .btn-reset-global:hover svg,
+      .btn-save-global:hover svg {
+        color: rgb(128, 128, 128);
+      }
+    }
+
+    @media (hover: none) {
+
+      .btn-to-top:active,
+      .btn-reset-global:active,
+      .btn-save-global:active {
+        border: 2px solid rgba(128, 128, 128, 0.8);
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-to-top:active svg,
+      .btn-reset-global:active svg,
+      .btn-save-global:active svg {
+        color: rgb(128, 128, 128);
+      }
+    }
+
+    /* GLOBAL BUTTONS [End] */
+
+    /* ##### Buttons [End] ##### */
+    /* ##### Small Elements [Start] ##### */
+    .warning {
+      border-radius: 4px;
+      background-color: var(--red-menu-color);
+      color: white;
+      padding: 4px 6px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 90%;
+    }
+
+    .check-mark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25px;
+      height: 25px;
+    }
+
+    /* Alert - Onclick */
+    .temp-alert {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      bottom: 50%;
+      right: 50%;
+      transform: translate(50%, 50%);
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      padding: 15px;
+      border: 4px solid white;
+      border-radius: 50%;
+    }
+
+    /* Comments */
+    .comment {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .comment::after {
+      content: '';
+      border-width: 3px;
+      border-style: solid;
+      border-color: red red transparent transparent;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .comment-box {
+      max-width: 300px;
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 10px 20px;
+      border: 2px solid rgb(192, 0, 0);
+      border-radius: 6px;
+      padding: 10px;
+      background-color: lightgoldenrodyellow;
+      color: black;
+      font-size: 0.9rem;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    .comment:hover .comment-box {
+      visibility: visible;
+      z-index: 99;
+    }
+
+    /* ##### Small Elements [End] ##### */
+    /* ##### QUERIES [Start] ##### */
+    /* Queries points >>> 1200px / 1000px / 680px / 370px / 350px / 308px / 300px */
+
+    @media (max-width: 1200px) {
+      .--grid-3-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer.page {
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .--grid-3-cols {
+        grid-template-columns: 1fr;
+      }
+
+      hr {
+        margin-bottom: 60px;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .top-nav,
+      a.legend-link:link {
+        /* position: initial; */
+      }
+
+      a.legend-link:link {
+        /* margin-right: 6px; */
+      }
+    }
+
+    @media (max-width: 220px) {
+      .top-nav {
+        /* flex-direction: column;
+    gap: 4px; */
+      }
+    }
+
+    /* ##### QUERIES [End] ##### */
+    /* ##### Modal [Start] ##### */
+    .modal {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .modal.open {
+      opacity: 1;
+      z-index: 120;
+    }
+
+    .modal .content {
+      max-width: 500px;
+      font-family: sans-serif;
+      background-color: white;
+      color: black;
+      border-radius: 6px;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 0 64px 12px rgba(255, 255, 255, 0.2);
+      margin: 0 20px;
+    }
+
+    .modal .title-text {
+      font-weight: 900;
+      font-size: 2rem;
+    }
+
+    .modal .msg-text {
+      margin: 2rem;
+    }
+
+    .modal .content button {
+      width: 40%;
+      padding: 0.75rem;
+      margin: 0 5px;
+      color: white;
+      border: 1px solid black;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .modal .content button:hover,
+    .modal .content button:active {
+      /* border: none; */
+      outline: 1px solid black;
+    }
+
+    .modal .content button.btn-cancel {
+      background-color: rgb(192, 0, 0);
+    }
+
+    .modal .content button.btn-confirm {
+      background-color: green;
+    }
+
+    .btn-cancel:focus,
+    .btn-confirm:focus {
+      box-shadow: 0 0 4px 4px gray;
+    }
+
+    /* ##### Modal [End] ##### */
+  </style>
+</head>
+
+<body>
+  <script>0</script>
+  <header class="page">
+    <h1>Тесто за баница</h1>
+    <h2>(калкулатор)</h2>
+  </header>
+
+  <nav class="top-nav">
+    <a href="#legend" class="legend-link">?</a>
+    <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
+  </nav>
+
+  <main class="--grid-3-cols">
+    <!-- ##### First Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
+        <form id="form-main" name="formMain">
+
+          <!-- ##### (1.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(1.3) Тегло на тестото</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">
+                  <label for="crusts-count">Кори, (брой):</label>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="crustsCount" id="crusts-count" placeholder="пр. 5"
+                    required autofocus>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line multiply-sign"><span>&times;</span></div>
+
+                <!-- Row -->
+                <div class="cell -a">
+                  <label for="crust-weight">Тегло на отделна кора, (g):</label>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="crustWeight" id="crust-weight" placeholder="пр. 150"
+                    required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line equal-sign"><span>&equals;</span></div>
+
+                <!-- Row -->
+                <div class="cell -a">Тегло на тестото, (g):</div>
+                <div class="cell -b -result">
+                  <output id="dough-weight" name="doughWeight">....</output>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### (2.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(2.3) Формула на тестото</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="hydration-percent">h<sup class="superscript">тесто</sup>, (%):</label>
+                  <aside class="comment-box">
+                    Хидратация на тестото;
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="50" max="125" name="hydrationPercent" id="hydration-percent"
+                    placeholder="пр. 55" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="salt-percent">Сол, (%):</label>
+                  <aside class="comment-box">
+                    При тестото за баница, обикновено е препоръчително
+                    солта да не надвишава 3%;
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="saltPercent" id="salt-percent"
+                    placeholder="пр. 2.5" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">Допълнителни съставки</div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="vinegar-percent">Оцет, (%):</label>
+                  <aside class="comment-box">
+                    % от брашното;<br />
+                    <span class="text-green italic">*Полето не е задължително;</span>
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="vinegarPercent" id="vinegar-percent"
+                    placeholder="пр. 0.5">
+                </div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="oil-percent">Олио, (%):</label>
+                  <aside class="comment-box">
+                    % от брашното;<br />
+                    <span class="text-green italic">*Полето не е задължително;</span>
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="oilPercent" id="oil-percent"
+                    placeholder="пр. 0.5">
+                </div>
+              </div>
+
+            </div>
+          </article>
+        </form>
+      </fieldset>
+
+    </section>
+
+    <!-- ##### Second Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
+        <form>
+          <!-- ##### (3.3) ##### -->
+          <article id="results-fMain" class="card --last-child">
+            <header>
+              <h3>(3.3) Изчислена формула</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">Брашно, (g):</div>
+                <div class="cell -b -result">
+                  <output id="flour-weight" name="flourWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a">Сол, (g):</div>
+                <div class="cell -b -result">
+                  <output id="salt-weight" name="saltWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">
+                  Течни съставки:&nbsp;
+                  <output id="liquid-indreds-weight" name="liquidIngredsWeight" class="-secondary"
+                    form="form-main">...</output>
+                </div>
+
+                <!-- Row -->
+                <div class="cell -a">Вода, (g):</div>
+                <div class="cell -b -result">
+                  <output id="water-weight" name="waterWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">Допълнителни съставки</div>
+
+                <!-- Row -->
+                <div class="cell -a">Оцет, (g):</div>
+                <div class="cell -b -result">
+                  <output id="vinegar-weight" name="vinegarWeight" form="form-main">...</output>
+                </div class="cell -b -result">
+
+                <!-- Row -->
+                <div class="cell -a">Олио, (g):</div>
+                <div class="cell -b -result">
+                  <output id="oil-weight" name="oilWeight" form="form-main">...</output>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### Buttons Group (Main) ##### -->
+          <div class="btns-group -main">
+
+            <!-- Submit button -->
+            <button type="submit" class="btn-submit" id="btn-submit-main" form="form-main"
+              title="Изчисляване на търсените стойности">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <circle cx="88" cy="148" r="10" />
+                <circle cx="128" cy="148" r="10" />
+                <circle cx="168" cy="148" r="10" />
+                <circle cx="88" cy="188" r="10" />
+                <circle cx="128" cy="188" r="10" />
+                <circle cx="168" cy="188" r="10" />
+              </svg>
+            </button>
+
+            <!-- Reset button -->
+            <button type="reset" class="btn-reset" id="btn-reset-main" form="form-main"
+              title="Нулиране на полетата от текущата форма">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+              </svg>
+            </button>
+
+            <!-- Save button -->
+            <button type="button" class="btn-save" id="btn-save-main" form="form-main"
+              title="Запаметяване на стойностите от полетата на текущата форма">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <path
+                  d="M216,91.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H164.69a8,8,0,0,1,5.65,2.34l43.32,43.32A8,8,0,0,1,216,91.31Z"
+                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+              </svg>
+            </button>
+
+          </div>
+
+          <hr />
+
+        </form>
+      </fieldset>
+
+    </section>
+
+    <!-- ##### Third Column ##### -->
+    <section class="page-column">
+
+      <!-- ##### Legend ##### -->
+      <aside id="legend" class="legend">
+        <header class="legend-header">
+          <h4>Легенда:</h4>
+        </header>
+
+        <div class="legend-row -version">
+          <p>Версия: 0.7</p>
+        </div>
+
+        <div class="legend-row -input comment">
+          <p>променлива стойност</p>
+          <aside class="comment-box">
+            Стойност, подлежаща на промяна, която задаваме свободно;
+          </aside>
+        </div>
+
+        <div class="legend-row -result comment">
+          <p>търсена стойност</p>
+          <aside class="comment-box">
+            Стойността, която търсим;<br />
+            (изчислена на базата на зададените
+            от нас променливи стойности)
+          </aside>
+        </div>
+
+        <div class="legend-row -placeholder">
+          <p>
+            пр. [число] - примерна стойност;
+          </p>
+        </div>
+
+        <div class="legend-row comment">
+          <p>
+            *Десетичният знак се изписва<br />
+            с „точка” или „запетая”;
+          </p>
+          <aside class="comment-box">
+            ... В зависимост от регионалните настройки на операционната система;
+          </aside>
+        </div>
+
+        <div class="legend-row -regular comment">
+          <p>h - хидратация;</p>
+          <aside class="comment-box">
+            Показва съдържанието на течности в тестото,
+            изразено като процент от съдържащото се в тестото брашно;
+          </aside>
+        </div>
+
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="page flex">
+    <a href="https://nstratiev.github.io/bread-calculator-bg/">bread-calculator-bg</a>
+  </footer>
+
+  <!-- Global buttons -->
+  <aside class="btns-global">
+
+    <!-- Global Reset Button -->
+    <div class="btn-reset-global" id="btn-reset-global" title="Освобождаване на паметта, свързана с текущата страница">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline points="24 56 24 104 72 104" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <path d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Global Save Button -->
+    <div class="btn-save-global" id="btn-save-global"
+      title="Запаметяване на стойностите от всички полета на текущата страница">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <ellipse cx="128" cy="80" rx="88" ry="48" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <path d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+          <path d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- To-top Button -->
+    <div class="btn-to-top" id="btn-to-top">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+        </svg>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- <script type="module" src="js/index.js"></script> -->
+  <script>
+    // ##### Class Modal [Start] #####
+    class ConfirmModal {
+      constructor({ titleText, msgText, confirmText, cancelText, msgText2 }) {
+        this.titleText = titleText;
+        this.msgText = msgText;
+        this.confirmText = confirmText;
+        this.cancelText = cancelText;
+        this.msgText2 = msgText2;
+      }
+
+      createAndOpen(onConfirm, onCancel) {
+        this.modalElem = document.createElement('div');
+        this.modalElem.classList.add('modal');
+        setTimeout(() => {
+          this.modalElem.classList.add('open');
+        }, 400);
+
+        const contentElem = document.createElement('div');
+        contentElem.classList.add('content');
+        this.modalElem.appendChild(contentElem);
+
+        // Heading
+        const titleElem = document.createElement('p');
+        titleElem.classList.add('title-text');
+        titleElem.textContent = this.titleText;
+        contentElem.appendChild(titleElem);
+
+        // Message
+        const msgElem = document.createElement('p');
+        msgElem.classList.add('msg-text');
+        if (this.msgText2 !== undefined) {
+          msgElem.innerHTML = this.msgText + '<br/>' + this.msgText2;
+        } else {
+          msgElem.textContent = this.msgText;
+        }
+        contentElem.appendChild(msgElem);
+
+        // Cancel Button
+        if (this.cancelText) {
+          const cancelBtnElem = document.createElement('button');
+          cancelBtnElem.classList.add('btn-cancel');
+          cancelBtnElem.textContent = this.cancelText;
+          cancelBtnElem.addEventListener('click', () => {
+            onCancel('Cancelled');
+            this.close();
+          });
+          contentElem.appendChild(cancelBtnElem);
+          // cancelBtnElem.focus();
+        }
+
+        // Confirm Button
+        if (this.confirmText) {
+          const confirmBtnElem = document.createElement('button');
+          confirmBtnElem.classList.add('btn-confirm');
+          confirmBtnElem.textContent = this.confirmText;
+          confirmBtnElem.addEventListener('click', () => {
+            onConfirm('Confirmed');
+            this.close();
+          });
+          contentElem.appendChild(confirmBtnElem);
+        }
+
+        document.body.appendChild(this.modalElem);
+
+        const cancelBtn = document.querySelector('.btn-cancel');
+        if (cancelBtn) {
+          cancelBtn.focus();
+        } else {
+          document.querySelector('.btn-confirm').focus();
+        }
+      }
+
+      open() {
+        return new Promise((resolve, reject) => {
+          this.createAndOpen(resolve, reject);
+        });
+      }
+
+      close() {
+        this.modalElem.classList.remove('open');
+        setTimeout(() => {
+          document.body.removeChild(this.modalElem);
+        }, 400);
+      }
+    }
+
+    // ##### Class Modal [End] #####
+    // ##### Elements [Start] #####
+    // -- Forms
+    const formMain = document.querySelector('#form-main');
+
+    // -- Elements - fMain
+    const resultElementsArr_fMain = getFormOutputsArray(formMain);
+    const resultElementsObj_fMain = getFormOutputsObject(formMain);
+
+    // Buttons (Global)
+    const btnsGlobal = document.querySelector('.btns-global');
+    const btnToTop = document.querySelector('#btn-to-top');
+    const btnGlobalReset = document.querySelector('#btn-reset-global ');
+    const btnGlobalSave = document.querySelector('#btn-save-global');
+
+    // -- Functions
+    function getFormOutputsArray(formElem) {
+      return Array.from(formElem.elements).filter(el => el.tagName === 'OUTPUT');
+    }
+
+    function getFormOutputsObject(formElem) {
+      const obj = {};
+      const arr = Array.from(formElem.elements).filter(el => el.tagName === 'OUTPUT');
+      const x = arr.forEach(el => {
+        obj[el.name] = el;
+      });
+
+      return obj;
+    }
+
+    // ##### Elements [End] #####
+    // ##### Index [Start] #####
+    // On first page load
+    document.addEventListener('DOMContentLoaded', (ev) => {
+      populateLocaleStorageData([formMain]);
+      onSubmit_initialLoad(ev);
+    });
+
+    // -- Button-to-top listeners
+    window.addEventListener('scroll', onScreenScroll);
+    btnToTop.addEventListener('click', goToScreenTop);
+
+    // -- Buttons - global
+    btnGlobalReset.addEventListener('click', onGlobalReset);
+    btnGlobalSave.addEventListener('click', onGlobalSave);
+
+    // Listeners
+    attachFocusoutValidation();
+    attachOnFocusoutDecimalPointValidation();
+
+    // -- Buttons listeners
+    document.addEventListener('click', (ev) => {
+      if (ev.target.tagName !== 'BUTTON') {
+        return;
+      }
+
+      const btnsGroupClassName = ev.target.parentElement.className;
+      const btnClassName = ev.target.className;
+
+      if (btnsGroupClassName.includes('-main')) {
+        // console.log('MAIN');
+        if (btnClassName === 'btn-submit') {
+          onSubmit_fMain(ev);
+
+        } else if (btnClassName === 'btn-reset') {
+          onReset_fMain(true);
+
+        } else if (btnClassName === 'btn-save') {
+          onSave_fMain(ev);
+        }
+      }
+
+    });
+
+
+    // ##### Index [End] #####
+    // ##### Event handlers [Start] #####
+    function onSubmit_initialLoad(ev) {
+      onSubmit(ev, formMain, { isFirstPageLoad: true }, printResult_formMain);
+    }
+
+    function onSubmit_fMain(ev) {
+      onSubmit(ev, formMain, { isFirstPageLoad: false }, printResult_formMain, resetResults_fMain, '#results-fMain');
+    }
+
+    function onSave_fMain(ev) {
+      onSave(ev, formMain, true);
+    }
+
+    // Basic
+    function onGlobalSave(ev) {
+      const allForms = document.querySelectorAll('form');
+
+      for (const form of allForms) {
+        onSave(ev, form, false);
+      }
+
+      checkmarkAlertGreen(true);
+    }
+
+    function onSave(ev, formElem, hasCheckmark) {
+      const currFormData = getFormDataToObject(formElem);
+      const currFormName = formElem.name;
+      setLocalStorage(currFormData, currFormName);
+
+      checkmarkAlertGreen(hasCheckmark);
+    }
+
+    function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, href) {
+      if (loadingConfig.isFirstPageLoad !== true) {
+        ev.preventDefault();
+      }
+
+      const data = getData(formElem, loadingConfig, resetFormResultsFunc);
+
+      if (data === false) {
+        return;
+      }
+
+      setLocalStorage(data, formElem.name);
+      const resultsData = calculate_fMain(data);
+      printFunc(resultsData);
+      resetFieldsOutline(formElem);
+
+      if (loadingConfig.isFirstPageLoad !== true) {
+        checkmarkAlertGreen(true);
+
+        if (href) {
+          const screenWidth = window.screen.width;
+          const screenAvailWidth = window.screen.availWidth;
+
+          if (screenWidth <= 680 || screenAvailWidth <= 680) {
+            // location.href = href;
+            document.querySelector(href).scrollIntoView();
+          }
+
+        }
+      }
+
+    }
+
+
+    // ##### Event handlers [End] #####
+    // ##### Alerts [Start] #####
+    function checkmarkAlertGreen(bool) {
+      if (bool) {
+        temporaryOnClickAlert('&check;', 400, 'green');
+        // setTimeout(() => showModal(ev), 200);
+      }
+    }
+
+    function temporaryOnClickAlert(msg, duration, bgColor) {
+      const containerEl = document.createElement('div');
+      containerEl.setAttribute('class', 'temp-alert');
+      containerEl.style.backgroundColor = bgColor;
+      containerEl.style.outline = `2px solid ${bgColor}`;
+
+      const spanEl = document.createElement('span');
+      spanEl.setAttribute('class', 'check-mark');
+      spanEl.innerHTML = msg;
+      containerEl.appendChild(spanEl);
+      setTimeout(function () {
+        containerEl.parentNode.removeChild(containerEl);
+      }, duration);
+      document.body.appendChild(containerEl);
+    }
+
+    const globalResetConfirmDialog = new ConfirmModal({
+      titleText: '',
+      msgText:
+        'Желаете ли всички запаметени стойности, свързани с настоящата страница, да бъдат изтрити трайно от паметта?',
+      confirmText: 'Да',
+      cancelText: 'Не',
+    });
+
+    const alertEmptyFieldBox = new ConfirmModal({
+      titleText: '',
+      msgText: 'Моля, попълнете всички задължителни полета ...',
+      confirmText: 'OK',
+      cancelText: '',
+      msgText2: ''
+    });
+
+    const alertOutOfRangeBox = new ConfirmModal({
+      titleText: '',
+      msgText: `Моля, въведете стойност в диапазона: `,
+      confirmText: 'OK',
+      cancelText: '',
+      msgText2: '',
+    });
+
+    // ##### Alerts [End] #####
+    // ##### Focusout [Start] #####
+    function attachFocusoutValidation() {
+      const formInputsCollection = document.querySelectorAll('input');
+
+      for (const field of formInputsCollection) {
+        field.addEventListener('focusout', () => focusoutEmptyFieldValidation(field));
+        field.addEventListener('focusout', () => focusoutOutOfRangeValidation(field));
+      }
+    }
+
+    function focusoutOutOfRangeValidation(currentField) {
+      if (currentField.type === 'number' && currentField.value !== '') {
+
+        const num = Number(currentField.value);
+        const minLimit = Number(currentField.min);
+        let maxLimit = Number(currentField.max);
+
+        if (maxLimit === 0) {
+          maxLimit = Number.MAX_SAFE_INTEGER;
+        }
+
+        if (num < minLimit || num > maxLimit) {
+          currentField.style.outline = '2px solid red';
+          return false;
+
+        } else {
+          currentField.style.outline = 'none';
+          return true
+        }
+      }
+    }
+
+    function focusoutEmptyFieldValidation(currentField) {
+      if (currentField.required === false) {
+        return;
+      }
+
+      if (currentField.value === '') {
+        currentField.style.outline = '2px solid green';
+
+      } else {
+        currentField.style.outline = 'none';
+      }
+
+    }
+
+    // ##### Focusout [End] #####
+    // ##### Generic [Start] #####
+    function getFormDataToObject(formElem) {
+      return Object.fromEntries(new FormData(formElem));
+    }
+
+    function getData(formElem, pageLoadingObj, resetFormResultsFunc) {
+      if (validationEmptyFields(formElem.elements, pageLoadingObj, resetFormResultsFunc) === false) {
+        return false;
+      }
+
+      if (validationOutOfRangeFields(formElem.elements, pageLoadingObj, resetFormResultsFunc) === false) {
+        return false;
+      }
+
+      const dataObj = getFormDataToObject(formElem);
+      return dataObj;
+    }
+
+    // -- Form disable
+    function inactivateAllFormsAndLinks(bool, [linkElems, inactivateFunc]) {
+      const allFieldsets = document.querySelectorAll('fieldset');
+      const allLinks = document.querySelectorAll('a');
+      const inactivateLink = (ev) => ev.preventDefault();
+
+      if (bool) {
+        btnsGlobal.style.pointerEvents = 'none';
+        allFieldsets.forEach(el => el.disabled = true);
+        allLinks.forEach(el => el.addEventListener('click', inactivateLink));
+        return [allLinks, inactivateLink];
+
+      } else {
+        btnsGlobal.style.pointerEvents = 'initial';
+        allFieldsets.forEach(el => el.disabled = false);
+        linkElems.forEach(el => el.removeEventListener('click', inactivateFunc));
+      }
+
+    }
+
+
+    // ##### Generic [End] #####
+    // ##### Math [Start] #####
+    function calculate_fMain(data) {
+      const doughWeight = getTotalDoughWeight(data.crustsCount, data.crustWeight);
+      const flourWeight = getTotalFlour(doughWeight, data.hydrationPercent, data.saltPercent);
+      const saltWeight = getTotalIngredientWeight(flourWeight, data.saltPercent);
+      const liquidIngredsWeight = getTotalIngredientWeight(flourWeight, data.hydrationPercent);
+      const vinegarWeight = getTotalIngredientWeight(flourWeight, data.vinegarPercent);
+      const oilWeight = getTotalIngredientWeight(flourWeight, data.oilPercent);
+      const waterWeight = getTotalWaterWeight(liquidIngredsWeight, vinegarWeight, oilWeight);
+
+      return { doughWeight, flourWeight, saltWeight, liquidIngredsWeight, vinegarWeight, oilWeight, waterWeight };
+    }
+
+    function getTotalDoughWeight(crustsCount, crustWeight) {
+      return Number(crustsCount) * Number(crustWeight);
+    }
+
+    function getTotalFlour(totalDoughWeight, hydrationPercentValue, saltPercent) {
+      return totalDoughWeight / (1 + Number(hydrationPercentValue / 100) + Number(saltPercent / 100));
+    }
+
+    function getTotalWaterWeight(liquidIngredientsWeight, vinegarWeight, oilWeight) {
+      return liquidIngredientsWeight - (vinegarWeight + oilWeight);
+    }
+
+    function getTotalIngredientWeight(totalFlour, ingredientPercentValue) {
+      return totalFlour * (Number(ingredientPercentValue) / 100);
+    }
+
+    // ##### Math [End] #####
+    // ##### Print [Start] #####
+    function printResult_formMain(resultsData) {
+      const d = resultsData;
+      const el = resultElementsObj_fMain;
+
+      printResult(d.doughWeight, el.doughWeight, 0);
+      printResult(d.flourWeight, el.flourWeight, 0);
+      printResult(d.saltWeight, el.saltWeight, 0);
+      printResult(d.liquidIngredsWeight, el.liquidIngredsWeight, 0, { prefix: '', postfix: ' g' });
+      printResult(d.waterWeight, el.waterWeight, 0);
+      printResult(d.vinegarWeight, el.vinegarWeight, 0);
+      printResult(d.oilWeight, el.oilWeight, 0);
+    }
+
+    function printResult(value, resultElem, toFixedIndex, additionalTextObj) {
+      // additionalTextObj = {prefix: '', postfix: ''};
+      let result;
+
+      if (value) {
+        if (additionalTextObj) {
+          result = `${additionalTextObj.prefix}${value.toFixed(toFixedIndex)}${additionalTextObj.postfix}`;
+        } else {
+          result = `${value.toFixed(toFixedIndex)}`;
+        }
+      } else {
+        result = '';
+      }
+
+      resultElem.style.fontWeight = 'bold';
+      resultElem.textContent = result;
+    }
+
+    // ##### Print [End] #####
+    // ##### Reset [Start] #####
+    function onReset_fMain(hasCheckmark) {
+      onReset(null, formMain, resetResults_fMain, hasCheckmark);
+    }
+
+    function resetResults_fMain() {
+      resetResults(resultElementsArr_fMain);
+    }
+
+    // Basic
+    function onGlobalReset() {
+      resetAllForms();
+      const configArr = inactivateAllFormsAndLinks(true, []);
+
+      globalResetConfirmDialog.open()
+        .then((msg) => {
+          clearLocalStorageGlobal();
+          formMain.reset();
+          checkmarkAlertGreen(true);
+          location.reload();
+        })
+        .catch((msg) => { })
+        .finally(() => inactivateAllFormsAndLinks(false, configArr));
+    }
+
+    function resetAllForms() {
+      onReset_fMain(false);
+    }
+
+    function resetResults(resultElementsCollection) {
+      resultElementsCollection.forEach(el => {
+        el.style.fontWeight = 'initial';
+
+        if (el.className.includes('-secondary') === false) {
+          el.textContent = '....';
+        } else {
+          el.textContent = '...';
+        }
+      });
+    }
+
+    function onReset(ev, formElem, resetResultHandler, hasCheckmark) {
+      formElem.reset();
+      resetFieldsOutline(formElem);
+      resetResultHandler();
+
+      checkmarkAlertGreen(hasCheckmark);
+    }
+
+    function resetFieldsOutline(formElem) {
+      const formInputsCollection = formElem.querySelectorAll('input');
+
+      for (const field of formInputsCollection) {
+        field.style.outline = 'none';
+      }
+    }
+
+
+    // ##### Reset [End] #####
+    // ##### Scroll [Start] #####
+    function onScreenScroll() {
+      if (
+        document.body.scrollTop > 120 ||
+        document.documentElement.scrollTop > 120
+      ) {
+        btnToTop.style.display = 'block';
+      } else {
+        btnToTop.style.display = 'none';
+      }
+    }
+
+    function goToScreenTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+
+      const path = `${window.location.pathname}` || '';
+      const newURL = window.location.protocol + "//" + window.location.host + path;
+      history.replaceState(null, "", newURL);
+    }
+
+
+    // ##### Scroll [End] #####
+    // ##### Storage [Start] #####
+    function setLocalStorage(obj, formName) {
+      const jsonData = JSON.stringify(obj);
+      localStorage.setItem(formName, jsonData);
+    }
+
+    function getLocalStorage(formName) {
+      const obj = JSON.parse(localStorage.getItem(formName));
+      return obj;
+    }
+
+    function clearLocalStorageGlobal() {
+      localStorage.clear();
+    }
+
+    function populateLocaleStorageData(formsArr) {
+      for (const formElem of formsArr) {
+        const localStorageObj = getLocalStorage(formElem.name);
+
+        if (localStorageObj === null) {
+          console.info('No localStorage for this form ...');
+          return null;
+        }
+
+        for (const key in localStorageObj) {
+          const target = formElem[key];
+          // const target = formElem.querySelector(`input[name=${key}]`);
+          target.value = localStorageObj[key];
+        }
+
+      }
+
+    }
+
+    // ##### Storage [End] #####
+    // ##### Validation [Start] #####
+    function validationOutOfRangeFields(formFieldsArr, pageLoadingObj, resetFormResultsFunc) {
+      for (const item of formFieldsArr) {
+        if (item.type !== 'number') {
+          continue;
+        }
+
+        const num = Number(item.value);
+        const minLimit = Number(item.min);
+        let maxLimit = Number(item.max);
+
+        if (maxLimit === 0) {
+          maxLimit = Number.MAX_SAFE_INTEGER;
+        }
+
+        if (num < minLimit || num > maxLimit) {
+          if (pageLoadingObj.isFirstPageLoad !== true) {
+            resetFormResultsFunc();
+
+            const configArr = inactivateAllFormsAndLinks(true, []);
+
+            alertOutOfRangeBox.msgText2 = `[ ${minLimit} - ${maxLimit} ]`;
+            alertOutOfRangeBox.open()
+              .then((msg) => { })
+              .catch((err) => console.log(err))
+              .finally(() => {
+                inactivateAllFormsAndLinks(false, configArr);
+                item.focus();
+              });
+          }
+
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function validationEmptyFields(formFieldsArr, pageLoadingObj, resetFormResultsFunc) {
+      for (const item of formFieldsArr) {
+        if (item.tagName !== 'INPUT' || item.required === false) {
+          continue;
+        }
+
+        if (item.value === '') {
+          if (pageLoadingObj.isFirstPageLoad !== true) {
+            resetFormResultsFunc();
+
+            const configArr = inactivateAllFormsAndLinks(true, []);
+
+            alertEmptyFieldBox.open()
+              .then((msg) => { })
+              .catch((err) => console.log(err))
+              .finally(() => {
+                inactivateAllFormsAndLinks(false, configArr);
+                item.focus();
+              });
+          }
+
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    // Decimal point inputs validation
+    function attachOnFocusoutDecimalPointValidation() {
+      document.querySelectorAll('input[step="0.1"]').forEach(el => {
+        el.addEventListener('focusout', (ev) => validationForDecimalPoint(ev, el));
+        el.addEventListener('keydown', (ev) => {
+          if (ev.code === 'Enter') {
+            validationForDecimalPoint(ev, el);
+          }
+        });
+      });
+    }
+
+    function validationForDecimalPoint(ev, numField) {
+      const numValue = numField.value;
+
+      if (numValue !== '' && numValue.includes('.') === false) {
+        numField.value = numValue + '.0';
+      }
+    }
+
+    // ##### Validation [End] #####
+  </script>
+</body>
+
+</html>

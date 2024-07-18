@@ -1,3 +1,4 @@
+// ##### Alerts [Start] #####
 export function checkmarkAlertGreen(bool) {
   if (bool) {
     temporaryOnClickAlert('&check;', 400, 'green');
@@ -47,3 +48,5 @@ export const alertOutOfRangeBox = new ConfirmModal({
 
 // IMPORTS
 import { ConfirmModal } from './modalClass.js';
+
+// ##### Alerts [End] #####

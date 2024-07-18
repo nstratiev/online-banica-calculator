@@ -1,3 +1,4 @@
+// ##### Class Modal [Start] #####
 export class ConfirmModal {
   constructor({ titleText, msgText, confirmText, cancelText, msgText2 }) {
     this.titleText = titleText;
@@ -82,3 +83,5 @@ export class ConfirmModal {
     }, 400);
   }
 }
+
+// ##### Class Modal [End] #####

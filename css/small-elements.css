@@ -1,4 +1,4 @@
-/* ##### Small Elements ##### */
+/* ##### Small Elements [Start] ##### */
 .warning {
   border-radius: 4px;
   background-color: var(--red-menu-color);
@@ -71,3 +71,5 @@
   visibility: visible;
   z-index: 99;
 }
+
+/* ##### Small Elements [End] ##### */

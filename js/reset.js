@@ -1,3 +1,4 @@
+// ##### Reset [Start] #####
 export function onReset_fMain(hasCheckmark) {
   onReset(null, formMain, resetResults_fMain, hasCheckmark);
 }
@@ -59,3 +60,5 @@ import { clearLocalStorageGlobal } from './storage.js';
 import { resultElementsArr_fMain, formMain, } from './elements.js';
 import { checkmarkAlertGreen, globalResetConfirmDialog } from './alerts.js';
 import { inactivateAllFormsAndLinks } from './generic.js';
+
+// ##### Reset [End] #####

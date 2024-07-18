@@ -1,3 +1,4 @@
+// ##### Storage [Start] #####
 export function setLocalStorage(obj, formName) {
   const jsonData = JSON.stringify(obj);
   localStorage.setItem(formName, jsonData);
@@ -30,3 +31,5 @@ export function populateLocaleStorageData(formsArr) {
   }
 
 }
+
+// ##### Storage [End] #####

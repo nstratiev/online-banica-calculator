@@ -1,4 +1,4 @@
-/* ##### QUERIES ##### */
+/* ##### QUERIES [Start] ##### */
 /* Queries points >>> 1200px / 1000px / 680px / 370px / 350px / 308px / 300px */
 
 @media (max-width: 1200px) {
@@ -38,3 +38,5 @@
     gap: 4px; */
   }
 }
+
+/* ##### QUERIES [End] ##### */

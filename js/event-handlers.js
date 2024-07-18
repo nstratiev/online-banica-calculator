@@ -1,3 +1,4 @@
+// ##### Event handlers [Start] #####
 export function onSubmit_initialLoad(ev) {
   onSubmit(ev, formMain, { isFirstPageLoad: true }, printResult_formMain);
 }
@@ -70,3 +71,5 @@ import { setLocalStorage } from './storage.js';
 import { resetFieldsOutline, resetResults_fMain } from './reset.js';
 import { checkmarkAlertGreen } from './alerts.js';
 import { calculate_fMain } from './math.js';
+
+// ##### Event handlers [End] #####

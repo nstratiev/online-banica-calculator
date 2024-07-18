@@ -1,3 +1,4 @@
+// ##### Focusout [Start] #####
 export function attachFocusoutValidation() {
   const formInputsCollection = document.querySelectorAll('input');
 
@@ -42,3 +43,5 @@ function focusoutEmptyFieldValidation(currentField) {
   }
 
 }
+
+// ##### Focusout [End] #####

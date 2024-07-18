@@ -1,3 +1,4 @@
+/* ##### Borders [Start] ##### */
 article.card > header {
   border-bottom: 1px solid black;
 }
@@ -35,3 +36,5 @@ aside.legend {
   border-top: 1px dashed black;
   border-left: 1px dashed black;
 }
+
+/* ##### Borders [End] ##### */

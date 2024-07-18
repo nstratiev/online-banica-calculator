@@ -1,3 +1,4 @@
+// ##### Math [Start] #####
 export function calculate_fMain(data) {
   const doughWeight = getTotalDoughWeight(data.crustsCount, data.crustWeight);
   const flourWeight = getTotalFlour(doughWeight, data.hydrationPercent, data.saltPercent);
@@ -25,3 +26,5 @@ function getTotalWaterWeight(liquidIngredientsWeight, vinegarWeight, oilWeight) 
 function getTotalIngredientWeight(totalFlour, ingredientPercentValue) {
   return totalFlour * (Number(ingredientPercentValue) / 100);
 }
+
+// ##### Math [End] #####

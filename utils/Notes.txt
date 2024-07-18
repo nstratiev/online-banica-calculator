@@ -3,3 +3,10 @@ TODO
 - Set paddings & margins
 - Change css for active state of the page buttons
 - box-shadow
+
+Combine multiple .txt files into one: 
+https://www.youtube.com/watch?v=cfOG1_kATJI
+https://www.youtube.com/watch?v=qqCA7ZrTYcw
+https://www.codeproject.com/Questions/1171769/How-to-combine-multiple-stylesheets-into-one
+
+cd ... >>> copy *.txt result-file.txt
