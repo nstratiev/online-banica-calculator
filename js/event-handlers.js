@@ -48,12 +48,13 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, 
   if (loadingConfig.isFirstPageLoad !== true) {
     checkmarkAlertGreen(true);
 
-    const screenWidth = window.screen.width;
-    const screenAvailWidth = window.screen.availWidth;
-
     if (href) {
+      const screenWidth = window.screen.width;
+      const screenAvailWidth = window.screen.availWidth;
+
       if (screenWidth <= 680 || screenAvailWidth <= 680) {
-        location.href = href;
+        // location.href = href;
+        document.querySelector(href).scrollIntoView();
       }
 
     }
@@ -69,4 +70,3 @@ import { setLocalStorage } from './storage.js';
 import { resetFieldsOutline, resetResults_fMain } from './reset.js';
 import { checkmarkAlertGreen } from './alerts.js';
 import { calculate_fMain } from './math.js';
-import { } from "./reset.js";
