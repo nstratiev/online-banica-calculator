@@ -300,7 +300,7 @@ footer > a:link, footer > a:visited,
 a.offline-link:link, a.offline-link:visited,
 a.github-link:link, a.github-link:visited {
   color: #366092;
-  font-size: 18px;
+  /* font-size: 18px; */
   font-weight: bold;
 }
 
