@@ -10,5 +10,6 @@
 - aside.legend is moved to new page section;
 - aside.legend is changed to div.legend;
 - Top and bottom details added;
-
+----------------
+- Legend section updated
 ----------------

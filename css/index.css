@@ -7,6 +7,7 @@
   --orange-menu-color: rgb(226, 107, 10);
   --red-menu-color: rgb(192, 0, 0);
   --grey-bg: rgb(248, 248, 248);
+  --blue-text-links: #366092;
 }
 
 * {
@@ -55,7 +56,7 @@ body {
 
 /* ##### Text styles ##### */
 .superscript {
-  /* vertical-align: top;  */
+  /* vertical-align: top; */
   position: relative;
   top: -0.3em;
   font-size: 80%;
@@ -118,7 +119,8 @@ header.page {
 }
 
 footer.page {
-  margin-top: auto;
+  /* margin-top: auto; */
+  margin-top: 40px;
   text-align: initial;
   padding: 8px 8px 8px 20px;
 }
@@ -212,7 +214,7 @@ article.card>header {
 }
 
 .cell.-b.-result,
-.legend-row.-result {
+.legend-cell-example.-result {
   background-color: rgb(255, 204, 102);
 }
 
@@ -232,7 +234,7 @@ article.card>header {
 }
 
 input[type="number"],
-.legend-row.-input {
+.legend-cell-example.-input {
   background-color: rgb(255, 255, 153);
 }
 
@@ -245,33 +247,6 @@ input[type="number"] {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* ##### Legend ##### */
-aside.legend,
-div.legend {
-  max-width: 320px;
-  width: 100%;
-}
-
-.legend-header,
-.legend-row {
-  padding: 4px 10px;
-  font-size: 90%;
-  width: 100%;
-}
-
-.legend-header {
-  text-decoration: underline;
-}
-
-.legend-row.-version {
-  font-style: italic;
-}
-
-.-placeholder {
-  font-family: monospace, monospace;
-  font-weight: 500;
-}
 
 /* ##### Links ##### */
 a.legend-link:link {

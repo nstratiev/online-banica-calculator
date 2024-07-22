@@ -10,7 +10,8 @@ body {
   padding: 0 8px;
 }
 
-input, button {
+input,
+button {
   font: inherit;
 }
 
@@ -21,7 +22,7 @@ input {
 ::placeholder {
   font-family: monospace, monospace;
   font-size: 90%;
-  font-weight: bold;
+  font-weight: 500;
   opacity: 0.4;
 }
 
@@ -45,4 +46,3 @@ button {
 }
 
 /* Common styles [End] */
-

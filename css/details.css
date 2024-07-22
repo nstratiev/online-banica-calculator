@@ -1,55 +1,64 @@
+/* ##### Details dropdown [Start] ##### */
 details {
-  /* border: 2px solid red; */
   text-align: initial;
   margin: 10px 10px 0px 20px;
   align-self: flex-start;
 }
 
 summary {
-  /* border: 2px solid green; */
-  color: rgb(11, 117, 11);
   font-weight: bold;
-  padding: 4px 20px;
+  padding: 4px 10px 4px 2px;
   cursor: pointer;
 }
 
 .details-body {
-  /* border: 2px solid blue; */
-  padding: 4px;
+  padding: 2px;
 }
 
 .details-body>p {
-  text-indent: 10px;
+  text-indent: 4px;
 }
 
 details p,
 details ol li p {
-  /* border: 2px solid yellow; */
   padding: 2px;
 }
 
 details ol {
-  /* border: 2px solid blue; */
   padding: 2px;
 }
 
 details ol li {
-  /* border: 2px solid green; */
   margin-left: 20px;
 
 }
 
 details hr {
-  /* border: 2px solid green; */
   margin: 8px auto;
   max-width: 80%;
   text-align: center;
 }
 
 .details-top summary {
-  color: #366092;
+  color: var(--blue-text-links);
+}
+
+main {
+  /* border: 2px solid red; */
+}
+
+.details-bottom {
+  margin-top: 0;
 }
 
 .details-bottom summary {
+  /* border: 2px solid green; */
   color: var(--orange-menu-color);
 }
+
+.details-body.-bottom {
+  /* border: 2px solid blue; */
+
+}
+
+/* ##### Details dropdown [End] ##### */

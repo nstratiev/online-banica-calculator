@@ -1,0 +1,63 @@
+/* ##### Legend [Start] ##### */
+.details-body.-bottom>p {
+  padding: 6px;
+}
+
+.legend-cell-example {
+  display: inline-block;
+  text-align: center;
+  padding: 2px 10px;
+  font-size: 90%;
+  min-width: 100px;
+  border: 1px solid black;
+}
+
+
+.-version {
+  padding: 0px 12px;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--red-menu-color);
+}
+
+h5.-legend {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.-placeholder {
+  font-family: monospace, monospace;
+  font-size: 90%;
+  font-weight: bold;
+  color: gray;
+  /* opacity: 0.4; */
+}
+
+#btn-reset-example,
+#btn-submit-example,
+#btn-save-example,
+div.-example {
+  pointer-events: none;
+}
+
+#btn-reset-example,
+#btn-submit-example,
+#btn-save-example {
+  width: 38px;
+  height: 38px;
+}
+
+div.-example {
+  display: inline-block;
+}
+
+span.-example-text {
+  /* border: 2px solid purple; */
+  display: inline-block;
+  vertical-align: middle;
+  min-height: 36px;
+}
+
+/* ##### Legend [End] ##### */

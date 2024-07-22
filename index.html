@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/details.css">
   <link rel="stylesheet" href="css/borders.css">
   <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/legend.css">
   <link rel="stylesheet" href="css/small-elements.css">
   <link rel="stylesheet" href="css/queries.css">
   <link rel="stylesheet" href="css/modal.css">
@@ -23,7 +24,7 @@
 
   <details class="details-top">
     <summary>Пояснения: ...</summary>
-    <div class="details-body">
+    <div class="details-body -top">
       <p>
         Задачата на калкулатора е да изчисли необходимите съставки за замесването на тесто за кори за баница, по
         зададени
@@ -52,6 +53,7 @@
   </nav>
 
   <main class="--grid-3-cols">
+
     <!-- ##### First Column ##### -->
     <section class="page-column">
 
@@ -305,129 +307,170 @@
 
     <!-- ##### Third Column ##### -->
     <section class="page-column">
-
-      <!-- ##### Legend ##### -->
-      <!-- <aside id="legend" class="legend">
-        <header class="legend-header">
-          <h4>Легенда:</h4>
-        </header>
-
-        <div class="legend-row -version">
-          <p>Версия: 0.7</p>
-        </div>
-
-        <div class="legend-row -input comment">
-          <p>променлива стойност</p>
-          <aside class="comment-box">
-            Стойност, подлежаща на промяна, която задаваме свободно;
-          </aside>
-        </div>
-
-        <div class="legend-row -result comment">
-          <p>търсена стойност</p>
-          <aside class="comment-box">
-            Стойността, която търсим;<br />
-            (изчислена на базата на зададените
-            от нас променливи стойности)
-          </aside>
-        </div>
-
-        <div class="legend-row -placeholder">
-          <p>
-            пр. [число] - примерна стойност;
-          </p>
-        </div>
-
-        <div class="legend-row comment">
-          <p>
-            *Десетичният знак се изписва<br />
-            с „точка” или „запетая”;
-          </p>
-          <aside class="comment-box">
-            ... В зависимост от регионалните настройки на операционната система;
-          </aside>
-        </div>
-
-        <div class="legend-row -regular comment">
-          <p>h - хидратация;</p>
-          <aside class="comment-box">
-            Показва съдържанието на течности в тестото,
-            изразено като процент от съдържащото се в тестото брашно;
-          </aside>
-        </div>
-
-      </aside> -->
     </section>
 
   </main>
 
-  <details class="details-bottom">
+  <details class="details-bottom" open>
     <summary id="legend">Легенда: ...</summary>
-    <aside class="legend-section --grid-3-cols">
-      <section class="page-column">
-        <!-- ##### Legend ##### -->
-        <div class="legend">
-          <header class="legend-header">
-            <h4>Легенда:</h4>
-          </header>
+    <div class="details-body -bottom">
 
-          <div class="legend-row -version">
-            <p>Версия: 0.7</p>
-          </div>
+      <!-- Версия -->
+      <div class="-version">
+        <p>Версия: 0.7.1</p>
+      </div>
 
-          <div class="legend-row -input comment">
-            <p>променлива стойност</p>
-            <aside class="comment-box">
-              Стойност, подлежаща на промяна, която задаваме свободно;
-            </aside>
-          </div>
+      <!-- Полета -->
+      <h5 class="-legend">Полета</h5>
+      <p>
+        *Десетичният знак се изписва с „точка” или „запетая” (в зависимост от регионалните настройки на операционната
+        система);
+      </p>
 
-          <div class="legend-row -result comment">
-            <p>търсена стойност</p>
-            <aside class="comment-box">
-              Стойността, която търсим;<br />
-              (изчислена на базата на зададените
-              от нас променливи стойности)
-            </aside>
-          </div>
+      <p>
+        <span class="legend-cell-example -input">[ число ]</span> >>> Променлива стойност. Стойност, подлежаща на
+        промяна, която
+        задаваме свободно;
+      </p>
 
-          <div class="legend-row -placeholder">
-            <p>
-              пр. [число] - примерна стойност;
-            </p>
-          </div>
+      <p>
+        <span class="legend-cell-example -input -placeholder">пр. [число]</span> >>> Примерна стойност;
+      </p>
 
-          <div class="legend-row comment">
-            <p>
-              *Десетичният знак се изписва<br />
-              с „точка” или „запетая”;
-            </p>
-            <aside class="comment-box">
-              ... В зависимост от регионалните настройки на операционната система;
-            </aside>
-          </div>
+      <p>
+        <span class="legend-cell-example -result">[ число ]</span> >>> Стойността, която търсим (изчислена на базата на
+        зададените от нас стойности);
+      </p>
 
-          <div class="legend-row -regular comment">
-            <p>h - хидратация;</p>
-            <aside class="comment-box">
-              Показва съдържанието на течности в тестото,
-              изразено като процент от съдържащото се в тестото брашно;
-            </aside>
-          </div>
+      <p>
+        <span class="legend-cell-example comment">[ текст ]</span> >>> Поле с пояснение (при посочване на полето);
+      </p>
 
+
+      <!-- Бутони -->
+      <h5 class="-legend">Бутони</h5>
+
+      <!-- Submit button example -->
+      <div class="line-btn">
+        <div class="-example">
+          <button id="btn-submit-example" class="btn-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="12" />
+              <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+              <circle cx="88" cy="148" r="10" />
+              <circle cx="128" cy="148" r="10" />
+              <circle cx="168" cy="148" r="10" />
+              <circle cx="88" cy="188" r="10" />
+              <circle cx="128" cy="188" r="10" />
+              <circle cx="168" cy="188" r="10" />
+            </svg>
+          </button>
         </div>
+        <span class="-example-text">
+          >>> Изчисляване на търсените стойности;
+        </span>
+      </div>
 
-      </section>
+      <!-- Reset button example -->
+      <div class="line-btn">
+        <div class="-example">
+          <button id="btn-reset-example" class="btn-reset">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="12" />
+              <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="12" />
+              <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="12" />
+              <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="12" />
+            </svg>
+          </button>
+        </div>
+        <span class="-example-text">
+          >>> Нулиране на полетата от текущата форма;
+        </span>
+      </div>
 
-      <section class="page-column">
-        <!-- <p>Second column</p> -->
-      </section>
+      <!-- Save button example -->
+      <div class="line-btn">
+        <div class="-example">
+          <button id="btn-save-example" class="btn-save">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <path
+                d="M216,91.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H164.69a8,8,0,0,1,5.65,2.34l43.32,43.32A8,8,0,0,1,216,91.31Z"
+                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+              <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+              <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="12" />
+            </svg>
+          </button>
+        </div>
+        <span class="-example-text">
+          >>> Запаметяване на стойностите от полетата на текущата форма;
+        </span>
+      </div>
 
-      <section class="page-column">
-        <!-- <p>Third column</p> -->
-      </section>
 
-    </aside>
+      <!-- Global Reset Button example -->
+      <div class="line-btn">
+        <div class="-example">
+          <div class="btn-reset-global">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <polyline points="24 56 24 104 72 104" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="16" />
+                <path d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <span class="-example-text">
+          >>> Освобождаване на паметта, свързана с текущата страница;
+        </span>
+      </div>
+
+
+      <!-- Global Save Button example -->
+      <div class="line-btn">
+        <div class="-example">
+          <div class="btn-save-global">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <ellipse cx="128" cy="80" rx="88" ry="48" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="16" />
+                <path d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                <path d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <span class="-example-text">
+          >>> Запаметяване на стойностите от всички полета на текущата страница;
+        </span>
+      </div>
+
+
+      <!-- Понятия -->
+      <h5 class="-legend">Понятия</h5>
+
+      <p>
+        <span class="">h</span> >>> Хидратация на тестото. Показва съдържанието на течности в тестото, изразено като
+        процент от съдържащото се в тестото брашно;
+      </p>
+
+    </div>
   </details>
 
   <footer class="page">
