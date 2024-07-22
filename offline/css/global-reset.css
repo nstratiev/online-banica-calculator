@@ -31,7 +31,8 @@ button {
 
 :focus {
   outline: none;
-  box-shadow: 0px 0px 6px 2px gray;
+  /* box-shadow: 0px 0px 6px 2px gray; */
+  box-shadow: 0 0 4px 4px gray;
 }
 
 /* Global reset [End] */

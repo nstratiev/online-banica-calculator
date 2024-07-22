@@ -65,7 +65,7 @@
 
 .btn-cancel:focus, 
 .btn-confirm:focus {
-  box-shadow: 0 0 4px 4px gray;
+  /* box-shadow: 0 0 4px 4px gray; */
 }
 
 /* ##### Modal [End] ##### */

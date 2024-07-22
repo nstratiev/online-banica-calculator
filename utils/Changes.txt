@@ -1,0 +1,9 @@
+- Box-shadow onFocus chaged to: box-shadow: 0 0 4px 4px gray;
+- Svg icons saved to separate files;
+- Submit btn arranged to the center position;
+- Buttons` size changed to bigger one in 680px breakpoint >>> 48px;
+- Legend-link made bigger. Padding changed;
+- Page footer >>> set min-height: 60px;
+- Footer changed
+----------------
+

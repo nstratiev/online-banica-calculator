@@ -23,7 +23,6 @@
   <nav class="top-nav">
     <a href="#legend" class="legend-link">?</a>
     <a href="./offline/offline.html" class="offline-link">Offline</a>
-    <a href="https://github.com/nstratiev/online-banica-calculator" class="github-link">GitHub</a>
     <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
   </nav>
 
@@ -221,6 +220,22 @@
           <!-- ##### Buttons Group (Main) ##### -->
           <div class="btns-group -main">
 
+            <!-- Reset button -->
+            <button type="reset" class="btn-reset" id="btn-reset-main" form="form-main"
+              title="Нулиране на полетата от текущата форма">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+                <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="12" />
+              </svg>
+            </button>
+
             <!-- Submit button -->
             <button type="submit" class="btn-submit" id="btn-submit-main" form="form-main"
               title="Изчисляване на търсените стойности">
@@ -236,22 +251,6 @@
                 <circle cx="88" cy="188" r="10" />
                 <circle cx="128" cy="188" r="10" />
                 <circle cx="168" cy="188" r="10" />
-              </svg>
-            </button>
-
-            <!-- Reset button -->
-            <button type="reset" class="btn-reset" id="btn-reset-main" form="form-main"
-              title="Нулиране на полетата от текущата форма">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                <rect width="256" height="256" fill="none" />
-                <path d="M192,64s-24-24-64-24C72,40,40,96,40,96" fill="none" stroke="currentColor"
-                  stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
-                <path d="M64,192s24,24,64,24c56,0,88-56,88-56" fill="none" stroke="currentColor" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="12" />
-                <polyline points="88 96 40 96 40 48" fill="none" stroke="currentColor" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="12" />
-                <polyline points="168 160 216 160 216 208" fill="none" stroke="currentColor" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="12" />
               </svg>
             </button>
 
@@ -337,10 +336,18 @@
 
   </main>
 
-  <footer class="page flex">
-    <!-- <a href="./offline/offline.html" class="offline-link">Offline версия</a> -->
-    <a href="https://nstratiev.github.io/bread-calculator-bg/">bread-calculator-bg</a>
-    <!-- <a href="https://github.com/nstratiev/online-banica-calculator" class="github-link">GitHub</a> -->
+  <footer class="page">
+    <ul>
+      <li>
+        <a class="page-footer-link" href="https://nstratiev.github.io/bread-calculator-bg/">Bread-calculator-bg</a>
+      </li>
+      <li>
+        <a href="./offline/offline.html" class="page-footer-link">Offline версия</a>
+      </li>
+      <li>
+        <a class="page-footer-link github-link" href="https://github.com/nstratiev/online-banica-calculator">GitHub</a>
+      </li>
+    </ul>
   </footer>
 
   <!-- Global buttons -->

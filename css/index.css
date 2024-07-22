@@ -20,7 +20,6 @@ html {
 }
 
 body {
-  /* font-family: Inter, Arial, Helvetica, sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
   color: var(--black-color);
   text-align: center;
@@ -29,9 +28,8 @@ body {
 
 :focus {
   outline: none;
-  outline: 1px solid green;
-  /* box-shadow: 0 0 4px 4px gray; */
-
+  /* outline: 1px solid green; */
+  box-shadow: 0 0 4px 4px gray;
 }
 
 /* ##### Common styles ##### */
@@ -40,6 +38,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* .-col {
+  flex-direction: column;
+} */
 
 .--grid-2-cols {
   display: grid;
@@ -96,6 +98,12 @@ fieldset {
   border: none;
 }
 
+header.page,
+footer.page {
+  background-color: rgb(248, 248, 248);
+  width: 100%;
+}
+
 header.page {
   padding: 6px;
   /* margin-bottom: 40px; */
@@ -103,12 +111,17 @@ header.page {
 
 footer.page {
   margin-top: auto;
+  text-align: initial;
+  padding: 8px 8px 8px 20px;
 }
 
-header.page,
-footer.page {
-  background-color: rgb(248, 248, 248);
-  width: 100%;
+footer ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+footer ul li {
+  margin: 10px 0px;
 }
 
 .top-nav {
@@ -223,10 +236,6 @@ input[type="number"] {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-input[type="number"]:focus {
-  /* box-shadow: 0 0 4px 4px rgb(61, 119, 194); */
-  box-shadow: 0 0 4px 4px gray;
-}
 
 /* ##### Legend ##### */
 aside.legend {
@@ -267,7 +276,8 @@ a.legend-link:visited {
   display: inline-block;
   border: 1px solid black;
   border-radius: 6px;
-  padding: 2px 10px;
+  margin-right: 20px;
+  padding: 4px 12px;
   color: var(--orange-menu-color);
   text-decoration: none;
   font-weight: bold;
@@ -288,30 +298,22 @@ a.legend-link:visited {
   }
 }
 
-/* footer > a:link,
-footer > a:visited  {
-  color: rgb(54, 96, 146);
-  font-size: 18px;
+a.offline-link:link, a.offline-link:visited {
   font-weight: bold;
-  padding: 20px 40px;
-} */
+}
 
-footer > a:link, footer > a:visited,
 a.offline-link:link, a.offline-link:visited,
-a.github-link:link, a.github-link:visited {
+.page-footer-link:link, .page-footer-link:visited {
   color: #366092;
-  /* font-size: 18px; */
-  font-weight: bold;
+  display: inline-block;
 }
 
-footer > a:link, footer > a:visited {
-  padding: 20px 40px;
+a.offline-link:link, a.offline-link:visited {
+  padding: 6px 8px;
 }
 
-a.legend-link:link, a.legend-link:visited,
-a.offline-link:link, a.offline-link:visited,
-a.github-link:link, a.github-link:visited {
-  margin-right: 20px;
+.page-footer-link:link, .page-footer-link:visited {
+  padding: 6px 20px 6px 10px;
 }
 
 
