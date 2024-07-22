@@ -57,7 +57,7 @@ body {
 .superscript {
   /* vertical-align: top;  */
   position: relative;
-  top:  -0.3em;
+  top: -0.3em;
   font-size: 80%;
 }
 
@@ -74,8 +74,8 @@ body {
   font-size: 120%;
 }
 
-.equal-sign > span,
-.multiply-sign > span {
+.equal-sign>span,
+.multiply-sign>span {
   transform: translateX(1px);
 }
 
@@ -83,15 +83,23 @@ body {
 body,
 .page-column,
 form,
-aside.legend {
+aside.legend,
+div.legend {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 main,
-form {
+form,
+.legend-section {
   width: 100%;
+}
+
+.legend-section {
+  /* border: 2px solid green; */
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
 
 fieldset {
@@ -128,7 +136,7 @@ footer ul li {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 4px 20px;
+  padding: 10px 20px;
 }
 
 .page-column {
@@ -151,7 +159,8 @@ article.card {
 }
 
 article.card,
-aside.legend {
+aside.legend,
+div.legend {
   margin: 0 20px 40px;
 }
 
@@ -163,14 +172,14 @@ article.card {
   border: 2px solid black;
 }
 
-article.card > header,
+article.card>header,
 .cell {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-article.card > header {
+article.card>header {
   background-color: rgb(220, 230, 241);
   padding: 2px 2px 4px 2px;
   text-decoration: underline;
@@ -198,7 +207,7 @@ article.card > header {
   font-style: italic;
 }
 
-.cell.-line.-text > span {
+.cell.-line.-text>span {
   font-weight: initial;
 }
 
@@ -238,7 +247,8 @@ input[type="number"] {
 
 
 /* ##### Legend ##### */
-aside.legend {
+aside.legend,
+div.legend {
   max-width: 320px;
   width: 100%;
 }
@@ -298,21 +308,26 @@ a.legend-link:visited {
   }
 }
 
-a.offline-link:link, a.offline-link:visited {
+a.offline-link:link,
+a.offline-link:visited {
   font-weight: bold;
 }
 
-a.offline-link:link, a.offline-link:visited,
-.page-footer-link:link, .page-footer-link:visited {
+a.offline-link:link,
+a.offline-link:visited,
+.page-footer-link:link,
+.page-footer-link:visited {
   color: #366092;
   display: inline-block;
 }
 
-a.offline-link:link, a.offline-link:visited {
+a.offline-link:link,
+a.offline-link:visited {
   padding: 6px 8px;
 }
 
-.page-footer-link:link, .page-footer-link:visited {
+.page-footer-link:link,
+.page-footer-link:visited {
   padding: 6px 20px 6px 10px;
 }
 

@@ -6,4 +6,9 @@
 - Page footer >>> set min-height: 60px;
 - Footer changed
 ----------------
+- Buttons` size changed to bigger one >>> 46px;
+- aside.legend is moved to new page section;
+- aside.legend is changed to div.legend;
+- Top and bottom details added;
 
+----------------

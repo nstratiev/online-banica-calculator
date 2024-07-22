@@ -1,5 +1,5 @@
 /* ##### Borders [Start] ##### */
-article.card > header {
+article.card>header {
   border-bottom: 1px solid black;
 }
 
@@ -26,7 +26,8 @@ article.card > header {
   border: none;
 }
 
-aside.legend {
+aside.legend,
+div.legend {
   border-bottom: 1px dashed black;
   border-right: 1px dashed black;
 }

@@ -1,0 +1,55 @@
+details {
+  /* border: 2px solid red; */
+  text-align: initial;
+  margin: 10px 10px 0px 20px;
+  align-self: flex-start;
+}
+
+summary {
+  /* border: 2px solid green; */
+  color: rgb(11, 117, 11);
+  font-weight: bold;
+  padding: 4px 20px;
+  cursor: pointer;
+}
+
+.details-body {
+  /* border: 2px solid blue; */
+  padding: 4px;
+}
+
+.details-body>p {
+  text-indent: 10px;
+}
+
+details p,
+details ol li p {
+  /* border: 2px solid yellow; */
+  padding: 2px;
+}
+
+details ol {
+  /* border: 2px solid blue; */
+  padding: 2px;
+}
+
+details ol li {
+  /* border: 2px solid green; */
+  margin-left: 20px;
+
+}
+
+details hr {
+  /* border: 2px solid green; */
+  margin: 8px auto;
+  max-width: 80%;
+  text-align: center;
+}
+
+.details-top summary {
+  color: #366092;
+}
+
+.details-bottom summary {
+  color: var(--orange-menu-color);
+}
