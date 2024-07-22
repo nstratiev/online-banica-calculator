@@ -13,3 +13,16 @@
 ----------------
 - Legend section updated
 ----------------
+TODO
+- Green comment >>> Незадължителни полета;
+- line-btn >>> margin-bottom;
+- Version >>> padding-top;
+- Оцет, Олио >>> z-index;
+- Offline page >>> стилизация;
+- Offline version >>> сглобяване;
+- h (тесто) >>> superscript;
+- Btn icons
+- External svg >>> ????;
+- Пояснения >>> скоби;
+- пр. [ число ] >>> Реалистична примерна стойност;
+- Бутон за попълване на примерни стойности >>> ????;
