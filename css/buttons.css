@@ -12,11 +12,11 @@ button > * {
   border: 1px solid black;
   border-radius: 6px;
   margin-right: 20px;
-  padding: 4px 12px;
+  padding: 6px 12px;
   color: darkgreen;
   font: inherit;
   font-weight: bold;
-  font-size: 140%;
+  font-size: 120%;
 
 }
 
