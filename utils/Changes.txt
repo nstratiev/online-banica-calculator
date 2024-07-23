@@ -16,7 +16,7 @@
 - Понятия, Стойности (legend) >>> bold;
 - Legend section re-build;
 ----------------
-
+- Bullet arrows changed;
 ----------------
 TODO
 - Btn icons
@@ -33,6 +33,4 @@ TODO
 - Зареждане на css само от един файл >>> ????;
 
 OC >>> Open Color (open-source color scheme) >>> https://yeun.github.io/open-color/
-Entity >>> &rarr; (right arrow)
-Heavy Arrow >>>     &#129093; /  &#x1F845;
-&#10132; / \2794
+Arrows >>> \27A2, \2794

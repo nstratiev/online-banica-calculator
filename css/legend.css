@@ -55,7 +55,13 @@ h5.-legend {
 }
 
 .-legend-grid-item.-b::before {
-  content: "\27A2";
+  /* content: "\27A2"; */
+  content: "\2794";
+}
+
+.text-bullet::before {
+  /* content: "\00a0\27A2\00a0"; */
+  content: "\00a0\2794\00a0";
 }
 
 .legend-grid.-btns {

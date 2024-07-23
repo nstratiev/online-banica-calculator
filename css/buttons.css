@@ -13,7 +13,8 @@ button > * {
   border-radius: 6px;
   margin-right: 20px;
   padding: 6px 12px;
-  color: darkgreen;
+  /* color: darkgreen; */
+  color: var(--blue-text-links);
   font: inherit;
   font-weight: bold;
   font-size: 120%;
