@@ -3,6 +3,11 @@ export function onSubmit_initialLoad(ev) {
   onSubmit(ev, formMain, { isFirstPageLoad: true }, printResult_formMain);
 }
 
+// fMain
+export function populatePredefinedValues_fMain() {
+  populatePredefinedValues(formMain, predefinedData_fMain, onReset_fMain);
+}
+
 export function onSubmit_fMain(ev) {
   onSubmit(ev, formMain, { isFirstPageLoad: false }, printResult_formMain, resetResults_fMain, '#results-fMain');
 }
@@ -63,12 +68,22 @@ function onSubmit(ev, formElem, loadingConfig, printFunc, resetFormResultsFunc, 
 
 }
 
+function populatePredefinedValues(formElem, predefinedData, resetFormResultsFunc) {
+  resetFormResultsFunc();
+
+  for (const key in predefinedData) {
+    formElem.elements[key].value = predefinedData[key];
+  }
+
+  checkmarkAlertGreen(true);
+}
+
 
 import { printResult_formMain } from './print.js';
-import { formMain } from './elements.js';
+import { formMain, predefinedData_fMain } from './elements.js';
 import { getData, getFormDataToObject } from './generic.js';
 import { setLocalStorage } from './storage.js';
-import { resetFieldsOutline, resetResults_fMain } from './reset.js';
+import { onReset_fMain, resetFieldsOutline, resetResults_fMain } from './reset.js';
 import { checkmarkAlertGreen } from './alerts.js';
 import { calculate_fMain } from './math.js';
 

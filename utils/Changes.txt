@@ -17,14 +17,15 @@
 - Legend section re-build;
 ----------------
 - Bullet arrows changed;
+Arrows >>> \27A2 or \2794
 ----------------
+- Бутон за попълване на примерни стойности >>> функционалност;
+----------------
+
 TODO
 - Btn icons
 
-- Бутон за попълване на примерни стойности >>> функционалност;
-
 - Текст >>> преразглеждане;
-- Пояснения >>> скоби;
 
 - Offline page >>> стилизация;
 - Offline version >>> сглобяване;
@@ -33,4 +34,3 @@ TODO
 - Зареждане на css само от един файл >>> ????;
 
 OC >>> Open Color (open-source color scheme) >>> https://yeun.github.io/open-color/
-Arrows >>> \27A2, \2794

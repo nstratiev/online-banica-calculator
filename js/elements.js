@@ -6,6 +6,9 @@ export const formMain = document.querySelector('#form-main');
 export const resultElementsArr_fMain = getFormOutputsArray(formMain);
 export const resultElementsObj_fMain = getFormOutputsObject(formMain);
 
+// Buttons
+export const btnPredefinedValues = document.querySelector('.predefined-values');
+
 // Buttons (Global)
 export const btnsGlobal = document.querySelector('.btns-global');
 export const btnToTop = document.querySelector('#btn-to-top');
@@ -26,5 +29,16 @@ function getFormOutputsObject(formElem) {
 
   return obj;
 }
+
+// Constant objects
+export const predefinedData_fMain = {
+  "crustsCount": "5",
+  "crustWeight": "150",
+  "hydrationPercent": "55",
+  "saltPercent": "2.5",
+  "vinegarPercent": "0.0",
+  "oilPercent": "0.0"
+};
+
 
 // ##### Elements [End] #####

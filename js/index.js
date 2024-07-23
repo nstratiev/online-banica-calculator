@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', (ev) => {
 window.addEventListener('scroll', onScreenScroll);
 btnToTop.addEventListener('click', goToScreenTop);
 
+// -- Button predefined values
+btnPredefinedValues.addEventListener('click', populatePredefinedValues_fMain);
+
 // -- Buttons - global
 btnGlobalReset.addEventListener('click', onGlobalReset);
 btnGlobalSave.addEventListener('click', onGlobalSave);
@@ -42,8 +45,8 @@ document.addEventListener('click', (ev) => {
 });
 
 
-import { btnGlobalReset, btnGlobalSave, btnToTop, formMain } from './elements.js';
-import { onGlobalSave, onSave_fMain, onSubmit_fMain, onSubmit_initialLoad } from './event-handlers.js';
+import { btnGlobalReset, btnGlobalSave, btnPredefinedValues, btnToTop, formMain } from './elements.js';
+import { onGlobalSave, onSave_fMain, onSubmit_fMain, onSubmit_initialLoad, populatePredefinedValues_fMain } from './event-handlers.js';
 import { attachFocusoutValidation } from './focusout.js';
 import { populateLocaleStorageData } from './storage.js';
 import { onGlobalReset, onReset_fMain } from './reset.js';
