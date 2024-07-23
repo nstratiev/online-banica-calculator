@@ -1,18 +1,4 @@
 /* ##### Legend [Start] ##### */
-.details-body.-bottom > p {
-  padding: 6px;
-}
-
-.legend-cell-example {
-  display: inline-block;
-  text-align: center;
-  padding: 2px 10px;
-  font-size: 90%;
-  min-width: 100px;
-  border: 1px solid black;
-}
-
-
 .-version {
   padding: 16px 12px 0 12px;
   text-align: center;
@@ -27,8 +13,13 @@ h5.-legend {
   margin-top: 16px;
 }
 
-.line-btn {
-  margin-bottom: 10px;
+.legend-cell-example {
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  padding: 4px;
+  font-size: 90%;
+  width: 100%;
 }
 
 .-placeholder {
@@ -38,17 +29,55 @@ h5.-legend {
   color: gray;
 }
 
+
+/* Legend Grid - Start */
+.legend-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 6px;
+  column-gap: 4px;
+  font-size: 98%;
+}
+
+.-legend-grid-full-row {
+  grid-column: 1/-1;
+  padding: 8px;
+}
+
+.-legend-grid-item button,
+.-legend-grid-item .-btn-global {
+  pointer-events: none;
+}
+
+.-legend-grid-item.-a {
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.-legend-grid-item.-b::before {
+  content: "\27A2";
+}
+
+.legend-grid.-btns {
+  grid-template-columns: 50px 1fr;
+}
+
+.legend-grid.-text {
+  grid-template-columns: 1fr;
+}
+
+.legend-grid.-text p {
+  padding: 0px 4px;
+}
+
+/* Legend Grid - End */
+
+
 #btn-predefined-example {
   padding: 0;
-  /* padding: 2px 10px; */
   margin: 0;
   width: 36px;
   height: 36px;
-}
-
-div.-example {
-  pointer-events: none;
-  display: inline-block;
 }
 
 #btn-reset-example,
@@ -61,18 +90,5 @@ div.-example {
 .-btn-global {
   margin: 0;
 }
-
-/* span.-example-text {
-  display: inline-block;
-  vertical-align: middle;
-  min-height: 36px;
-} */
-
-span.-example-text {
-  border: 1px solid purple;
-  display: inline-block;
-  /* vertical-align: top; */
-}
-
 
 /* ##### Legend [End] ##### */

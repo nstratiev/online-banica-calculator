@@ -13,9 +13,13 @@
 ----------------
 - Legend section updated
 ----------------
+- Понятия, Стойности (legend) >>> bold;
+- Legend section re-build;
+----------------
+
+----------------
 TODO
 - Btn icons
-- External svg >>> ????;
 
 - Бутон за попълване на примерни стойности >>> функционалност;
 
@@ -25,4 +29,10 @@ TODO
 - Offline page >>> стилизация;
 - Offline version >>> сглобяване;
 
+- External svg >>> ????;
 - Зареждане на css само от един файл >>> ????;
+
+OC >>> Open Color (open-source color scheme) >>> https://yeun.github.io/open-color/
+Entity >>> &rarr; (right arrow)
+Heavy Arrow >>>     &#129093; /  &#x1F845;
+&#10132; / \2794

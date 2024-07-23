@@ -9,6 +9,7 @@ summary {
   font-weight: bold;
   padding: 4px 10px 4px 2px;
   cursor: pointer;
+  /* max-width: 320px; */
 }
 
 .details-body {
@@ -19,8 +20,8 @@ summary {
   text-indent: 4px;
 }
 
-details p,
-details ol li p {
+.details-body.-top p,
+details ol li {
   padding: 2px;
 }
 

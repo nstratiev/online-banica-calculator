@@ -66,6 +66,10 @@ body {
   font-style: italic;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .text-green {
   color: green;
 }

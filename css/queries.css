@@ -1,14 +1,10 @@
 /* ##### QUERIES [Start] ##### */
-/* Queries points >>> 1200px / 1000px / 680px / 370px / 350px / 308px / 300px */
+/* Queries points >>> 1200px / 1000px / 680px / 370px / 350px / 308px / 300px / 220px */
 
 @media (max-width: 1200px) {
   .--grid-3-cols {
     grid-template-columns: 1fr 1fr;
   }
-
-  /* footer.page {
-    margin-top: 40px;
-  } */
 
 }
 
@@ -24,22 +20,28 @@
 }
 
 @media (max-width: 400px) {
-
-  .top-nav,
-  a.legend-link:link {
-    /* position: initial; */
+  .legend-cell-example {
+    width: 100px;
   }
 
-  a.legend-link:link {
-    /* margin-right: 6px; */
+  .legend-grid.-fields {
+    grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 220px) {
-  .top-nav {
-    /* flex-direction: column;
-    gap: 4px; */
+  .legend-grid.-fields .-legend-grid-item.-a {
+    justify-self: left;
   }
+
+  .legend-grid.-fields .-legend-grid-item.-b,
+  .legend-grid.-fields .-legend-grid-full-row {
+    padding-bottom: 16px;
+  }
+
+  .legend-grid.-btns,
+  .legend-grid.-text {
+    row-gap: 16px;
+  }
+
 }
 
 /* ##### QUERIES [End] ##### */

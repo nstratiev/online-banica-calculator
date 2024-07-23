@@ -323,54 +323,70 @@
         <p>Версия: 0.7.1</p>
       </div>
 
+
       <!-- Полета -->
       <h5 class="-legend">Полета</h5>
-      <p>
-        *Десетичният знак се изписва с „точка” или „запетая” (в зависимост от регионалните настройки на операционната
-        система);
-      </p>
 
-      <p>
-        <span class="legend-cell-example -input">[ число ]</span> >>> Променлива стойност. Стойност, подлежаща на
-        промяна, която
-        задаваме свободно;
-      </p>
 
-      <p>
-        <span class="legend-cell-example -input -placeholder">пр. [число]</span> >>> Примерна стойност;
-      </p>
+      <div class="legend-grid -fields">
 
-      <p>
-        <span class="legend-cell-example -result">[ число ]</span> >>> Стойността, която търсим (изчислена на базата на
-        зададените от нас стойности);
-      </p>
+        <!-- Row -->
+        <p class="-legend-grid-full-row -grid-item">
+          *Десетичният знак се изписва с „точка” или „запетая”;<br>
+          (в зависимост от регионалните настройки на операционната
+          система)
+        </p>
 
-      <p>
-        <span class="legend-cell-example comment">[ текст ]</span> >>> Поле с пояснение (при посочване на полето);
-      </p>
+        <!-- Row -->
+        <p class="legend-cell-example -input -legend-grid-item -a">[ число ]</p>
+        <p class="-legend-grid-item -b">
+          Променлива стойност. / Стойност, подлежаща на промяна, която задаваме свободно;
+        </p>
 
-      <p>
-        <span class="legend-cell-example comment -comment-green">[ текст ]</span> >>> Поле с пояснение (при посочване на
-        полето) / Незадължително поле;
-      </p>
+        <!-- Row -->
+        <p class="legend-cell-example -input -placeholder -legend-grid-item -a">пр. [число]</p>
+        <p class="-legend-grid-item -b">
+          Примерна стойност;
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-example -result -legend-grid-item -a">[ число ]</p>
+        <p class="-legend-grid-item -b">
+          Стойността, която търсим (изчислена на базата на зададените от нас стойности);
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-example comment -legend-grid-item -a">[ текст ]</p>
+        <p class="-legend-grid-item -b">
+          Поле с пояснение (при посочване на полето);
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-example comment -comment-green -legend-grid-item -a">[ текст ]</p>
+        <p class="-legend-grid-item -b">
+          Поле с пояснение (при посочване на полето) / Незадължително поле;
+        </p>
+
+      </div>
 
 
       <!-- Бутони -->
       <h5 class="-legend">Бутони</h5>
 
-      <!-- Predefined values button example -->
-      <div class="line-btn">
-        <div class="-example">
-          <button id="btn-predefined-example" class="predefined-values -btn">П</button>
-        </div>
-        <span class="-example-text">
-          >>> Попълване на полетата за свободно въвеждане с примерни стойности;
-        </span>
-      </div>
+      <div class="legend-grid -btns">
 
-      <!-- Submit button example -->
-      <div class="line-btn">
-        <div class="-example">
+        <!-- Row -->
+        <!-- Predefined values button example -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-predefined-example" class="predefined-values -btn">П</button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Попълване на полетата за свободно въвеждане с примерни стойности;
+        </p>
+
+        <!-- Row -->
+        <!-- Submit button example -->
+        <p class="-legend-grid-item -a">
           <button id="btn-submit-example" class="btn-submit">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
               <rect width="256" height="256" fill="none" />
@@ -386,15 +402,14 @@
               <circle cx="168" cy="188" r="10" />
             </svg>
           </button>
-        </div>
-        <span class="-example-text">
-          >>> Изчисляване на търсените стойности;
-        </span>
-      </div>
+        </p>
+        <p class="-legend-grid-item -b">
+          Изчисляване на търсените стойности;
+        </p>
 
-      <!-- Reset button example -->
-      <div class="line-btn">
-        <div class="-example">
+        <!-- Row -->
+        <!-- Reset button example -->
+        <p class="-legend-grid-item -a">
           <button id="btn-reset-example" class="btn-reset">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
               <rect width="256" height="256" fill="none" />
@@ -408,15 +423,14 @@
                 stroke-linejoin="round" stroke-width="12" />
             </svg>
           </button>
-        </div>
-        <span class="-example-text">
-          >>> Нулиране на полетата от текущата форма;
-        </span>
-      </div>
+        </p>
+        <p class="-legend-grid-item -b">
+          Нулиране на полетата от текущата форма;
+        </p>
 
-      <!-- Save button example -->
-      <div class="line-btn">
-        <div class="-example">
+        <!-- Row -->
+        <!-- Save button example -->
+        <p class="-legend-grid-item -a">
           <button id="btn-save-example" class="btn-save">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
               <rect width="256" height="256" fill="none" />
@@ -429,16 +443,14 @@
                 stroke-linejoin="round" stroke-width="12" />
             </svg>
           </button>
-        </div>
-        <span class="-example-text">
-          >>> Запаметяване на стойностите от полетата на текущата форма;
-        </span>
-      </div>
+        </p>
+        <p class="-legend-grid-item -b">
+          Запаметяване на стойностите от полетата на текущата форма;
+        </p>
 
-
-      <!-- Global Reset Button example -->
-      <div class="line-btn">
-        <div class="-example">
+        <!-- Row -->
+        <!-- Global Reset Button example -->
+        <div class="-legend-grid-item -a">
           <div class="btn-reset-global -btn-global">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -451,15 +463,13 @@
             </div>
           </div>
         </div>
-        <span class="-example-text">
-          >>> Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница;
-        </span>
-      </div>
+        <p class="-legend-grid-item -b">
+          Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница;
+        </p>
 
-
-      <!-- Global Save Button example -->
-      <div class="line-btn">
-        <div class="-example">
+        <!-- Row -->
+        <!-- Global Save Button example -->
+        <div class="-legend-grid-item -a">
           <div class="btn-save-global -btn-global">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -474,36 +484,50 @@
             </div>
           </div>
         </div>
-        <span class="-example-text">
-          >>> Запаметяване на стойностите от всички полета на текущата страница;
-        </span>
+        <p class="-legend-grid-item -b">
+          Запаметяване на стойностите от всички полета на текущата страница;
+        </p>
+
       </div>
 
 
       <!-- Понятия -->
       <h5 class="-legend">Понятия</h5>
 
-      <p>
-        <span class="">h</span> >>> Хидратация на тестото. Показва съдържанието на течности в тестото, изразено като
-        процент от съдържащото се в тестото брашно;
-      </p>
+      <div class="legend-grid -text">
+        <p>
+          <span class="bold">h<span class="superscript">тесто</span></span> &#10146; Хидратация на тестото. Показва
+          съдържанието на течности в тестото,
+          изразено
+          като
+          процент от съдържащото се в тестото брашно;
+        </p>
+      </div>
 
       <!-- Стойности -->
       <h5 class="-legend">Стойности</h5>
 
-      <p>
-        <span class="">h<span class="superscript">тесто</span></span> >>> Обичайно, баничното тесто е сравнително твърд
-        тип тесто.<br>
-        Неговата хидратация варира в диапазона на 50 - 60%. ;
-      </p>
+      <div class="legend-grid -text">
+        <p>
+          <span class="bold">h<span class="superscript">тесто</span></span> &#10146; Обичайно, баничното тесто е
+          сравнително
+          твърд
+          тип тесто.<br>
+          Неговата хидратация варира в диапазона на 50 - 60%. ;
+        </p>
 
-      <p>
-        <span class="">Сол, (%)</span> >>> При замесването на хляб, обикновено, теглото на солта е 2% (или около 2%) от
-        теглото на брашното.<br>
-        При тестото за баница, обикновено, този процент е завишен и варира в диапазона на 2 - 3%. ;
-      </p>
+        <p>
+          <span class="bold">Сол, (%)</span> &#10146; При замесването на хляб, обикновено, теглото на солта е 2% (или
+          около
+          2%)
+          от
+          теглото на брашното.<br>
+          При тестото за баница, обикновено, този процент е завишен и варира в диапазона на 2 - 3%. ;
+        </p>
+      </div>
 
     </div>
+
   </details>
 
   <footer class="-page">
