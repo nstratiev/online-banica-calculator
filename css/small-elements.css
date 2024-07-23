@@ -17,6 +17,16 @@
   height: 25px;
 }
 
+.equal-sign,
+.multiply-sign {
+  font-size: 120%;
+}
+
+.equal-sign > span,
+.multiply-sign > span {
+  transform: translateX(1px);
+}
+
 /* Alert - Onclick */
 .temp-alert {
   display: flex;
@@ -40,14 +50,23 @@
   cursor: pointer;
 }
 
-.comment::after {
+.comment::after,
+.comment-green::after {
   content: '';
   border-width: 3px;
   border-style: solid;
-  border-color: red red transparent transparent;
+  /* border-color: red red transparent transparent; */
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.comment::after {
+  border-color: red red transparent transparent;
+}
+
+.-comment-green::after {
+  border-color: green green transparent transparent;
 }
 
 .comment-box {

@@ -1,5 +1,5 @@
 /* ##### Legend [Start] ##### */
-.details-body.-bottom>p {
+.details-body.-bottom > p {
   padding: 6px;
 }
 
@@ -14,7 +14,7 @@
 
 
 .-version {
-  padding: 0px 12px;
+  padding: 16px 12px 0 12px;
   text-align: center;
   font-style: italic;
   font-weight: bold;
@@ -24,7 +24,11 @@
 h5.-legend {
   font-size: 1em;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 16px;
+}
+
+.line-btn {
+  margin-bottom: 10px;
 }
 
 .-placeholder {
@@ -32,14 +36,19 @@ h5.-legend {
   font-size: 90%;
   font-weight: bold;
   color: gray;
-  /* opacity: 0.4; */
 }
 
-#btn-reset-example,
-#btn-submit-example,
-#btn-save-example,
+#btn-predefined-example {
+  padding: 0;
+  /* padding: 2px 10px; */
+  margin: 0;
+  width: 36px;
+  height: 36px;
+}
+
 div.-example {
   pointer-events: none;
+  display: inline-block;
 }
 
 #btn-reset-example,
@@ -49,15 +58,21 @@ div.-example {
   height: 38px;
 }
 
-div.-example {
-  display: inline-block;
+.-btn-global {
+  margin: 0;
 }
 
-span.-example-text {
-  /* border: 2px solid purple; */
+/* span.-example-text {
   display: inline-block;
   vertical-align: middle;
   min-height: 36px;
+} */
+
+span.-example-text {
+  border: 1px solid purple;
+  display: inline-block;
+  /* vertical-align: top; */
 }
+
 
 /* ##### Legend [End] ##### */

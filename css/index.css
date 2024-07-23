@@ -70,16 +70,6 @@ body {
   color: green;
 }
 
-.equal-sign,
-.multiply-sign {
-  font-size: 120%;
-}
-
-.equal-sign>span,
-.multiply-sign>span {
-  transform: translateX(1px);
-}
-
 /* ##### Main elements ##### */
 body,
 .page-column,
@@ -92,33 +82,26 @@ div.legend {
 }
 
 main,
-form,
-.legend-section {
+form {
   width: 100%;
-}
-
-.legend-section {
-  /* border: 2px solid green; */
-  margin-top: 60px;
-  margin-bottom: 40px;
 }
 
 fieldset {
   border: none;
 }
 
-header.page,
-footer.page {
+header.-page,
+footer.-page {
   background-color: rgb(248, 248, 248);
   width: 100%;
 }
 
-header.page {
+header.-page {
   padding: 6px;
   /* margin-bottom: 40px; */
 }
 
-footer.page {
+footer.-page {
   /* margin-top: auto; */
   margin-top: 40px;
   text-align: initial;
@@ -174,14 +157,14 @@ article.card {
   border: 2px solid black;
 }
 
-article.card>header,
+article.card > header,
 .cell {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-article.card>header {
+article.card > header {
   background-color: rgb(220, 230, 241);
   padding: 2px 2px 4px 2px;
   text-decoration: underline;
@@ -209,7 +192,7 @@ article.card>header {
   font-style: italic;
 }
 
-.cell.-line.-text>span {
+.cell.-line.-text > span {
   font-weight: initial;
 }
 
@@ -247,64 +230,9 @@ input[type="number"] {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* ##### Links ##### */
-a.legend-link:link {
-  /* position: absolute;
-  top: 3px;
-  left: 6px; */
-  background-color: white;
+#vinegar-percent:focus,
+#oil-percent:focus {
+  z-index: 32;
 }
-
-a.legend-link:link,
-a.legend-link:visited {
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 6px;
-  margin-right: 20px;
-  padding: 4px 12px;
-  color: var(--orange-menu-color);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 140%;
-}
-
-@media (hover: hover) {
-  a.legend-link:hover {
-    outline: 2px solid black;
-    border: 1px solid white;
-  }
-}
-
-@media (hover: none) {
-  a.legend-link:active {
-    outline: 2px solid black;
-    border: 1px solid white;
-  }
-}
-
-a.offline-link:link,
-a.offline-link:visited {
-  font-weight: bold;
-}
-
-a.offline-link:link,
-a.offline-link:visited,
-.page-footer-link:link,
-.page-footer-link:visited {
-  color: #366092;
-  display: inline-block;
-}
-
-a.offline-link:link,
-a.offline-link:visited {
-  padding: 6px 8px;
-}
-
-.page-footer-link:link,
-.page-footer-link:visited {
-  padding: 6px 20px 6px 10px;
-}
-
 
 /* ##### Index [End] ##### */

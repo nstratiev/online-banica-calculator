@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/details.css">
   <link rel="stylesheet" href="css/borders.css">
   <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/links.css">
   <link rel="stylesheet" href="css/legend.css">
   <link rel="stylesheet" href="css/small-elements.css">
   <link rel="stylesheet" href="css/queries.css">
@@ -17,7 +18,7 @@
 
 <body>
   <script>0</script>
-  <header class="page">
+  <header class="-page">
     <h1>Тесто за баница</h1>
     <h2>(калкулатор)</h2>
   </header>
@@ -48,6 +49,7 @@
 
   <nav class="top-nav">
     <a href="#legend" class="legend-link">?</a>
+    <button class="predefined-values -btn" title="Попълване на примерни стойности">П</button>
     <a href="./offline/offline.html" class="offline-link">Offline</a>
     <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
   </nav>
@@ -112,7 +114,7 @@
               <div class="rows-container --grid-2-cols">
                 <!-- Row -->
                 <div class="cell -a comment">
-                  <label for="hydration-percent">h<sup class="superscript">тесто</sup>, (%):</label>
+                  <label for="hydration-percent">h<span class="superscript">тесто</span>, (%):</label>
                   <aside class="comment-box">
                     Хидратация на тестото;
                   </aside>
@@ -145,8 +147,8 @@
                 <div class="cell -line -text">Допълнителни съставки</div>
 
                 <!-- Row -->
-                <div class="cell -a comment">
-                  <label for="vinegar-percent">Оцет, (%):</label>
+                <div class="cell -a comment -comment-green">
+                  <label for="_vinegar-percent">Оцет, (%):</label>
                   <aside class="comment-box">
                     % от брашното;<br />
                     <span class="text-green italic">*Полето не е задължително;</span>
@@ -158,7 +160,7 @@
                 </div>
 
                 <!-- Row -->
-                <div class="cell -a comment">
+                <div class="cell -a comment -comment-green">
                   <label for="oil-percent">Олио, (%):</label>
                   <aside class="comment-box">
                     % от брашното;<br />
@@ -311,6 +313,7 @@
 
   </main>
 
+
   <details class="details-bottom">
     <summary id="legend">Легенда: ...</summary>
     <div class="details-body -bottom">
@@ -346,9 +349,24 @@
         <span class="legend-cell-example comment">[ текст ]</span> >>> Поле с пояснение (при посочване на полето);
       </p>
 
+      <p>
+        <span class="legend-cell-example comment -comment-green">[ текст ]</span> >>> Поле с пояснение (при посочване на
+        полето) / Незадължително поле;
+      </p>
+
 
       <!-- Бутони -->
       <h5 class="-legend">Бутони</h5>
+
+      <!-- Predefined values button example -->
+      <div class="line-btn">
+        <div class="-example">
+          <button id="btn-predefined-example" class="predefined-values -btn">П</button>
+        </div>
+        <span class="-example-text">
+          >>> Попълване на полетата за свободно въвеждане с примерни стойности;
+        </span>
+      </div>
 
       <!-- Submit button example -->
       <div class="line-btn">
@@ -421,7 +439,7 @@
       <!-- Global Reset Button example -->
       <div class="line-btn">
         <div class="-example">
-          <div class="btn-reset-global">
+          <div class="btn-reset-global -btn-global">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                 <rect width="256" height="256" fill="none" />
@@ -434,7 +452,7 @@
           </div>
         </div>
         <span class="-example-text">
-          >>> Освобождаване на паметта, свързана с текущата страница;
+          >>> Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница;
         </span>
       </div>
 
@@ -442,7 +460,7 @@
       <!-- Global Save Button example -->
       <div class="line-btn">
         <div class="-example">
-          <div class="btn-save-global">
+          <div class="btn-save-global -btn-global">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                 <rect width="256" height="256" fill="none" />
@@ -470,10 +488,25 @@
         процент от съдържащото се в тестото брашно;
       </p>
 
+      <!-- Стойности -->
+      <h5 class="-legend">Стойности</h5>
+
+      <p>
+        <span class="">h<span class="superscript">тесто</span></span> >>> Обичайно, баничното тесто е сравнително твърд
+        тип тесто.<br>
+        Неговата хидратация варира в диапазона на 50 - 60%. ;
+      </p>
+
+      <p>
+        <span class="">Сол, (%)</span> >>> При замесването на хляб, обикновено, теглото на солта е 2% (или около 2%) от
+        теглото на брашното.<br>
+        При тестото за баница, обикновено, този процент е завишен и варира в диапазона на 2 - 3%. ;
+      </p>
+
     </div>
   </details>
 
-  <footer class="page">
+  <footer class="-page">
     <ul>
       <li>
         <a class="page-footer-link" href="https://nstratiev.github.io/bread-calculator-bg/">Bread-calculator-bg</a>
@@ -491,7 +524,8 @@
   <aside class="btns-global">
 
     <!-- Global Reset Button -->
-    <div class="btn-reset-global" id="btn-reset-global" title="Освобождаване на паметта, свързана с текущата страница">
+    <div class="btn-reset-global" id="btn-reset-global"
+      title="Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
           <rect width="256" height="256" fill="none" />
