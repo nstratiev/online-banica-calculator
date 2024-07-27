@@ -4,7 +4,7 @@ export function onScreenScroll() {
     document.body.scrollTop > 120 ||
     document.documentElement.scrollTop > 120
   ) {
-    btnToTop.style.display = 'block';
+    btnToTop.style.display = 'flex';
   } else {
     btnToTop.style.display = 'none';
   }

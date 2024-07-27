@@ -1,5 +1,5 @@
 /* ##### Borders [Start] ##### */
-article.card>header {
+article.card > header {
   border-bottom: 1px solid black;
 }
 
@@ -33,7 +33,7 @@ div.legend {
 }
 
 .legend-header,
-.legend-cell-example {
+.legend-cell-sample {
   border-top: 1px dashed black;
   border-left: 1px dashed black;
 } */

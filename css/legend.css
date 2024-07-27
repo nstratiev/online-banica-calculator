@@ -13,7 +13,7 @@ h5.-legend {
   margin-top: 16px;
 }
 
-.legend-cell-example {
+.legend-cell-sample {
   border: 1px solid black;
   display: inline-block;
   text-align: center;
@@ -44,8 +44,7 @@ h5.-legend {
   padding: 8px;
 }
 
-.-legend-grid-item button,
-.-legend-grid-item .-btn-global {
+.-legend-grid-item button {
   pointer-events: none;
 }
 
@@ -79,16 +78,16 @@ h5.-legend {
 /* Legend Grid - End */
 
 
-#btn-predefined-example {
+#btn-predefined-sample {
   padding: 0;
   margin: 0;
   width: 36px;
   height: 36px;
 }
 
-#btn-reset-example,
-#btn-submit-example,
-#btn-save-example {
+#btn-reset-sample,
+#btn-submit-sample,
+#btn-save-sample {
   width: 38px;
   height: 38px;
 }

@@ -55,6 +55,12 @@ body {
 }
 
 /* ##### Text styles ##### */
+code {
+  font: inherit;
+  font-weight: bold;
+  color: green;
+}
+
 .superscript {
   /* vertical-align: top; */
   position: relative;
@@ -121,11 +127,11 @@ footer ul li {
   margin: 10px 0px;
 }
 
-.top-nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 10px 20px;
+.page-footer-link:link,
+.page-footer-link:visited {
+  display: inline-block;
+  padding: 6px 20px 6px 10px;
+  color: #366092;
 }
 
 .page-column {
@@ -201,7 +207,7 @@ article.card > header {
 }
 
 .cell.-b.-result,
-.legend-cell-example.-result {
+.legend-cell-sample.-result {
   background-color: rgb(255, 204, 102);
 }
 
@@ -221,7 +227,7 @@ article.card > header {
 }
 
 input[type="number"],
-.legend-cell-example.-input {
+.legend-cell-sample.-input {
   background-color: rgb(255, 255, 153);
 }
 

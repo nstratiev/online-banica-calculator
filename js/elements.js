@@ -7,7 +7,7 @@ export const resultElementsArr_fMain = getFormOutputsArray(formMain);
 export const resultElementsObj_fMain = getFormOutputsObject(formMain);
 
 // Buttons
-export const btnPredefinedValues = document.querySelector('.predefined-values');
+export const btnPredefinedValues = document.querySelector('.btn-predefined-values');
 
 // Buttons (Global)
 export const btnsGlobal = document.querySelector('.btns-global');
