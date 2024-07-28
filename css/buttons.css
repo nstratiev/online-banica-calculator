@@ -83,7 +83,7 @@ button svg {
 
 .btn.-global {
   background-color: rgba(128, 128, 128, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(128, 128, 128, 0.8);
   border-radius: 50%;
   z-index: 99;
   display: flex;
