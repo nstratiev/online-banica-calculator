@@ -36,7 +36,9 @@ Arrows >>> \27A2 or \2794
 - Legend >>> Navigation section added ... Content to be created ... [Finished];
 - Global btns rebuilt >>> CSS needs to be revised ... [Finished];
 ----------------
-
+-Btn-to-top issue fixed;
+----------------
+- Computer commands explanation rebuilt;
 
 TODO
 - Btn icons

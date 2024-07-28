@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="css/top-nav.css">
   <link rel="stylesheet" href="css/borders.css">
   <link rel="stylesheet" href="css/buttons.css">
-  <!-- <link rel="stylesheet" href="css/btns-test.css"> -->
-  <!-- <link rel="stylesheet" href="css/btns-test-2.css"> -->
   <link rel="stylesheet" href="css/legend.css">
   <link rel="stylesheet" href="css/small-elements.css">
   <link rel="stylesheet" href="css/queries.css">
@@ -293,7 +291,7 @@
   </main>
 
 
-  <details class="details-bottom">
+  <details class="details-bottom" open>
     <summary id="legend">Легенда: ...</summary>
     <div class="details-body -bottom">
 
@@ -476,18 +474,26 @@
         <p>
           При работа на настолен или преносим компютър би могло да се използва клавиатурата:
         </p>
-        <p>
-          Преминаване от едно поле за въвеждане към друго >>> <code>Tab</code> ;
-        </p>
-        <p>
-          Връщане към предходно поле за въвеждане >>> <code>Shift + Tab</code> ;
-        </p>
-        <p>
-          За моментално изчисляване (когато някое поле за въвеждане е на фокус) >>> <code>Enter</code> ;
-        </p>
-      </div>
 
-    </div>
+        <p>
+          <code>[Tab]</code><br>
+          <span class="text-bullet"></span>Преминаване от един интерактивен елемент към друг;<br>
+          * Интерактивни елементи (елементи, податливи на взаимодействие с потребителя):<br>
+          ... Полета за свободно въвеждане / Бутони / Хипервръзки ...
+        </p>
+
+        <p>
+          <code>[Shift] + [Tab]</code><br>
+          <span class="text-bullet"></span>Връщане към предходен интерактивен елемент;
+        </p>
+
+        <p>
+          <code>[Enter]</code><br>
+          <span class="text-bullet"></span>Моментално изчисляване (когато някое поле за въвеждане е на фокус);<br>
+          <span class="text-bullet"></span>Активиране на действието на даден бутон или хипервръзка;
+        </p>
+
+      </div>
 
   </details>
 
@@ -525,12 +531,13 @@
     </button>
 
     <!-- Go-to-top Button -->
-    <button type="button" class="btn -global btn-to-top" id="btn-to-top" tabindex="-1">
-      <svg>
-        <use href="#svg-global-go-to-top"></use>
-      </svg>
-    </button>
-
+    <div class="btn-to-top-container">
+      <button type="button" class="btn -global btn-to-top" id="btn-to-top" tabindex="-1">
+        <svg>
+          <use href="#svg-global-go-to-top"></use>
+        </svg>
+      </button>
+    </div>
   </aside>
 
 

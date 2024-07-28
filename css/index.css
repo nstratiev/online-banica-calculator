@@ -56,8 +56,10 @@ body {
 
 /* ##### Text styles ##### */
 code {
-  font: inherit;
+  /* font: inherit; */
+  font-family: monospace, monospace;
   font-weight: bold;
+  font-size: 110%;
   color: green;
 }
 

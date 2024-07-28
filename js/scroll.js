@@ -4,9 +4,9 @@ export function onScreenScroll() {
     document.body.scrollTop > 120 ||
     document.documentElement.scrollTop > 120
   ) {
-    btnToTop.style.display = 'flex';
+    btnToTopContainer.style.display = 'block';
   } else {
-    btnToTop.style.display = 'none';
+    btnToTopContainer.style.display = 'none';
   }
 }
 
@@ -20,6 +20,6 @@ export function goToScreenTop() {
 }
 
 
-import { btnToTop } from './elements.js';
+import { btnToTopContainer } from './elements.js';
 
 // ##### Scroll [End] #####
