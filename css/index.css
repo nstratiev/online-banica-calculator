@@ -29,7 +29,6 @@ body {
 
 :focus {
   outline: none;
-  /* outline: 1px solid green; */
   box-shadow: 0 0 4px 4px gray;
 }
 
@@ -39,10 +38,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-/* .-col {
-  flex-direction: column;
-} */
 
 .--grid-2-cols {
   display: grid;
@@ -56,7 +51,6 @@ body {
 
 /* ##### Text styles ##### */
 code {
-  /* font: inherit; */
   font-family: monospace, monospace;
   font-weight: bold;
   font-size: 110%;
@@ -110,7 +104,6 @@ footer.-page {
 
 header.-page {
   padding: 6px;
-  /* margin-bottom: 40px; */
 }
 
 footer.-page {
@@ -213,9 +206,7 @@ article.card > header {
   background-color: rgb(255, 204, 102);
 }
 
-.cell.-b.-result {
-  /* font-weight: bold; */
-}
+.cell.-b.-result {}
 
 .cell.-b.-input {
   padding: 0;

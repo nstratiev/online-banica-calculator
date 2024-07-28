@@ -8,8 +8,6 @@ button > * {
 }
 
 button svg {
-  /* width: 65%; */
-  /* height: auto; */
   z-index: 0;
 }
 
@@ -92,6 +90,25 @@ button svg {
   width: 38px;
   height: 38px;
   margin-bottom: 5px;
+}
+
+@media (hover: hover) {
+
+  .btn.-global:hover {
+    border: 2px solid rgba(128, 128, 128, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    --gray-svg: rgba(128, 128, 128, 0.8);
+  }
+
+}
+
+@media (hover: none) {
+  .btn.-global:active {
+    border: 2px solid rgba(128, 128, 128, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    --gray-svg: rgba(128, 128, 128, 0.8);
+  }
+
 }
 
 .btn.-global:hover,

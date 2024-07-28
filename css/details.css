@@ -10,7 +10,7 @@ summary {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  /* max-width: 320px; */
+  width: 210px;
 }
 
 .details-body {
@@ -36,7 +36,7 @@ details ol li {
 }
 
 details hr {
-  margin: 8px auto;
+  margin: 10px auto;
   max-width: 80%;
   text-align: center;
 }
@@ -45,22 +45,16 @@ details hr {
   color: var(--blue-text-links);
 }
 
-main {
-  /* border: 2px solid red; */
-}
-
 .details-bottom {
   margin-top: 0;
 }
 
 .details-bottom summary {
-  /* border: 2px solid green; */
   color: var(--orange-menu-color);
 }
 
 .details-body.-bottom {
-  /* border: 2px solid blue; */
-
+  margin-bottom: 20px;
 }
 
 /* ##### Details dropdown [End] ##### */
