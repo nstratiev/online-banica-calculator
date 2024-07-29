@@ -17,6 +17,10 @@ summary {
   padding: 2px;
 }
 
+.details-body.-top {
+  margin-top: 10px;
+}
+
 .details-body.-top > p {
   text-indent: 4px;
 }

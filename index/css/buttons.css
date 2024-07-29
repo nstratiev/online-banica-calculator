@@ -24,7 +24,7 @@ button svg {
 .btn-reset svg,
 .btn-save svg {
   width: 65%;
-  height: auto;
+  height: 65%;
 }
 
 .btn-submit,
@@ -121,7 +121,7 @@ button svg {
 /* Buttons - Svg */
 .btn.-global svg {
   width: 75%;
-  height: auto;
+  height: 75%;
   z-index: 0;
 }
 
