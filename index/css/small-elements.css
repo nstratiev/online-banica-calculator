@@ -50,6 +50,10 @@
   cursor: pointer;
 }
 
+.comment > * {
+  cursor: pointer;
+}
+
 .comment::after,
 .comment-green::after {
   content: '';
