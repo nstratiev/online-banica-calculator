@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Калкулатор - тесто за баница (online)">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тесто за баница (online калкулатор)</title>
+  <link rel="icon" type="image/x-icon" href="../favicon_rolling-pin_5637312.png">
+
+  <link rel="stylesheet" href="../global/css/index.css">
+  <link rel="stylesheet" href="../global/css/details.css">
+  <link rel="stylesheet" href="../global/css/top-nav.css">
+  <link rel="stylesheet" href="../global/css/borders.css">
+  <link rel="stylesheet" href="../global/css/buttons.css">
+  <link rel="stylesheet" href="../global/css/legend.css">
+  <link rel="stylesheet" href="../global/css/small-elements.css">
+  <link rel="stylesheet" href="../global/css/queries.css">
+  <link rel="stylesheet" href="../global/css/modal.css">
+</head>
+
+<body>
+  <script>0</script>
+  <header class="-page">
+    <h1>Тесто за баница</h1>
+    <h2>(online калкулатор)</h2>
+  </header>
+
+  <details class="details-top">
+    <summary>Пояснения: ...</summary>
+    <div class="details-body -top">
+      <p>
+        Задачата на калкулатора е да изчисли необходимите съставки за замесването на тесто (за кори за баница), по
+        зададени от нас:
+      </p>
+
+      <ol>
+        <li>
+          Тегло на тестото, което желаем да получим;
+        </li>
+        <li>
+          Формула на тестото;<br>
+          * Основната съставка е съдържащото се в тестото брашно. Всички останали съставки се изразяват като
+          процент от него;
+        </li>
+      </ol>
+
+      <div class="said-in-different-way">... Kазано по друг начин ...
+      </div>
+      <div>
+        <P class="used-when">Използваме, когато:</P>
+        <p>Имаме конкретна хлебна формула (формула на тестото) и дадено количество тесто, което желаем да получим.;</p>
+        <p class="and-txt">и</p>
+        <p>Искаме да изчислим количествата на съставките, които е необходимо да използваме при замесването.;</p>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+  </details>
+
+  <nav class="top-nav">
+    <a href="../" id="link-menu" class="top-nav link-legend btn-menu" title="Меню">М</a>
+    <a href="#legend" id="link-legend" class="top-nav link-legend" title="Легенда">?</a>
+
+    <button type="button" id="btn-predefined-values" class="top-nav btn-predefined-values"
+      title="Попълване на примерни стойности">П</button>
+
+    <!-- <a href="./offline" id="link-offline" class="top-nav link-offline " title="Offline версия">Offline</a> -->
+    <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
+  </nav>
+
+  <main class="--grid-3-cols">
+
+    <!-- ##### First Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
+        <form id="form-main" name="formMain">
+
+          <!-- ##### (1.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(1.3) Тегло на тестото</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">
+                  <label for="_crusts-count">Кори, (брой):</label>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="crustsCount" id="crusts-count" placeholder="пр. 5"
+                    required autofocus>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line multiply-sign"><span>&times;</span></div>
+
+                <!-- Row -->
+                <div class="cell -a">
+                  <label for="_crust-weight">Тегло на тестото за една кора, (g):</label>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="crustWeight" id="crust-weight" placeholder="пр. 150"
+                    required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line equal-sign"><span>&equals;</span></div>
+
+                <!-- Row -->
+                <div class="cell -a">Тегло на общото тесто, (g):</div>
+                <div class="cell -b -result">
+                  <output id="dough-weight" name="doughWeight">....</output>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### (2.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(2.3) Формула на тестото</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="_hydration-percent">h<span class="superscript">тесто</span>, (%):</label>
+                  <aside class="comment-box">
+                    Хидратация на тестото;
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="50" max="125" name="hydrationPercent" id="hydration-percent"
+                    placeholder="пр. 55" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="_salt-percent">Сол, (%):</label>
+                  <aside class="comment-box">
+                    При тестото за баница, обикновено е препоръчително
+                    солта да не надвишава 3%;
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="saltPercent" id="salt-percent"
+                    placeholder="пр. 2.5" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">Допълнителни съставки</div>
+
+                <!-- Row -->
+                <div class="cell -a comment -comment-green">
+                  <label for="_vinegar-percent">Оцет, (%):</label>
+                  <aside class="comment-box">
+                    % от брашното;<br />
+                    <span class="text-green italic">*Полето не е задължително;</span>
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="vinegarPercent" id="vinegar-percent"
+                    placeholder="пр. 0.5">
+                </div>
+
+                <!-- Row -->
+                <div class="cell -a comment -comment-green">
+                  <label for="_oil-percent">Олио, (%):</label>
+                  <aside class="comment-box">
+                    % от брашното;<br />
+                    <span class="text-green italic">*Полето не е задължително;</span>
+                  </aside>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" max="7.0" name="oilPercent" id="oil-percent"
+                    placeholder="пр. 0.5">
+                </div>
+              </div>
+
+            </div>
+          </article>
+        </form>
+      </fieldset>
+
+    </section>
+
+    <!-- ##### Second Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
+        <form>
+          <!-- ##### (3.3) ##### -->
+          <article id="results-fMain" class="card --last-child">
+            <header>
+              <h3>(3.3) Изчислена формула</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">Брашно, (g):</div>
+                <div class="cell -b -result">
+                  <output id="flour-weight" name="flourWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a">Сол, (g):</div>
+                <div class="cell -b -result">
+                  <output id="salt-weight" name="saltWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">
+                  Течни съставки:&nbsp;
+                  <output id="liquid-indreds-weight" name="liquidIngredsWeight" class="-secondary"
+                    form="form-main">...</output>
+                </div>
+
+                <!-- Row -->
+                <div class="cell -a">Вода, (g):</div>
+                <div class="cell -b -result">
+                  <output id="water-weight" name="waterWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row - Line -->
+                <div class="cell -line -text">Допълнителни съставки</div>
+
+                <!-- Row -->
+                <div class="cell -a">Оцет, (g):</div>
+                <div class="cell -b -result">
+                  <output id="vinegar-weight" name="vinegarWeight" form="form-main">...</output>
+                </div class="cell -b -result">
+
+                <!-- Row -->
+                <div class="cell -a">Олио, (g):</div>
+                <div class="cell -b -result">
+                  <output id="oil-weight" name="oilWeight" form="form-main">...</output>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### Buttons Group (Main) ##### -->
+          <div class="btns-group -main">
+
+            <!-- Reset button -->
+            <button type="reset" class="btn-reset" id="btn-reset-main" form="form-main"
+              title="Нулиране на полетата от текущата форма">
+              <svg>
+                <use href="#svg-form-refresh"></use>
+              </svg>
+            </button>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn-submit" id="btn-submit-main" form="form-main"
+              title="Изчисляване на търсените стойности">
+              <svg>
+                <use href="#svg-form-calculate"></use>
+              </svg>
+            </button>
+
+            <!-- Save button -->
+            <button type="button" class="btn-save" id="btn-save-main" form="form-main"
+              title="Запаметяване на стойностите от полетата на текущата форма">
+              <svg>
+                <use href="#svg-form-save"></use>
+              </svg>
+            </button>
+
+          </div>
+
+          <hr />
+
+        </form>
+      </fieldset>
+
+    </section>
+
+    <!-- ##### Third Column ##### -->
+    <section class="page-column">
+    </section>
+
+  </main>
+
+
+  <details class="details-bottom">
+    <summary id="legend">Легенда: ...</summary>
+    <div class="details-body -bottom">
+
+      <!-- Версия -->
+      <div class="-version">
+        <p>Версия: <span id="version"></span></p>
+      </div>
+
+      <!-- Понятия -->
+      <h5 class="-legend">Понятия</h5>
+
+      <div class="legend-grid -text">
+        <p>
+          <span class="bold">h<span class="superscript">тесто</span></span>
+          <span class="text-bullet"></span>Хидратация на тестото. Показва
+          съдържанието на течности в тестото,
+          изразено
+          като
+          процент от съдържащото се в тестото брашно;
+        </p>
+      </div>
+
+      <!-- Стойности -->
+      <h5 class="-legend">Стойности</h5>
+
+      <div class="legend-grid -text">
+        <p>
+          <span class="bold">h<span class="superscript">тесто</span></span> <span class="text-bullet"></span>Обичайно,
+          баничното тесто е
+          сравнително
+          твърд
+          тип тесто.<br>
+          Неговата хидратация варира в диапазона на 50 - 60%. ;
+        </p>
+
+        <p>
+          <span class="bold">Сол, (%)</span><span class="text-bullet"></span>При замесването на хляб, обикновено,
+          теглото на солта е 2% (или
+          около
+          2%)
+          от
+          теглото на брашното.<br>
+          При тестото за баница, обикновено, този процент е завишен и варира в диапазона на 2 - 3%. ;
+        </p>
+      </div>
+
+      <!-- Полета -->
+      <h5 class="-legend">Полета</h5>
+
+      <div class="legend-grid -fields">
+
+        <!-- Row -->
+        <p class="-legend-grid-full-row -grid-item">
+          *Десетичният знак се изписва с „точка” или „запетая”;<br>
+          (в зависимост от регионалните настройки на операционната
+          система)
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample -input -legend-grid-item -a">[ число ]</p>
+        <p class="-legend-grid-item -b">
+          Променлива стойност. / Стойност, подлежаща на промяна, която задаваме свободно;
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample -input -placeholder -legend-grid-item -a">пр. [число]</p>
+        <p class="-legend-grid-item -b">
+          Примерна стойност;
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample -result -legend-grid-item -a">[ число ]</p>
+        <p class="-legend-grid-item -b">
+          Стойността, която търсим (изчислена на базата на зададените от нас стойности);
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample comment -legend-grid-item -a">[ текст ]</p>
+        <p class="-legend-grid-item -b">
+          Поле с пояснение (при посочване на полето);
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample comment -comment-green -legend-grid-item -a">[ текст ]</p>
+        <p class="-legend-grid-item -b">
+          Поле с пояснение (при посочване на полето) / Незадължително поле;
+        </p>
+
+      </div>
+
+
+      <!-- Бутони -->
+      <h5 class="-legend">Бутони</h5>
+
+      <div class="legend-grid -btns">
+
+        <!-- Row -->
+        <!-- Predefined values button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-predefined-sample" class="top-nav btn-predefined-values" tabindex="-1">П</button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Попълване на полетата за свободно въвеждане с примерни стойности;
+        </p>
+
+        <!-- Row -->
+        <!-- Submit button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-submit-sample" class="btn-submit" tabindex="-1">
+            <svg>
+              <use href="#svg-form-calculate"></use>
+            </svg>
+          </button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Изчисляване на търсените стойности;
+        </p>
+
+        <!-- Row -->
+        <!-- Reset button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-reset-sample" class="btn-reset" tabindex="-1">
+            <svg>
+              <use href="#svg-form-refresh"></use>
+            </svg>
+          </button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Нулиране на полетата от текущата форма;
+        </p>
+
+        <!-- Row -->
+        <!-- Save button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-save-sample" class="btn-save" tabindex="-1">
+            <svg>
+              <use href="#svg-form-save"></use>
+            </svg>
+          </button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Запаметяване на стойностите от полетата на текущата форма;
+        </p>
+
+        <!-- Row -->
+        <!-- Global Reset Button sample -->
+        <div class="-legend-grid-item -a">
+          <button type="button" class="btn-reset-global btn -global" tabindex="-1">
+            <svg>
+              <use href="#svg-global-reset"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="-legend-grid-item -b">
+          Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница;
+        </p>
+
+        <!-- Row -->
+        <!-- Global Save Button sample -->
+        <div class="-legend-grid-item -a">
+          <button type="button" class="btn-save-global btn -global" tabindex="-1">
+            <svg>
+              <use href="#svg-global-save"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="-legend-grid-item -b">
+          Запаметяване на стойностите от всички полета на текущата страница;
+        </p>
+
+      </div>
+
+      <!-- Навигация в страницата -->
+      <h5 class="-legend">Клавиатура (команди)</h5>
+
+      <div class="legend-grid -text">
+        <p>
+          При работа на настолен или преносим компютър би могло да се използва клавиатурата:
+        </p>
+
+        <p>
+          <code>[Tab]</code><br>
+          <span class="text-bullet"></span>Преминаване от един интерактивен елемент към друг;<br>
+          * Интерактивни елементи (елементи, податливи на взаимодействие с потребителя): полета за свободно въвеждане /
+          бутони / хипервръзки ... ;
+        </p>
+
+        <p>
+          <code>[Shift] + [Tab]</code><br>
+          <span class="text-bullet"></span>Връщане към предходен интерактивен елемент;
+        </p>
+
+        <p>
+          <code>[Enter]</code><br>
+          <span class="text-bullet"></span>Моментално изчисляване (когато някое поле за въвеждане е на фокус);<br>
+          <span class="text-bullet"></span>Активиране на действието на даден бутон или хипервръзка;
+        </p>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+  </details>
+
+  <footer class="-page">
+    <ul>
+      <li>
+        <a class="page-footer-link" href="https://nstratiev.github.io/bread-calculator-bg/">Bread-calculator-bg</a>
+      </li>
+      <!-- <li>
+        <a href="./offline" class="page-footer-link">Offline версия</a>
+      </li> -->
+      <li>
+        <a class="page-footer-link github-link" href="https://github.com/nstratiev/online-banica-calculator">GitHub</a>
+      </li>
+      <li>
+        <a class="page-footer-link favicon-link" href="https://www.freepik.com/icon/rolling-pin_5637312"
+          target="_blank">Favicon by
+          Circlon Tech</a>
+      </li>
+    </ul>
+  </footer>
+
+  <!-- Global buttons -->
+  <aside class="btns-global">
+
+    <!-- Global Reset Button -->
+    <button type="button" class="btn -global btn-reset-global" id="btn-reset-global"
+      title="Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница" tabindex="-1">
+      <svg>
+        <use href="#svg-global-reset"></use>
+      </svg>
+    </button>
+
+    <!-- Global Save Button -->
+    <button type="button" class="btn -global btn-save-global" id="btn-save-global"
+      title="Запаметяване на стойностите от всички полета на текущата страница" tabindex="-1">
+      <svg>
+        <use href="#svg-global-save"></use>
+      </svg>
+    </button>
+
+    <!-- Go-to-top Button -->
+    <div class="btn-to-top-container">
+      <button type="button" class="btn -global btn-to-top" id="btn-to-top" tabindex="-1">
+        <svg>
+          <use href="#svg-global-go-to-top"></use>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+
+  <!-- ##### SVG (https://phosphoricons.com/) ##### -->
+  <!-- SVG - forms -->
+  <aside>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-group-forms" style="display: none;">
+
+      <!-- Refresh svg -->
+      <symbol id="svg-form-refresh" viewBox="0 0 256 256">
+        <title>Refresh svg - light 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <polyline points="24 56 24 104 72 104" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+      <!-- Calculate svg -->
+      <symbol id="svg-form-calculate" viewBox="0 0 256 256">
+        <title>Calculate svg - light 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
+          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+        <circle cx="88" cy="148" r="10" />
+        <circle cx="128" cy="148" r="10" />
+        <circle cx="168" cy="148" r="10" />
+        <circle cx="88" cy="188" r="10" />
+        <circle cx="128" cy="188" r="10" />
+        <circle cx="168" cy="188" r="10" />
+      </symbol>
+
+      <!-- Save svg -->
+      <symbol id="svg-form-save" viewBox="0 0 256 256">
+        <title>Save svg - light 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <path
+          d="M216,83.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H172.69a8,8,0,0,1,5.65,2.34l35.32,35.32A8,8,0,0,1,216,83.31Z"
+          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+        <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+    </svg>
+  </aside>
+
+  <!-- SVG - global -->
+  <aside>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-group-global" style="display: none;">
+
+      <!-- Global Reset svg -->
+      <symbol id="svg-global-reset" class="" viewBox="0 0 256 256">
+        <title>Global Refresh svg - global 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <polyline points="88 96 40 96 40 48" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M40,96,68.28,67.72A88,88,0,0,1,192,67" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <polyline points="168 160 216 160 216 208" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M216,160l-28.28,28.28A88,88,0,0,1,64,189" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+      <!-- Global Save svg -->
+      <symbol id="svg-global-save" class="" viewBox="0 0 256 256">
+        <title>Global Save svg - global 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <ellipse cx="128" cy="80" rx="88" ry="48" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80" fill="none" stroke="var(--gray-svg)"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+        <path d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128" fill="none" stroke="var(--gray-svg)"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+      <!-- Global Go-to-top svg -->
+      <symbol id="svg-global-go-to-top" class="" viewBox="0 0 256 256">
+        <title>Global Go-to-top svg - global 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <polyline points="48 160 128 80 208 160" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+    </svg>
+  </aside>
+
+
+  <script type="module" src=" ./js/index.js"></script>
+</body>
+
+</html>

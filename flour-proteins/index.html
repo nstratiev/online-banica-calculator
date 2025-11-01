@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Калкулатор - Протеини в брашното (online)">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../favicon_rolling-pin_5637312.png">
+
+  <title>Протеини в брашното (online калкулатор)</title>
+  <link rel="stylesheet" href="../global/css/index.css">
+  <link rel="stylesheet" href="../global/css/details.css">
+  <link rel="stylesheet" href="../global/css/top-nav.css">
+  <link rel="stylesheet" href="../global/css/borders.css">
+  <link rel="stylesheet" href="../global/css/buttons.css">
+  <link rel="stylesheet" href="../global/css/legend.css">
+  <link rel="stylesheet" href="../global/css/small-elements.css">
+  <link rel="stylesheet" href="../global/css/queries.css">
+  <link rel="stylesheet" href="../global/css/modal.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <script>0</script>
+  <header class="-page">
+    <h1>Протеини в брашното</h1>
+    <h2>(online калкулатор)</h2>
+  </header>
+
+  <details class="details-top">
+    <summary>Пояснения: ...</summary>
+    <div class="details-body -top">
+      <p>
+        Задачата на калкулатора е да изчисли какви количества от два налични вида брашно (с различно протеиново
+        /белтъчно/ съдържание) да смесим,
+        <br>така че да получим смес (от тези брашна) с желано от нас протеиново съдържание, ...
+      </p>
+      <p class="italic">
+        * Желаното от нас протеиново съдържание на Брашно<span class="superscript">смес</span> е необходимо да бъде в
+        диапазона:
+        ( Протеини<span class="superscript">min</span>, Протеини<span class="superscript">max</span> );
+        ... ,
+        <br>по зададени от нас:
+      </p>
+
+      <ol>
+        <li>
+          Количество на протеините в брашното, което е с най-ниско съдържание на протеини
+          (Брашно-1 с Протеини<span class="superscript">min</span>);
+        </li>
+        <li>
+          Количество на протеините в брашното, което е с най-високо съдържание на протеини
+          (Брашно-2 с Протеини<span class="superscript">max</span>);
+        </li>
+        <li>
+          Желано тегло на брашното, което представлява смес от двата вида брашно
+          (Брашно<span class="superscript">смес</span> или т.нар. „съставно брашно“);
+        </li>
+        <li>
+          Желано съдържание на протеини в съставното брашно;
+        </li>
+      </ol>
+
+      <div class="said-in-different-way">... Kазано по друг начин ...
+      </div>
+      <div>
+        <P class="used-when">Използваме, когато:</P>
+        <p>Разполагаме с два вида брашно с различно протеиново (белтъчно) съдържание:
+          <br>Брашно-1 с Протеини<span class="superscript">min</span>, както и Брашно-2 с Протеини<span
+            class="superscript">max</span>;
+        </p>
+        <p class="and-txt">и</p>
+        <p>
+          Искаме да разберем какви количества от двата налични вида брашно да смесим, така че да получим смес с желано
+          от нас протеиново съдържание (Брашно<span class="superscript">смес</span>);
+        </p>
+        <p class="italic">
+          * Желаното от нас протеиново съдържание на Брашно<span class="superscript">смес</span> е необходимо да бъде в
+          диапазона:
+          <br>( Протеини<span class="superscript">min</span>, Протеини<span class="superscript">max</span> );
+        </p>
+      </div>
+
+    </div>
+
+    <hr>
+
+  </details>
+
+  <nav class="top-nav">
+    <a href="../" id="link-menu" class="top-nav link-legend btn-menu" title="Меню">М</a>
+    <a href="#legend" id="link-legend" class="top-nav link-legend" title="Легенда">?</a>
+
+    <button type="button" id="btn-predefined-values" class="top-nav btn-predefined-values"
+      title="Попълване на примерни стойности">П</button>
+
+    <!-- <a href="./offline" id="link-offline" class="top-nav link-offline " title="Offline версия">Offline</a> -->
+    <!-- <div class="warning">UNDER CONSTRUCTION</div> -->
+  </nav>
+
+  <main class="--grid-3-cols">
+
+    <!-- ##### First Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
+        <form id="form-main" name="formMain">
+
+          <!-- ##### (1.3) ##### -->
+          <article class="card">
+            <header>
+              <h3>(1.3) Налично брашно</h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="_proteins-min-amount">Протеини<span class="superscript">min</span> в Брашно-1,
+                    <br>(g или %):</label>
+                  <aside class="comment-box">
+                    Количеството протеини в брашното,
+                    <br>което е с най-ниско съдържание на протеини;
+                  </aside>
+
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" name="proteinsMinAmount" id="proteins-min-amount"
+                    placeholder="пр. 10.6" required autofocus>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="_proteins-max-amount">Протеини<span class="superscript">max</span> в Брашно-2,
+                    <br>(g или %):</label>
+                  <aside class="comment-box">
+                    Количеството протеини в брашното,
+                    <br>което е с най-високо съдържание на протеини;
+                  </aside>
+
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" name="proteinsMaxAmount" id="proteins-max-amount"
+                    placeholder="пр. 13.4" required>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### (2.3) ##### -->
+          <article class="card">
+            <header class="no-underline">
+              <h3>
+                <span class="underline">(2.3) Брашно</span><span class="superscript">смес</span><br>(характеристики)
+              </h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols">
+                <!-- Row -->
+                <div class="cell -a">
+                  <label for="_final-flour-weight">Желано тегло
+                    на Брашно<span class="superscript">смес</span>, (g):</label>
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="1" min="0" name="finalFlourWeight" id="final-flour-weight"
+                    placeholder="пр. 500" required>
+                </div>
+
+                <!-- Row - Line -->
+                <div class="cell -line"></div>
+
+                <!-- Row -->
+                <div class="cell -a comment">
+                  <label for="_desired-proteins-amount">Желано съдържание
+                    <br>на протеини
+                    <br>в Брашно<span class="superscript">смес</span>,
+                    <br>(g или %):</label>
+                  <aside class="comment-box">
+                    Протеини<span class="superscript">min</span> (Брашно 1) &lt; <span class="text-green">Протеини
+                      (смес)</span> &lt;
+                    Протеини<span class="superscript">max</span> (Брашно 2)
+                </div>
+                <div class="cell -b -input">
+                  <input type="number" step="0.1" min="0" name="desiredProteinsAmount" id="desired-proteins-amount"
+                    placeholder="пр. 12.3" required>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+        </form>
+      </fieldset>
+
+    </section>
+
+    <!-- ##### Second Column ##### -->
+    <section class="page-column">
+
+      <fieldset>
+        <form>
+          <!-- ##### (3.3) ##### -->
+          <article id="results-fMain" class="card --last-child">
+            <header class="no-underline">
+              <h3><span class="underline">(3.3) Брашно</span><span class="superscript">смес</span></h3>
+            </header>
+
+            <div class="card-body">
+              <div class="rows-container --grid-2-cols -no-border">
+                <!-- Row -->
+                <div class="cell -a">Брашно-1, (g):</div>
+                <div class="cell -b -result">
+                  <output id="flour-min-proteins-weight" name="flourMinProteinsWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line - plus sign -->
+                <div class="cell -a -inner"></div>
+                <div class="cell -b -inner">&plus;</div>
+
+                <!-- Row -->
+                <div class="cell -a">Брашно-2, (g):</div>
+                <div class="cell -b -result">
+                  <output id="flour-max-proteins-weight" name="flourMaxProteinsWeight" form="form-main">....</output>
+                </div>
+
+                <!-- Row - Line - equal sign -->
+                <div class="cell -a -inner"></div>
+                <div class="cell -b -inner">&equals;</div>
+
+                <!-- Row -->
+                <div class="cell -a -no-border"></div>
+                <div class="cell -b -full-border">
+                  <output id="final-notes" name="finalNotes" class="final-notes" form="form-main">....</output>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ##### Buttons Group (Main) ##### -->
+          <div class="btns-group -main">
+
+            <!-- Reset button -->
+            <button type="reset" class="btn-reset" id="btn-reset-main" form="form-main"
+              title="Нулиране на полетата от текущата форма">
+              <svg>
+                <use href="#svg-form-refresh"></use>
+              </svg>
+            </button>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn-submit" id="btn-submit-main" form="form-main"
+              title="Изчисляване на търсените стойности">
+              <svg>
+                <use href="#svg-form-calculate"></use>
+              </svg>
+            </button>
+
+            <!-- Save button -->
+            <button type="button" class="btn-save" id="btn-save-main" form="form-main"
+              title="Запаметяване на стойностите от полетата на текущата форма">
+              <svg>
+                <use href="#svg-form-save"></use>
+              </svg>
+            </button>
+
+          </div>
+
+          <hr />
+
+        </form>
+      </fieldset>
+
+    </section>
+
+    <!-- ##### Third Column ##### -->
+    <section class="page-column">
+    </section>
+
+  </main>
+
+
+  <details class="details-bottom">
+    <summary id="legend">Легенда: ...</summary>
+    <div class="details-body -bottom">
+
+      <!-- Версия -->
+      <div class="-version">
+        <p>Версия: <span id="version"></span></p>
+      </div>
+
+      <!-- Понятия -->
+      <h5 class="-legend">Понятия</h5>
+
+      <div class="legend-grid -text">
+        <p>
+          <span class="bold">Брашно<span class="superscript">смес</span></span>
+          <span class="text-bullet"></span>Съставно брашно. Брашно, съставено от двата налични вида брашно;
+        </p>
+
+        <p>
+          <span class="bold">Протеини в брашното</span>
+          <span class="text-bullet"></span>Съдържанието на белтъчини в брашното
+          (изразено в g или %) за 100g от него.
+          Обикновено е посочено върху опаковката
+          от производителя на брашното;
+        </p>
+
+      </div>
+
+      <!-- Стойности -->
+      <h5 class="-legend">Стойности</h5>
+
+      <div class="legend-grid -text">
+        <P>
+          Брашно с високо съдържание на протеини, обикновено се счита, че е брашно, чиито протеини са над 13% ( 13%
+          протеини = 13
+          g протеини за
+          100 g
+          брашно );
+        </P>
+      </div>
+
+      <!-- Полета -->
+      <h5 class="-legend">Полета</h5>
+
+      <div class="legend-grid -fields">
+
+        <!-- Row -->
+        <p class="-legend-grid-full-row -grid-item">
+          *Десетичният знак се изписва с „точка” или „запетая”;<br>
+          (в зависимост от регионалните настройки на операционната
+          система)
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample -input -legend-grid-item -a">[ число ]</p>
+        <p class="-legend-grid-item -b">
+          Променлива стойност. / Стойност, подлежаща на промяна, която задаваме свободно;
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample -input -placeholder -legend-grid-item -a">пр. [число]</p>
+        <p class="-legend-grid-item -b">
+          Примерна стойност;
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample -result -legend-grid-item -a">[ число ]</p>
+        <p class="-legend-grid-item -b">
+          Стойността, която търсим (изчислена на базата на зададените от нас стойности);
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample comment -legend-grid-item -a">[ текст ]</p>
+        <p class="-legend-grid-item -b">
+          Поле с пояснение (при посочване на полето);
+        </p>
+
+        <!-- Row -->
+        <p class="legend-cell-sample comment -comment-green -legend-grid-item -a">[ текст ]</p>
+        <p class="-legend-grid-item -b">
+          Поле с пояснение (при посочване на полето) / Незадължително поле;
+        </p>
+
+      </div>
+
+
+      <!-- Бутони -->
+      <h5 class="-legend">Бутони</h5>
+
+      <div class="legend-grid -btns">
+
+        <!-- Row -->
+        <!-- Predefined values button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-predefined-sample" class="top-nav btn-predefined-values" tabindex="-1">П</button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Попълване на полетата за свободно въвеждане с примерни стойности;
+        </p>
+
+        <!-- Row -->
+        <!-- Submit button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-submit-sample" class="btn-submit" tabindex="-1">
+            <svg>
+              <use href="#svg-form-calculate"></use>
+            </svg>
+          </button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Изчисляване на търсените стойности;
+        </p>
+
+        <!-- Row -->
+        <!-- Reset button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-reset-sample" class="btn-reset" tabindex="-1">
+            <svg>
+              <use href="#svg-form-refresh"></use>
+            </svg>
+          </button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Нулиране на полетата от текущата форма;
+        </p>
+
+        <!-- Row -->
+        <!-- Save button sample -->
+        <p class="-legend-grid-item -a">
+          <button id="btn-save-sample" class="btn-save" tabindex="-1">
+            <svg>
+              <use href="#svg-form-save"></use>
+            </svg>
+          </button>
+        </p>
+        <p class="-legend-grid-item -b">
+          Запаметяване на стойностите от полетата на текущата форма;
+        </p>
+
+        <!-- Row -->
+        <!-- Global Reset Button sample -->
+        <div class="-legend-grid-item -a">
+          <button type="button" class="btn-reset-global btn -global" tabindex="-1">
+            <svg>
+              <use href="#svg-global-reset"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="-legend-grid-item -b">
+          Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница;
+        </p>
+
+        <!-- Row -->
+        <!-- Global Save Button sample -->
+        <div class="-legend-grid-item -a">
+          <button type="button" class="btn-save-global btn -global" tabindex="-1">
+            <svg>
+              <use href="#svg-global-save"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="-legend-grid-item -b">
+          Запаметяване на стойностите от всички полета на текущата страница;
+        </p>
+
+      </div>
+
+      <!-- Навигация в страницата -->
+      <h5 class="-legend">Клавиатура (команди)</h5>
+
+      <div class="legend-grid -text">
+        <p>
+          При работа на настолен или преносим компютър би могло да се използва клавиатурата:
+        </p>
+
+        <p>
+          <code>[Tab]</code><br>
+          <span class="text-bullet"></span>Преминаване от един интерактивен елемент към друг;<br>
+          * Интерактивни елементи (елементи, податливи на взаимодействие с потребителя): полета за свободно въвеждане /
+          бутони / хипервръзки ... ;
+        </p>
+
+        <p>
+          <code>[Shift] + [Tab]</code><br>
+          <span class="text-bullet"></span>Връщане към предходен интерактивен елемент;
+        </p>
+
+        <p>
+          <code>[Enter]</code><br>
+          <span class="text-bullet"></span>Моментално изчисляване (когато някое поле за въвеждане е на фокус);<br>
+          <span class="text-bullet"></span>Активиране на действието на даден бутон или хипервръзка;
+        </p>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+  </details>
+
+  <footer class="-page">
+    <ul>
+      <li>
+        <a class="page-footer-link" href="https://nstratiev.github.io/bread-calculator-bg/">Bread-calculator-bg</a>
+      </li>
+      <!-- <li>
+        <a href="./offline" class="page-footer-link">Offline версия</a>
+      </li> -->
+      <li>
+        <a class="page-footer-link github-link" href="https://github.com/nstratiev/online-banica-calculator">GitHub</a>
+      </li>
+      <li>
+        <a class="page-footer-link favicon-link" href="https://www.freepik.com/icon/rolling-pin_5637312"
+          target="_blank">Favicon by
+          Circlon Tech</a>
+      </li>
+    </ul>
+  </footer>
+
+  <!-- Global buttons -->
+  <aside class="btns-global">
+
+    <!-- Global Reset Button -->
+    <button type="button" class="btn -global btn-reset-global" id="btn-reset-global"
+      title="Нулиране на всички полета и освобождаване на паметта, свързана с текущата страница" tabindex="-1">
+      <svg>
+        <use href="#svg-global-reset"></use>
+      </svg>
+    </button>
+
+    <!-- Global Save Button -->
+    <button type="button" class="btn -global btn-save-global" id="btn-save-global"
+      title="Запаметяване на стойностите от всички полета на текущата страница" tabindex="-1">
+      <svg>
+        <use href="#svg-global-save"></use>
+      </svg>
+    </button>
+
+    <!-- Go-to-top Button -->
+    <div class="btn-to-top-container">
+      <button type="button" class="btn -global btn-to-top" id="btn-to-top" tabindex="-1">
+        <svg>
+          <use href="#svg-global-go-to-top"></use>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+
+  <!-- ##### SVG (https://phosphoricons.com/) ##### -->
+  <!-- SVG - forms -->
+  <aside>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-group-forms" style="display: none;">
+
+      <!-- Refresh svg -->
+      <symbol id="svg-form-refresh" viewBox="0 0 256 256">
+        <title>Refresh svg - light 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <polyline points="24 56 24 104 72 104" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M67.59,192A88,88,0,1,0,65.77,65.77L24,104" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+      <!-- Calculate svg -->
+      <symbol id="svg-form-calculate" viewBox="0 0 256 256">
+        <title>Calculate svg - light 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none"
+          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+        <circle cx="88" cy="148" r="10" />
+        <circle cx="128" cy="148" r="10" />
+        <circle cx="168" cy="148" r="10" />
+        <circle cx="88" cy="188" r="10" />
+        <circle cx="128" cy="188" r="10" />
+        <circle cx="168" cy="188" r="10" />
+      </symbol>
+
+      <!-- Save svg -->
+      <symbol id="svg-form-save" viewBox="0 0 256 256">
+        <title>Save svg - light 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <path
+          d="M216,83.31V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H172.69a8,8,0,0,1,5.65,2.34l35.32,35.32A8,8,0,0,1,216,83.31Z"
+          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+        <path d="M80,216V152a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8v64" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <line x1="152" y1="72" x2="96" y2="72" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+    </svg>
+  </aside>
+
+  <!-- SVG - global -->
+  <aside>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-group-global" style="display: none;">
+
+      <!-- Global Reset svg -->
+      <symbol id="svg-global-reset" class="" viewBox="0 0 256 256">
+        <title>Global Refresh svg - global 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <polyline points="88 96 40 96 40 48" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M40,96,68.28,67.72A88,88,0,0,1,192,67" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <polyline points="168 160 216 160 216 208" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M216,160l-28.28,28.28A88,88,0,0,1,64,189" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+      <!-- Global Save svg -->
+      <symbol id="svg-global-save" class="" viewBox="0 0 256 256">
+        <title>Global Save svg - global 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <ellipse cx="128" cy="80" rx="88" ry="48" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+        <path d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80" fill="none" stroke="var(--gray-svg)"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+        <path d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128" fill="none" stroke="var(--gray-svg)"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+      <!-- Global Go-to-top svg -->
+      <symbol id="svg-global-go-to-top" class="" viewBox="0 0 256 256">
+        <title>Global Go-to-top svg - global 16px RAW</title>
+        <rect width="256" height="256" fill="none" />
+        <polyline points="48 160 128 80 208 160" fill="none" stroke="var(--gray-svg)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12" />
+      </symbol>
+
+    </svg>
+  </aside>
+
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+.warning {
+  margin: 20px 10px;
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: underline;
+  /* margin-bottom: 20px; */
+}
+
+header.menu.-page {
+  margin-bottom: 40px;
+}
+
+div.cell > h3 {
+  width: 100%;
+}
+
+/* ##### Smaller Elements ##### */
+.grid-container {
+  margin: 0 auto;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.cell {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.title-1,
+.title-2 {
+  color: rgb(192, 0, 0);
+}
+
+.title-1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title-2 {
+  margin-bottom: 20px;
+}
+
+.cell h3 {
+  height: 100%;
+}
+
+.cell._A {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  font-size: 90%;
+  font-weight: 600;
+  color: rgb(80, 80, 80);
+}
+
+.cell._B {
+  justify-content: left;
+}
+
+/* ##### Links ##### */
+.calc-link {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 4px 2px 4px 8px;
+}
+
+.calc-link:link,
+.calc-link:visited {
+  color: var(--blue-font-color);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.calc-link:hover,
+.calc-link:active {
+  text-decoration: underline;
+}
+
+footer.-page {
+  margin-top: auto;
+  text-align: center;
+}
+
+.page-footer-link:link,
+.page-footer-link:visited {
+  padding: 6px 20px;
+}
+
+.not-active:link,
+.not-active:visited {
+  color: grey;
+  pointer-events: none;
+}
+
+.not-active:hover,
+.not-active:active {
+  text-decoration: none;
+}
+
+/* ##### QUERIES ##### */
+@media (hover: none) {
+  .calc-link:active {
+    text-decoration: underline;
+  }
+
+  .footer-link:active {
+    text-decoration: none;
+  }
+
+  .not-active:active {
+    text-decoration: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .grid-container {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 340px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .cell._A {
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+
+  .cell._B {
+    border-top: none;
+    padding-bottom: 6px;
+    justify-content: center;
+  }
+
+  .calc-link {
+    justify-content: center;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 220px) {
+  footer.-page {
+    margin-top: 20px;
+  }
+
+  .warning {
+    margin: 20px 4px;
+  }
+
+}

@@ -1,0 +1,44 @@
+/* ##### Top navigation [Start] ##### */
+nav.top-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+a.top-nav:link,
+a.top-nav:visited,
+button.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  border: 1px solid black;
+  border-radius: 6px;
+  height: 38px;
+  width: 38px;
+  text-decoration: none;
+}
+
+a.top-nav:hover,
+a.top-nav:active,
+button.top-nav:hover,
+button.top-nav:active {
+  outline: 1px solid black;
+}
+
+#link-online:link,
+#link-online:visited {
+  width: auto;
+  padding: 0 10px;
+  font-weight: bold;
+  color: green;
+  text-decoration: underline;
+}
+
+#link-download:link,
+#link-download:visited {
+  color: blue;
+}
+
+/* ##### Top navigation [End] ##### */

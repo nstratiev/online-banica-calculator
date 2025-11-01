@@ -1,0 +1,279 @@
+/* ##### Index [Start] ##### */
+:root {
+  --black-color: rgb(53, 59, 65);
+  --black-color-2: rgb(74, 80, 87);
+  --yellow-input-bg-color: rgb(255, 255, 153);
+  --orange-input-bg-color: rgb(255, 204, 102);
+  --orange-menu-color: rgb(226, 107, 10);
+  --red-menu-color: rgb(192, 0, 0);
+  --grey-bg: rgb(248, 248, 248);
+  --blue-text-links: #366092;
+
+  /* From menu style.css */
+  --blue-font-color: rgb(54, 96, 146);
+  --red-font-color: rgb(192, 0, 0);
+  --grey-bg-color: rgb(248, 248, 248);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black-color);
+  text-align: center;
+  height: 100vh;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 4px 4px gray;
+}
+
+/* ##### Common styles ##### */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.--grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.--grid-3-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* ##### Text styles ##### */
+code {
+  font-family: monospace, monospace;
+  font-weight: bold;
+  font-size: 110%;
+  color: green;
+}
+
+.superscript {
+  /* vertical-align: top; */
+  position: relative;
+  top: -0.3em;
+  font-size: 80%;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-green {
+  color: green;
+}
+
+.said-in-different-way {
+  text-align: center;
+  margin-top: 10px;
+  color: #366992;
+  font-weight: bold;
+}
+
+.used-when {
+  text-indent: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.and-txt {
+  text-align: center;
+  color: #366992;
+  font-weight: bold;
+}
+
+/* ##### Main elements ##### */
+body,
+.page-column,
+form,
+aside.legend,
+div.legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main,
+form {
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+}
+
+header.-page,
+footer.-page {
+  background-color: rgb(248, 248, 248);
+  width: 100%;
+}
+
+header.-page {
+  padding: 6px;
+}
+
+footer.-page {
+  /* margin-top: auto; */
+  margin-top: 40px;
+  text-align: initial;
+  padding: 8px 8px 8px 20px;
+}
+
+footer ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+footer ul li {
+  margin: 10px 0px;
+}
+
+.page-footer-link:link,
+.page-footer-link:visited {
+  display: inline-block;
+  padding: 6px 20px 6px 10px;
+  color: #366092;
+}
+
+.page-column {
+  padding: 0 5px;
+}
+
+/* ##### Small elements ##### */
+hr {
+  max-width: 300px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ##### Card ##### */
+fieldset,
+article.card {
+  max-width: 320px;
+  width: 100%;
+}
+
+article.card,
+aside.legend,
+div.legend {
+  margin: 0 20px 40px;
+}
+
+article.card.--last-child {
+  margin-bottom: 20px;
+}
+
+article.card {
+  border: 2px solid black;
+}
+
+article.card > header,
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article.card > header {
+  background-color: rgb(220, 230, 241);
+  padding: 2px 2px 4px 2px;
+  text-decoration: underline;
+}
+
+article.card > header.no-underline {
+  text-decoration: none;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.cell {
+  padding: 2px;
+}
+
+.cell.-line {
+  grid-column: 1 / -1;
+  padding: 2px;
+  height: 16px;
+}
+
+.cell.-line.-text {
+  height: auto;
+  padding: 2px;
+  font-size: 90%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.cell.-line.-text > span {
+  font-weight: initial;
+}
+
+.cell.-b.-result,
+.legend-cell-sample.-result {
+  background-color: rgb(255, 204, 102);
+}
+
+.cell.-b.-result {}
+
+.cell.-b.-input {
+  padding: 0;
+}
+
+::placeholder {
+  font-family: monospace, monospace;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+input[type="number"],
+.legend-cell-sample.-input {
+  background-color: rgb(255, 255, 153);
+}
+
+input[type="number"] {
+  border: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#vinegar-percent:focus,
+#oil-percent:focus {
+  z-index: 32;
+}
+
+.favicon-link:link,
+.favicon-link:visited {
+  font-size: 80%;
+  font-style: italic;
+}
+
+/* ##### Index [End] ##### */

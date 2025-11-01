@@ -1,0 +1,50 @@
+/* ##### Borders [Start] ##### */
+article.card > header {
+  border-bottom: 1px solid black;
+}
+
+.rows-container {
+  border-bottom: 1px solid black;
+}
+
+.rows-container.-no-border {
+  border-bottom: none;
+}
+
+.cell.-a {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.cell.-a.-inner {
+  border-left: none;
+}
+
+.cell.-b {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.cell.-b.-inner {
+  border-left: none;
+  border-right: none;
+}
+
+.cell.-line {
+  border-top: 1px solid black;
+}
+
+.cell.-line .-text {
+  border: none;
+}
+
+.cell.-no-border {
+  border: none;
+}
+
+.cell.-full-border {
+  border: 1px solid black;
+}
+
+/* ##### Borders [End] ##### */

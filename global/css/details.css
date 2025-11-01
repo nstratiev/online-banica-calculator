@@ -1,0 +1,64 @@
+/* ##### Details dropdown [Start] ##### */
+details {
+  text-align: initial;
+  margin: 10px 10px 0px 20px;
+  align-self: flex-start;
+}
+
+summary {
+  padding: 4px 10px 4px 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 210px;
+}
+
+.details-body {
+  padding: 2px;
+}
+
+.details-body.-top {
+  margin-top: 10px;
+}
+
+.details-body.-top > p {
+  text-indent: 4px;
+}
+
+.details-body.-top p,
+details ol li {
+  padding: 2px;
+}
+
+details ol {
+  padding: 2px;
+}
+
+details ol li {
+  margin-left: 20px;
+
+}
+
+details hr {
+  margin: 10px auto;
+  max-width: 80%;
+  text-align: center;
+}
+
+.details-top summary {
+  color: var(--blue-text-links);
+}
+
+.details-bottom {
+  margin-top: 0;
+}
+
+.details-bottom summary {
+  color: var(--orange-menu-color);
+}
+
+.details-body.-bottom {
+  margin-bottom: 20px;
+}
+
+/* ##### Details dropdown [End] ##### */
