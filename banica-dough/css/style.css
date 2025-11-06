@@ -1,0 +1,13 @@
+.cell.-line.-text.-above {
+  padding-bottom: 0;
+}
+
+.cell.-line.-text.-explain {
+  border: none;
+  padding-top: 0;
+  color: red;
+  font-size: 90%;
+  font-style: italic;
+  font-weight: 100;
+  /* margin-bottom: 4px; */
+}
