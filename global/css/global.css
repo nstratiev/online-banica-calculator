@@ -1,4 +1,4 @@
-/* ##### Index [Start] ##### */
+/* ##### Global [Start] ##### */
 :root {
   --black-color: rgb(53, 59, 65);
   --black-color-2: rgb(74, 80, 87);
@@ -139,6 +139,7 @@ footer.-page {
   margin-top: 40px;
   text-align: initial;
   padding: 8px 8px 8px 20px;
+  text-align: center;
 }
 
 footer ul {
@@ -238,7 +239,7 @@ article.card > header.no-underline {
   background-color: rgb(255, 204, 102);
 }
 
-.cell.-b.-result {}
+/* .cell.-b.-result {} */
 
 .cell.-b.-input {
   padding: 0;
@@ -276,4 +277,4 @@ input[type="number"] {
   font-style: italic;
 }
 
-/* ##### Index [End] ##### */
+/* ##### Global [End] ##### */

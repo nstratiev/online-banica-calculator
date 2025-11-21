@@ -34,6 +34,7 @@ footer.-page {
   margin-top: auto;
   text-align: initial;
   padding: 8px 8px 8px 20px;
+  text-align: center;
 }
 
 footer ul {
@@ -50,6 +51,23 @@ footer ul li {
   display: inline-block;
   padding: 6px 20px 6px 10px;
   color: #366092;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.offline-label {
+  color: rgb(192, 0, 0);
+}
+
+.online {
+  color: green;
+  font-weight: bold;
 }
 
 h1 {
@@ -108,6 +126,7 @@ svg.left-arrow {
 
 .calculator-html {
   color: var(--orange-menu-color);
+  font-weight: bold;
 }
 
 .hellip {

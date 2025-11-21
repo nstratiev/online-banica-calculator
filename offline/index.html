@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offline версия</title>
   <link rel="stylesheet" href="css/global-reset.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/page.css">
   <link rel="stylesheet" href="css/top-nav.css">
 </head>
 
@@ -14,7 +14,7 @@
   <header class="-page">
     <h2>Тесто за баница</h2>
     <h3>(калкулатор)</h3>
-    <h1>Offline версия</h1>
+    <h1 class="offline-label">Offline версия</h1>
   </header>
 
   <nav class="top-nav">
@@ -33,23 +33,25 @@
   <main>
 
     <ol class="-main">
-      <li><span class="bullet"></span>Изтеглете <a href="downloads/Banica-Offline-Calculator-Ver.0.8.zip"
-          id="link-download" download="">Banica-Offline-Calculator.zip</a>;</li>
+      <li><span class="bullet"></span>Изтеглете <span class="bold"><a
+            href="downloads/Banica-Offline-Calculator-Ver.0.8.zip" id="link-download"
+            download="">Banica-Offline-Calculator.zip</a>;</span></li>
       <li><span class="bullet"></span>Разархивирайте изтегления (.zip) файл;</li>
 
-      <li><span class="bullet"></span>Отворете разархивираната папка, съдържаща калкулатора
-        (<span class="calculator-html">Banica-Offline-Calculator.html</span>) и го отворете чрез
-        някой браузър (Firefox, Chrome, ...);</li>
+      <li><span class="bullet"></span>Отворете разархивираната папка, съдържаща калкулаторите в
+        <span class="calculator-html italic">.html</span> формат. Всеки един от тях може да бъде отворен чрез
+        някой браузър (Firefox, Chrome, ...);
+      </li>
     </ol>
 
     <div class="divider"><span class="hellip">....</span></div>
 
     <ul class="-main -circle">
-      <li>Вече изтегленият (.zip) архив, както и калкулаторът в него (.html), могат да бъдат преименувани
+      <li>Вече изтегленият (.zip) архив, както и калкулаторите в него (.html), могат да бъдат преименувани
         по желание;</li>
 
-      <li>За удобство, може да запаметите връзка за бърз достъп (shortcut) към файла (<span
-          class="calculator-html">Banica-Offline-Calculator.html</span>)
+      <li>За удобство, може да се създаде връзка за бърз достъп (shortcut) към <span
+          class="calculator-html italic">.html</span> файловете
         върху "работния плот" (desktop) на настолния компютър или мобилното устройство;</li>
     </ul>
 
@@ -58,14 +60,16 @@
   <footer class="-page">
     <ul>
       <li>
+        <a class="online" href="../" class="page-footer-link">Online версия</a>
+      </li>
+
+      <!-- <li>
         <a class="page-footer-link" href="https://nstratiev.github.io/bread-calculator-bg/">Bread-calculator-bg</a>
       </li>
-      <li>
-        <a href="../" class="page-footer-link">Online версия</a>
-      </li>
+
       <li>
         <a class="page-footer-link github-link" href="https://github.com/nstratiev/online-banica-calculator">GitHub</a>
-      </li>
+      </li> -->
     </ul>
   </footer>
 
