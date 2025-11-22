@@ -53,6 +53,11 @@ footer ul li {
   color: #366092;
 }
 
+.page-footer-link:hover,
+.page-footer-link:active {
+  font-weight: bold;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -65,10 +70,10 @@ footer ul li {
   color: rgb(192, 0, 0);
 }
 
-.online {
-  color: green;
-  font-weight: bold;
-}
+/* .online {
+    color: green;
+    font-weight: bold;
+  } */
 
 h1 {
   padding: 6px 0;
