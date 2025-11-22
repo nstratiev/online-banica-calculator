@@ -1,5 +1,5 @@
 export function printCurrentVersion(versionElem) {
-  printCalculatorVersion(versionElem, '0.9');
+  printCalculatorVersion(versionElem, '1.1.2');
 }
 
 function printCalculatorVersion(versionElem, calculatorVersion) {
