@@ -38,8 +38,16 @@ button.top-nav:active {
 
 #link-download:link,
 #link-download:visited {
-  color: rgb(192, 0, 0);
   font-weight: bold;
+  color: rgb(192, 0, 0);
+  border: 1px solid rgb(192, 0, 0);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+#link-download:hover,
+#link-download:active {
+  outline: 2px solid rgb(192, 0, 0);
 }
 
 /* ##### Top navigation [End] ##### */
