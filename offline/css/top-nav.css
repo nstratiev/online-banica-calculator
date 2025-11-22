@@ -51,3 +51,16 @@ button.top-nav:active {
 }
 
 /* ##### Top navigation [End] ##### */
+
+/* ##### QUERIES [Start] ##### */
+/* Queries points >>> 1200px / 1000px / 680px / 370px / 350px / 308px / 300px / 220px */
+
+@media (max-width: 400px) {
+  #link-download {
+    display: block;
+    width: fit-content;
+    margin-top: 4px;
+  }
+}
+
+/* ##### QUERIES [End] ##### */
