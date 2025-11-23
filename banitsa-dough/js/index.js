@@ -2,8 +2,9 @@
 
 // On first page load
 document.addEventListener('DOMContentLoaded', (ev) => {
-  printCurrentVersion(versionElem);
-  console.log(versionElem);
+  printCurrentAppVersion(versionHeaderElem);
+  printCurrentAppVersion(versionLegendElem);
+  console.log(versionLegendElem);
 
   populateLocaleStorageData([formMain]);
   onSubmit_initialLoad(ev);
@@ -51,13 +52,13 @@ document.addEventListener('click', (ev) => {
 });
 
 
-import { btnGlobalReset, btnGlobalSave, btnPredefinedValues, btnToTop, formMain, versionElem } from './elements.js';
+import { btnGlobalReset, btnGlobalSave, btnPredefinedValues, btnToTop, formMain, versionHeaderElem, versionLegendElem } from './elements.js';
 import { onGlobalSave, onSave_fMain, onSubmit_fMain, onSubmit_initialLoad, populatePredefinedValues_fMain } from './event-handlers.js';
 import { attachFocusoutValidation } from './focusout.js';
 import { populateLocaleStorageData } from './storage.js';
 import { onGlobalReset, onReset_fMain } from './reset.js';
 import { goToScreenTop, onScreenScroll } from "./scroll.js";
 import { attachOnFocusoutDecimalPointValidation } from './validation.js';
-import { printCurrentVersion } from '../../global/js/version.js';
+import { printCurrentAppVersion } from '../../global/js/version.js';
 
 // ##### Index [End] #####

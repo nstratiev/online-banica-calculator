@@ -1,5 +1,6 @@
 // ##### Elements [Start] #####
-export const versionElem = document.querySelector('#version');
+export const versionHeaderElem = document.querySelector('#version-header');
+export const versionLegendElem = document.querySelector('#version-legend');
 
 // -- Forms
 export const formMain = document.querySelector('#form-main');

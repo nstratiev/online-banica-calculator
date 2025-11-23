@@ -1,7 +1,10 @@
-export function printCurrentVersion(versionElem) {
-  printCalculatorVersion(versionElem, '1.1.2');
-}
+const appVersion = 'Версия: 1.1.3';
+const appEnvironmentType = ' - Online';
 
-function printCalculatorVersion(versionElem, calculatorVersion) {
-  versionElem.textContent = calculatorVersion;
+export function printCurrentAppVersion(versionElem) {
+  versionElem.textContent = appVersion;
+
+  const spanElem = document.createElement('span');
+  spanElem.textContent = appEnvironmentType;
+  versionElem.appendChild(spanElem);
 }

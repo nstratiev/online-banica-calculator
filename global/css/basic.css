@@ -131,7 +131,7 @@ footer.-page {
 }
 
 header.-page {
-  padding: 6px;
+  padding-bottom: 10px;
 }
 
 footer.-page {
@@ -168,6 +168,24 @@ hr {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+div.version-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.version {
+  background-color: rgb(128, 128, 128);
+  /* background-color: var(--blue-font-color); */
+  color: white;
+  font-size: 85%;
+  padding: 2px 8px;
+  border-bottom-left-radius: 6px;
+}
+
+.version > span {
+  letter-spacing: 2px;
 }
 
 /* ##### Card ##### */
