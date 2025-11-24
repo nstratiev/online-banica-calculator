@@ -176,11 +176,13 @@ div.version-container {
 }
 
 div.version {
-  background-color: rgb(128, 128, 128);
-  /* background-color: var(--blue-font-color); */
-  color: white;
+  color: rgb(192, 0, 0);
   font-size: 85%;
+  font-weight: bold;
+  /* padding: 2px 8px 0; */
   padding: 2px 8px;
+  border-left: 1px solid rgb(192, 0, 0);
+  border-bottom: 1px solid rgb(192, 0, 0);
   border-bottom-left-radius: 6px;
 }
 
